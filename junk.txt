@@ -23,6 +23,7 @@
 *@eurasiaconferences.org
 *@ferpi.uz
 *@generis-publishing.com
+*@iaicf.net
 *@iaria.org
 *@iceccme.com
 *@icecet.com
