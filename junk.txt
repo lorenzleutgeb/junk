@@ -26,6 +26,7 @@
 *@ferpi.uz
 *@generis-publishing.com
 *@iaicf.net
+*@iaicf.net
 *@iaria.org
 *@iceccme.com
 *@icecet.com
