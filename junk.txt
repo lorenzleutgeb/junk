@@ -43,6 +43,7 @@
 *@intcec.org
 *@intjaaa.org
 *@iscsi-conference.org
+*@italyconferences.org
 *@itsalesblepass.com
 *@joccee.com
 *@josurg.com
