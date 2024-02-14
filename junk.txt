@@ -49,6 +49,7 @@
 *@joccee.com
 *@josurg.com
 *@larpj.org
+*@mail.cmseconf.org
 *@mailiconf.com
 *@mathematical-engineering-sciences.com
 *@mathlett.org
