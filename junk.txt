@@ -50,6 +50,7 @@
 *@joccee.com
 *@josurg.com
 *@larpj.org
+*@mail.beehiiv.com
 *@mail.cmseconf.org
 *@mailiconf.com
 *@mathematical-engineering-sciences.com
