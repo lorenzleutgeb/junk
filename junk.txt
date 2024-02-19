@@ -68,6 +68,7 @@
 *@researchoutreach.org
 *@saiconference.com
 *@santeservice-fondation.net
+*@sci-network.org
 *@science-europe.com
 *@sciencebg.eu
 *@shiconference.site
