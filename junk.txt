@@ -80,6 +80,7 @@
 *@sci-network.org
 *@science-europe.com
 *@sciencebg.eu
+*@seedconference.eu
 *@shiconference.site
 *@sjclinmed.com
 *@skywebservice.org
