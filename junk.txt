@@ -68,6 +68,7 @@
 *@mathlett.org
 *@mediconpublications.com
 *@monguide.org
+*@openaccesspublications.org
 *@openaccessreaserchgroup.com
 *@peerefmail.com
 *@peerreviewedjournal.club
