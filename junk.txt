@@ -84,6 +84,7 @@
 *@science-europe.com
 *@sciencebg.eu
 *@seedconference.eu
+*@send.icarce.com
 *@shiconference.site
 *@sjclinmed.com
 *@skywebservice.org
