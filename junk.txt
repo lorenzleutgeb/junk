@@ -3,7 +3,6 @@
 *@06892.net
 *@68-gi.net
 *@acdsa.org
-*@acdsa.org
 *@ahfe.org
 *@aiaeditorial.com
 *@aiconf.site
@@ -37,7 +36,6 @@
 *@generis-publishing.com
 *@gh.iotiip.org
 *@helpdesk-academic-relations.com
-*@iaicf.net
 *@iaicf.net
 *@iaria.org
 *@iceccme.com
