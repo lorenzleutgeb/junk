@@ -98,6 +98,7 @@
 *@universitaeten-fachhochschulen.com
 *@universitoxy.com
 *@vx.icctis.org
+*@web3conferences.io
 *@wissenschaftliche-ausschreibungen.com
 *@worlds4.co.uk
 *@ws-press.net
