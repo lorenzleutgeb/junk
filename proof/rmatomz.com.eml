@@ -1,0 +1,257 @@
+Return-Path: <ACC@rmatomz.com>
+Delivered-To: lorenz
+Received: from max.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by idas.mpi-inf.mpg.de with LMTPS
+	id QLUsM0U9/GWL8TgAp5wMLw:P1
+	(envelope-from <ACC@rmatomz.com>)
+	for <lorenz>; Thu, 21 Mar 2024 14:59:33 +0100
+Received: from jupiter.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by max.mpi-klsb.mpg.de with LMTPS
+	id QLUsM0U9/GWL8TgAp5wMLw
+	(envelope-from <ACC@rmatomz.com>)
+	for <lorenz@imap-inf0.mpi-inf.mpg.de>; Thu, 21 Mar 2024 14:59:33 +0100
+Received: from [23.94.122.151] (port=53954 helo=rmatomz.com)
+	by jupiter.mpi-klsb.mpg.de (envelope-from <ACC@rmatomz.com>) 
+	with esmtp (Exim 4.97) id 1rnIx3-00000008Qmk-2ggq
+	for lorenz@mpi-inf.mpg.de;
+	Thu, 21 Mar 2024 14:59:33 +0100
+Received: from localhost.localdomain (unknown [121.127.227.70])
+	by rmatomz.com (Postfix) with ESMTPA id 4BEA665B5
+	for <lorenz@mpi-inf.mpg.de>; Thu, 21 Mar 2024 08:24:54 -0400 (EDT)
+X-Notes-Item: [BBBBBB]   MID_MISSING_BRACKETS  HFILTER_HOSTNAME_UNKNOWN  FROM_EQ_ENVFROM  RCVD_COUNT_TWO  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  MV_CASE  NEURAL_HAM  R_DKIM_NA  R_SPF_ALLOW  RCVD_VIA_SMTP_AUTH  ASN  FROM_NO_DN  RCVD_NO_TLS_LAST  MISSING_XM_UA  BAD_REP_POLICIES  REPLYTO_DOM_NEQ_FROM_DOM  REPLYTO_DN_EQ_FROM_DN  TO_MATCH_ENVRCPT_ALL  RBL_VIRUSFREE_BOTNET  DMARC_NA  GREYLIST  URI_COUNT_ODD  RCPT_COUNT_ONE  ARC_NA  MIME_TRACE  HAS_REPLYTO  
+    [XXX] BAYES_00 HTML_MESSAGE HTML_FONT_LOW_CONTRAST RDNS_NONE INVALID_MSGID NORDNS_LOW_CONTRAST URIBL_SBL_A  [URI: mtw.so/123.6.40.127]  [URI: mtw.so/123.6.40.242]  [URI: mtw.so/123.6.40.213]  [URI: mtw.so/36.248.54.85] RAZOR2_CF_RANGE_51_100 ;
+    name=$DNSBLSite
+Date: Thu, 21 Mar 2024 20:24:52 +0800
+From: ACC@rmatomz.com
+Reply-To: contact@hillpublishing.org
+To: lorenz@mpi-inf.mpg.de
+Message-ID: 818d809d7b21114406052ef979f428a3@hillpublishing.org
+Subject: Kindly Acknowledge your Decision | Dear Dr. Leutgeb, L
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_65fc2714934df_73b13ff120483b6c1905461b9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-MPI-No-Header-Rewrite: yes
+X-RSPAMD-Score: 6.6 (++++++)
+X-RSPAMD-Report: Action: add header
+ Symbol: MID_MISSING_BRACKETS(0.50)
+ Symbol: HFILTER_HOSTNAME_UNKNOWN(2.50)
+ Symbol: FROM_EQ_ENVFROM(0.00)
+ Symbol: RCVD_COUNT_TWO(0.00)
+ Symbol: TO_DN_NONE(0.00)
+ Symbol: PREVIOUSLY_DELIVERED(0.00)
+ Symbol: MIME_GOOD(-0.10)
+ Symbol: MV_CASE(0.50)
+ Symbol: NEURAL_HAM(0.00)
+ Symbol: R_DKIM_NA(0.00)
+ Symbol: R_SPF_ALLOW(0.00)
+ Symbol: RCVD_VIA_SMTP_AUTH(0.00)
+ Symbol: ASN(0.00)
+ Symbol: FROM_NO_DN(0.00)
+ Symbol: RCVD_NO_TLS_LAST(0.10)
+ Symbol: MISSING_XM_UA(0.00)
+ Symbol: BAD_REP_POLICIES(0.10)
+ Symbol: REPLYTO_DOM_NEQ_FROM_DOM(0.00)
+ Symbol: REPLYTO_DN_EQ_FROM_DN(0.00)
+ Symbol: TO_MATCH_ENVRCPT_ALL(0.00)
+ Symbol: RBL_VIRUSFREE_BOTNET(2.00)
+ Symbol: DMARC_NA(0.00)
+ Symbol: GREYLIST(0.00)
+ Symbol: URI_COUNT_ODD(1.00)
+ Symbol: RCPT_COUNT_ONE(0.00)
+ Symbol: ARC_NA(0.00)
+ Symbol: MIME_TRACE(0.00)
+ Symbol: HAS_REPLYTO(0.00)
+ Message-ID: 818d809d7b21114406052ef979f428a3@hillpublishing.org
+X-RSPAMD-Bar: ++++++
+X-RSPAMD-Status: Yes
+X-Spam-MPI-Report: Content analysis details:
+ * -1.9 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0000]
+ *  0.0 HTML_MESSAGE BODY: HTML included in message
+ *  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+ *       background
+ *  1.0 RDNS_NONE Delivered to internal network by a host with no rDNS
+ *  0.6 INVALID_MSGID Message-Id is not valid, according to RFC 2822
+ *  1.4 NORDNS_LOW_CONTRAST No rDNS + hidden text
+ *  0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ *      blocklist
+ *      [URI: mtw.so/113.194.51.118]
+ [URI: mtw.so/123.6.40.127]
+ [URI: mtw.so/123.6.40.242]
+ [URI: mtw.so/123.6.40.213]
+ [URI: mtw.so/36.248.54.85]
+ *  1.9 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+ *      [cf: 100]
+ -------------------------------------------------------------------------------
+ * 03.1 Total Score
+X-Spam-MPI-Level: [BBBBBB]   MID_MISSING_BRACKETS  HFILTER_HOSTNAME_UNKNOWN  FROM_EQ_ENVFROM  RCVD_COUNT_TWO  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  MV_CASE  NEURAL_HAM  R_DKIM_NA  R_SPF_ALLOW  RCVD_VIA_SMTP_AUTH  ASN  FROM_NO_DN  RCVD_NO_TLS_LAST  MISSING_XM_UA  BAD_REP_POLICIES  REPLYTO_DOM_NEQ_FROM_DOM  REPLYTO_DN_EQ_FROM_DN  TO_MATCH_ENVRCPT_ALL  RBL_VIRUSFREE_BOTNET  DMARC_NA  GREYLIST  URI_COUNT_ODD  RCPT_COUNT_ONE  ARC_NA  MIME_TRACE  HAS_REPLYTO  
+    [XXX] BAYES_00 HTML_MESSAGE HTML_FONT_LOW_CONTRAST RDNS_NONE INVALID_MSGID NORDNS_LOW_CONTRAST URIBL_SBL_A  [URI: mtw.so/123.6.40.127]  [URI: mtw.so/123.6.40.242]  [URI: mtw.so/123.6.40.213]  [URI: mtw.so/36.248.54.85] RAZOR2_CF_RANGE_51_100 
+X-MPI-Decontamination: 6F7655DFFAFE74B9747C36CF0235861B92CD21CA
+
+
+----==_mimepart_65fc2714934df_73b13ff120483b6c1905461b9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Dear Dr. Leutgeb, L,
+
+Cordial Wishes from=C2=A0Advances in Computer and Communication (ISSN Onl=
+ine: 2767-2875, ACC). =
+
+
+We have enthralled to know about your reputation and commitment so that w=
+e would like to invite you to submit or recommend original research paper=
+s to be published in ACC, which is a peer-reviewed open access journal. =
+
+
+As it is open access, researchers around the world were able to freely do=
+wnload our papers online without a subscription. Now, more and more schol=
+ars are paying close attention to the journal.
+
+We look forward to publish your valuable works. =
+
+
+If you are interested to join our Reviewer Board member, kindly submit yo=
+ur CV. Benefits of the position:=0D
+=E2=80=A2 Collaborating with an international editorial leadership team=0D=
+
+=E2=80=A2 Mentoring authors from all over the world =0D
+=E2=80=A2 Receiving editorial reviewing resource materials =0D
+=E2=80=A2 Participating in research projects to improve the editorial pro=
+cess =0D
+=E2=80=A2 Acquiring knowledge on the latest innovations in qualitative in=
+quiry =0D
+=E2=80=A2 Gaining a valuable credential for tenure and promotion review
+
+Best regards,=0D
+Melissa Kennedy =0D
+Editorial Office=0D
+Advances in Computer and Communication=0D
+Hill Publishing Group =
+
+
+If you do not wish to receive such emails in the future, please reply us =
+with =E2=80=9CUnsubscribe=E2=80=9D in the subject line. And we would grea=
+tly appreciate if we can know the reason.=
+
+----==_mimepart_65fc2714934df_73b13ff120483b6c1905461b9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>=0D
+<html>=0D
+<head>=0D
+<meta charset=3D"utf-8">=0D
+<title>The Educational Review, USA</title>=0D
+</head>
+
+<body style=3D" background: #F2F2E6; padding-top: 25px">=0D
+ <table width=3D"700" align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" style=3D"text-align:justify; background: #fff; font-family=
+:Times New Roman">=0D
+  <tbody>=0D
+    <tr style=3D" background: #FF9900;">=0D
+    =0D
+	<td style=3D" text-align: center; vertical-align: middle;"><p style=3D"c=
+olor: #000000; font-family:Times New Roman; font-weight: bold;font-size: =
+26px; padding-bottom: 5px; margin:15px 0 10px 0">Call <span style=3D"colo=
+r: #552B00">For</span> Paper</p></td>	=0D
+    </tr>=0D
+	=0D
+	  <tr style=3D" background: #552B00">=0D
+	=0D
+	  <td  colspan=3D"2" valign=3D"top" style=3D" padding-left: 25px; paddin=
+g-right: 25px; padding-top: 24px;  height: 150px; text-align: center">		=0D=
+
+		 =0D
+		 <p style=3D" border: 4px solid #FF6600; color: #FFFFFF; padding: 25px"=
+><strong style=3D" font-size: 26px;font-family: 'serif'; line-height: 42p=
+x;  ">Advances in Computer and Communication</strong></p>	=0D
+		</td>=0D
+  =0D
+		  =0D
+    </tr>=0D
+	  =0D
+    <tr>=0D
+      <td colspan=3D"2" valign=3D"top" style=3D"padding-right: 22px; padd=
+ing-top: 25px; padding-bottom: 25px; padding-left: 22px">=0D
+		<p style=3D"font-size: 18px; line-height: 24px;"><strong>Dear Dr. Leutg=
+eb, L,</strong></p>=0D
+		  		  =0D
+		<p style=3D"font-size: 18px; line-height: 24px">Cordial Wishes from=C2=A0=
+<strong>Advances in Computer and Communication</strong> (ISSN Online: =C2=
+=A02767-2875, ACC). =0D
+		<p style=3D"font-size: 18px; line-height: 24px">We have enthralled to k=
+now about your reputation and commitment so that we would like to invite =
+you to submit or recommend original research papers to be published in AC=
+C, which is a peer-reviewed open access journal. </p>=0D
+		<p style=3D"font-size: 18px; line-height: 24px;">As it is open access, =
+researchers around the world were able to freely download our papers onli=
+ne without a subscription. Now, more and more scholars are paying close a=
+ttention to the journal.</p>=0D
+		<p style=3D"font-size: 18px; line-height: 24px;">We look forward to pub=
+lish your valuable works.=0D
+		  =0D
+		=0D
+	  <p style=3D"text-align: center"><a href=3D"http://mtw.so/5EENge" targe=
+t=3D"_blank" style=3D"width: 280px; height: 48px; font-size: 24px; backgr=
+ound: #006600; display: inline-block; line-height: 48px; color: #fff; tex=
+t-decoration: none; text-align: center; margin: 15px 0;font-family: Cambr=
+ia;">Ready to submit?</a></p>=0D
+	=0D
+    </tr>=0D
+    <tr>=0D
+       <td colspan=3D"2" style=3D" border-top: 1px solid #cbcbcb;box-shad=
+ow: 1px 0px 20px 0px rgba(148,148,148,0.5); padding-left: 22px;padding-ri=
+ght: 22px; padding-top: 20px; padding-bottom: 28px;">=0D
+	    <p style=3D"font-size: 18px; line-height: 24px; padding-top: 10px;">=
+<strong>If you are interested to join our Reviewer Board member, kindly s=
+ubmit your CV. Benefits of the position:</strong><br>   =0D
+		=E2=80=A2 Collaborating with an international editorial leadership team=
+<br>=0D
+=E2=80=A2 Mentoring authors from all over the world <br>=0D
+=E2=80=A2 Receiving editorial reviewing resource materials <br>=0D
+=E2=80=A2 Participating in research projects to improve the editorial pro=
+cess <br>=0D
+=E2=80=A2 Acquiring knowledge on the latest innovations in qualitative in=
+quiry <br>=0D
+=E2=80=A2 Gaining a valuable credential for tenure and promotion review</=
+p> =0D
+	  </td>=0D
+    </tr>=0D
+	<tr>=0D
+	  <td><p style=3D"font-size: 18px; line-height: 26px; padding-bottom: 15=
+px; text-align: left; padding-left: 22px">=0D
+		 Best regards,<br>=0D
+		Melissa Kennedy=0D
+<br>=0D
+		 Editorial Office<br>=0D
+		 Advances in Computer and Communication<br>=0D
+		 Hill Publishing Group=0D
+		</td>  =0D
+	</tr>=0D
+	<tr>=0D
+       <td colspan=3D"2" style=3D"background: #552B00; color: #fff;">	   =
+=0D
+		<p style=3D"font-size: 14px; line-height: 20px; text-align: left; paddi=
+ng-left: 22px">If you do not wish to receive such emails in the future, p=
+lease reply us with =E2=80=9CUnsubscribe=E2=80=9D in the subject line. An=
+d we would greatly appreciate if we can know the reason.</p>     =0D
+      </td>=0D
+    </tr>=0D
+  </tbody>=0D
+</table>=0D
+	=
+
+
+</body>=0D
+</html><img src=3D"http://t.oajrc.org/?dom=3Dwww.hillpublisher.com&eid=3D=
+11778" style=3D"width:0;height:0">=
+
+----==_mimepart_65fc2714934df_73b13ff120483b6c1905461b9--
