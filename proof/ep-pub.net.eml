@@ -1,0 +1,193 @@
+Return-Path: <cassandra.lau@ep-pub.net>
+Delivered-To: lorenz
+Received: from zak ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by idas.mpi-inf.mpg.de with LMTPS
+	id APP3GZexE2akASgAQ6f/oA:P1
+	(envelope-from <cassandra.lau@ep-pub.net>)
+	for <lorenz>; Mon, 08 Apr 2024 10:57:59 +0200
+Received: from jupiter.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by zak with LMTPS
+	id APP3GZexE2akASgAQ6f/oA
+	(envelope-from <cassandra.lau@ep-pub.net>)
+	for <lorenz@imap-inf0.mpi-inf.mpg.de>; Mon, 08 Apr 2024 10:57:59 +0200
+Received: from mail-qt1-f180.google.com ([209.85.160.180]:42248)
+	by jupiter.mpi-klsb.mpg.de (envelope-from <cassandra.lau@ep-pub.net>) 
+	with esmtps (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_128_GCM:128)
+	(Exim 4.97) id 1rtkp6-0000000DuR2-3aGZ
+	for lorenz@mpi-inf.mpg.de;
+	Mon, 08 Apr 2024 10:57:59 +0200
+Received: by mail-qt1-f180.google.com with SMTP id d75a77b69052e-4346e50ef62so13860051cf.1
+        for <lorenz@mpi-inf.mpg.de>; Mon, 08 Apr 2024 01:57:52 -0700 (PDT)
+X-Notes-Item: [/]   R_SPF_NA  FROM_HAS_DN  FROM_EQ_ENVFROM  TO_DN_NONE  TO_MATCH_ENVRCPT_ALL  PREVIOUSLY_DELIVERED  RCVD_TLS_LAST  R_DKIM_ALLOW  MIME_GOOD  RCVD_COUNT_THREE  DMARC_NA  RWL_MAILSPIKE_GOOD  NEURAL_HAM  URI_COUNT_ODD  RCPT_COUNT_ONE  ASN  MISSING_XM_UA  MIME_TRACE  ARC_NA  RCVD_IN_DNSWL_NONE  DKIM_TRACE  
+    [X] URIBL_BLACK RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID RCVD_IN_MSPIKE_H3 RCVD_IN_MSPIKE_WL BAYES_00 HTML_MESSAGE HTML_IMAGE_ONLY_20 T_REMOTE_IMAGE ;
+    name=$DNSBLSite
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ep-pub-net.20230601.gappssmtp.com; s=20230601; t=1712566671; x=1713171471; darn=mpi-inf.mpg.de;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=hy6XyaZk1tmEpV/6iScV8tQP5TetPY/O3vu7GNsMPcM=;
+        b=yxvfVWA9KXxWY76mujn5gEROLUZ70Vs8EcEIduMbkcy1J+JCy2/BD+mJsEWZ1qIC4/
+         n+ONgSXxIwF8bNqjevhaxq11sD/b2zMol4qhQOQG3qLDnF9+CQli84WzEY8V7TCiI3Qi
+         IaD3AFzOe2+WI97eMgxA2tZTkuOmt3bYrz9MT6wkUZ45FjznwgQb9KepgF9Aum+rcWX0
+         UYsOCMJjxcDsunk6UOySI1R1rWqYLKZZuuApNboaOZI7uSk2sBktyG2S/b7PRcrspZKh
+         cuKXfsse+k82MANLwau+83QrtBz2bBIpDOgTsrPcPcIIh8YMac1/R2YVkKizc02XpnzG
+         fPkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712566671; x=1713171471;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=hy6XyaZk1tmEpV/6iScV8tQP5TetPY/O3vu7GNsMPcM=;
+        b=cg2bEm2hpOntS+RufydxIl7RXjWu5TrnHmqPr1BxTXIGg8Jldy6qaiVLdEG4z1w0VO
+         U4ZBwbPoHoJCIVw1rkqvXhYsFbsYWa4T2/XH9cj5zQdpNfQ/v5+mu2TfQurhKiq0Pncq
+         u1+QyIaBxG+AjY8Zxrn5Gpu8k6Vg940Z259dTbMiVHhpjmJmZCznSVDJTedWb17bgA7P
+         L0zRvpYc20ygXbhItZeFZlwGAYy7zzegaZ8JTULW72caGwgBcdS4BwI33wxTSm/97Rwd
+         mBi6sPTw4lZaKA4/jJXtLIm9DmlzOoWLEoomgto86Ubucj+H2IbF/hgrdmn1h62A0Fa+
+         22YA==
+X-Gm-Message-State: AOJu0YwymExl/5pyLO4/D3HcfQKXLH/2Roqoaycdy1Ijci8qF6t0qmn3
+	RP/VD876tapEDWyO0wWZifq37x1CIGjgXj73+9dv0HvBgKqVVuCqvPq6LxJvMcdOkruZankqR5o
+	vuX4kJJEqJyesWBrAsGAUaYHFIOsHcxvQrHDqw18akte4xeg6cyI=
+X-Google-Smtp-Source: AGHT+IEgAVeICnp4lJ1bp8tkYGPoooQz9YEK/8I4y2h6H4+VVuHLrNquKRonBlVlRqF6BwjdqD+2NfuIkn2nq61/Yt8=
+X-Received: by 2002:ac8:598f:0:b0:434:70b6:1bbe with SMTP id
+ e15-20020ac8598f000000b0043470b61bbemr7622182qte.9.1712566671730; Mon, 08 Apr
+ 2024 01:57:51 -0700 (PDT)
+Received: from 776393159873 named unknown by gmailapi.google.com with
+ HTTPREST; Mon, 8 Apr 2024 01:57:51 -0700
+MIME-Version: 1.0
+From: Cassandra Lau <cassandra.lau@ep-pub.net>
+Date: Mon, 8 Apr 2024 01:57:51 -0700
+Message-ID: <CAAE7D=7jpBSbR5qCKuRZJaf23r7hOuRrbsnfqp2MbcwjfEhB3A@mail.gmail.com>
+Subject: Paper Invitation: Web of Science (ESCI)& Scopus index, Q2, [JIPD ISSN
+ 2572-7931] (IF 0.7) "Journal of Infrastructure, Policy and Development"
+To: lorenz@mpi-inf.mpg.de
+Content-Type: multipart/alternative; boundary="0000000000001f7b6b06159200dc"
+X-MPI-No-Header-Rewrite: yes
+X-RSPAMD-Score: 0.6 (/)
+X-RSPAMD-Report: Action: no action
+ Symbol: R_SPF_NA(0.00)
+ Symbol: FROM_HAS_DN(0.00)
+ Symbol: FROM_EQ_ENVFROM(0.00)
+ Symbol: TO_DN_NONE(0.00)
+ Symbol: TO_MATCH_ENVRCPT_ALL(0.00)
+ Symbol: PREVIOUSLY_DELIVERED(0.00)
+ Symbol: RCVD_TLS_LAST(0.00)
+ Symbol: R_DKIM_ALLOW(-0.20)
+ Symbol: MIME_GOOD(-0.10)
+ Symbol: RCVD_COUNT_THREE(0.00)
+ Symbol: DMARC_NA(0.00)
+ Symbol: RWL_MAILSPIKE_GOOD(-0.10)
+ Symbol: NEURAL_HAM(0.00)
+ Symbol: URI_COUNT_ODD(1.00)
+ Symbol: RCPT_COUNT_ONE(0.00)
+ Symbol: ASN(0.00)
+ Symbol: MISSING_XM_UA(0.00)
+ Symbol: MIME_TRACE(0.00)
+ Symbol: ARC_NA(0.00)
+ Symbol: RCVD_IN_DNSWL_NONE(0.00)
+ Symbol: DKIM_TRACE(0.00)
+ Message-ID: CAAE7D=7jpBSbR5qCKuRZJaf23r7hOuRrbsnfqp2MbcwjfEhB3A@mail.gmail.com
+X-RSPAMD-Bar: /
+X-Spam-MPI-Report: Content analysis details:
+ *  1.7 URIBL_BLACK Contains an URL listed in the URIBL blacklist
+ *      [URI: fmailroute.net]
+ * -0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at https://www.dnswl.org/, no
+ *      trust
+ *      [209.85.160.180 listed in list.dnswl.org]
+ *  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+ *      valid
+ * -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ *  0.0 RCVD_IN_MSPIKE_H3 RBL: Good reputation (+3)
+ *      [209.85.160.180 listed in wl.mailspike.net]
+ *  0.0 RCVD_IN_MSPIKE_WL Mailspike good senders
+ * -1.9 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0000]
+ *  0.0 HTML_MESSAGE BODY: HTML included in message
+ *  1.5 HTML_IMAGE_ONLY_20 BODY: HTML: images with 1600-2000 bytes of words
+ *  0.0 T_REMOTE_IMAGE Message contains an external image
+ -------------------------------------------------------------------------------
+ * 01.4 Total Score
+X-Spam-MPI-Level: [/]   R_SPF_NA  FROM_HAS_DN  FROM_EQ_ENVFROM  TO_DN_NONE  TO_MATCH_ENVRCPT_ALL  PREVIOUSLY_DELIVERED  RCVD_TLS_LAST  R_DKIM_ALLOW  MIME_GOOD  RCVD_COUNT_THREE  DMARC_NA  RWL_MAILSPIKE_GOOD  NEURAL_HAM  URI_COUNT_ODD  RCPT_COUNT_ONE  ASN  MISSING_XM_UA  MIME_TRACE  ARC_NA  RCVD_IN_DNSWL_NONE  DKIM_TRACE  
+    [X] URIBL_BLACK RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID RCVD_IN_MSPIKE_H3 RCVD_IN_MSPIKE_WL BAYES_00 HTML_MESSAGE HTML_IMAGE_ONLY_20 T_REMOTE_IMAGE 
+X-MPI-Decontamination: 8870162EC2AF167A3D20BB30318A8804BCEB04D1
+
+--0000000000001f7b6b06159200dc
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Professor,
+
+Wish you a happy, healthy, and peaceful 2024!
+
+We are pleased to share that */JIPD/ received a CiteScore of 1.6 in 2022,
+ranking 204/502 (Q2) in social science. In the meantime, we got our first
+Impact Factor of 0.7, released by Clarivate in JCR.*
+
+*On behalf of the Editor-in-Chief, Professor Qingyang Gu of the Lee Kuan
+Yew School of Public Policy at the National University of Singapore, we
+cordially invite you to submit your excellent research work to our Journal.*
+
+The Journal of Infrastructure, Policy and Development (JIPD, ISSN
+2572-7931) is a multi-disciplinary, double-blind peer-reviewed journal
+dedicated to publishing high-quality articles on infrastructure, economic
+development, and public policy and is fully open access. *With the global
+context, relevant topics that JIPD includes are below, but are not limited
+to:*
+
+Education system
+Physical infrastructure
+Healthcare system
+Urban development
+Social system
+Green development
+Innovation of policy
+Climate-resilient infrastructure
+Institutional reform
+Sustainable infrastructure
+Infrastructure finance
+infrastructure governance
+
+If you have an interest in contributing or need more information, please
+feel free to let us know. We are looking forward to hearing from you.* (In
+order not to cause any unnecessary delay in your manuscript processing,
+please kindly tell me your paper ID after submission.)*
+
+Wishing you and your loved ones a wonderful holiday season and all the best
+for 2024!
+
+Kind regards,
+Cassandra
+JIPD Editorial Office
+
+--0000000000001f7b6b06159200dc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Dear Professor,<br><br>Wish you a happy, healthy, and peac=
+eful 2024!<br><br>We are pleased to share that=C2=A0<u>/JIPD/ received a Ci=
+teScore of 1.6 in 2022, ranking 204/502 (Q2) in social science. In the mean=
+time, we got our first Impact Factor of 0.7, released by Clarivate in JCR.<=
+/u><br><br><b>On behalf of the Editor-in-Chief, Professor Qingyang Gu of th=
+e Lee Kuan Yew School of Public Policy at the National University of Singap=
+ore, we cordially invite you to submit your excellent research work to our =
+Journal.</b><br><br>The Journal of Infrastructure, Policy and Development (=
+JIPD, ISSN 2572-7931) is a multi-disciplinary, double-blind peer-reviewed j=
+ournal dedicated to publishing high-quality articles on infrastructure, eco=
+nomic development, and public policy and is fully open access.=C2=A0<u>With=
+ the global context, relevant topics that JIPD includes are below, but are =
+not limited to:</u><br><br>Education system<br>Physical infrastructure<br>H=
+ealthcare system<br>Urban development<br>Social system<br>Green development=
+<br>Innovation of policy<br>Climate-resilient infrastructure<br>Institution=
+al reform<br>Sustainable infrastructure<br>Infrastructure finance<br>infras=
+tructure governance<br><br>If you have an interest in contributing or need =
+more information, please feel free to let us know. We are looking forward t=
+o hearing from you.<b>=C2=A0(In order not to cause any unnecessary delay in=
+ your manuscript processing, please kindly tell me your paper ID after subm=
+ission.)</b><br><br>Wishing you and your loved ones a wonderful holiday sea=
+son and all the best for 2024!<div><br>Kind regards,<br>Cassandra<br>JIPD E=
+ditorial Office</div></div>
+<img src=3D"https://ep-pub-net.fmailroute.net/N-6nrm2DYfOV09pXko-kJCNURjky8=
+YlMxm7D20my1XD-vCW_tBaUYXcBXkMEH4nzZxyJAWYypxLryH6D-8eMjLJZ1ZnRrthiIarhleyq=
+C864nxVBcU1GzJsq_iG73F1sVBR3HGsicUq0bL_scwO17I6lNPgCFAQqvMChWK-4BrsajgmB3d2=
+">
+
+--0000000000001f7b6b06159200dc--

@@ -33,6 +33,7 @@
 *@email.researchfeatures.com
 *@email.researchoutreach.org
 *@engappsci.com
+*@ep-pub.net
 *@eurasiaconferences.org
 *@facultyvacancies.com
 *@ferpi.uz
