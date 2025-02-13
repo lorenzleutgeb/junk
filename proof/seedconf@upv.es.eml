@@ -1,0 +1,1736 @@
+Return-Path: <bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp12.migadu.com ([2001:41d0:303:e224::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms8.migadu.com with LMTPS
+	id sGvmL8o6SGWuAQEAauVa8A:P1
+	(envelope-from <bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net>)
+	for <lorenz@leutgeb.xyz>; Mon, 06 Nov 2023 02:00:58 +0100
+Received: from aspmx1.migadu.com ([2001:41d0:303:e224::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp12.migadu.com with LMTPS
+	id sGvmL8o6SGWuAQEAauVa8A
+	(envelope-from <bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net>)
+	for <lorenz@leutgeb.xyz>; Mon, 06 Nov 2023 02:00:58 +0100
+Received: from is.d.sender-sib.com (is.d.sender-sib.com [77.32.148.71])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 8084C5A163
+	for <lorenz@leutgeb.xyz>; Mon,  6 Nov 2023 02:00:55 +0100 (CET)
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=sendinblue.com header.s=mail header.b=gBD1vZUt;
+	dmarc=fail reason="SPF not aligned (relaxed), DKIM not aligned (relaxed)" header.from=upv.es (policy=none);
+	spf=pass (aspmx1.migadu.com: domain of "bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net" designates 77.32.148.71 as permitted sender) smtp.mailfrom="bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net"
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1699232458; a=rsa-sha256; cv=none;
+	b=VJUHxcCSSX/Y3k0BXw+nRndv88u0afro4dEqOpxhN9uEdpCbYz8r3eFoqJ2ubuxs+tu0rY
+	bGk+q0DpvgzU4btLZVOd1ZK7lp3wtgny4fxnwYnf+blNSgx9Xj+ftJioaWSmBSQO8Ajv6+
+	eQ6T1EbCtRb7cboKmNG6cfXp3PUiFsk=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=sendinblue.com header.s=mail header.b=gBD1vZUt;
+	dmarc=fail reason="SPF not aligned (relaxed), DKIM not aligned (relaxed)" header.from=upv.es (policy=none);
+	spf=pass (aspmx1.migadu.com: domain of "bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net" designates 77.32.148.71 as permitted sender) smtp.mailfrom="bounces-bqay9-seedconf=upv.es@shared-p100-i6.d.sp1-brevo.net"
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1699232458; h=from:from:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:list-id:list-unsubscribe:
+	 list-unsubscribe-post:dkim-signature;
+	bh=FuxTkm7v1I60s49MwwIVFREAa3IzK7Bez2ywbzxUHQ4=;
+	b=AdBjueeVr6vHe4dWm+185HeHCP2pUrbroAEi6+lU6OTtFHE2icqNdM35bpOvCpLsSXfPD4
+	ragHLI2ZnM6OW/x03IZJXbPFd/w5h+25GNbcjFpzaid6g+gMiOE3j2r6zpCnRpQOVXUPjI
+	egoTsQaWR8WtToG9NArbmTl4SokCBdE=
+DKIM-Signature: a=rsa-sha256; bh=FuxTkm7v1I60s49MwwIVFREAa3IzK7Bez2ywbzxUHQ4=;
+ c=relaxed/relaxed; d=sendinblue.com;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id;
+ q=dns/txt; s=mail; t=1699232454; v=1;
+ b=gBD1vZUtFJ181oDU9nLvMC5JrV1EI5rjBZkJ419xrI6Dnm9tvqVEIS5SbtIhKTvCfASaw9Lz
+ Bvrx3PY8SarcGacM6mhUJUs4OVhIYwNEqw6zcXzrhT/Bfp9AYrC2QKewn411JtUdSpZKNq+0o6B
+ QoEjSXBh8wihl7JihGifTKcw=
+To: <lorenz@leutgeb.xyz>
+Subject: SEED '24 Valencia - Call for Papers
+Content-Type: multipart/alternative; boundary="-------?=_46479-8733943526469"
+Date: Mon, 06 Nov 2023 01:00:54 +0000
+Feedback-ID: 77.32.149.6:6722269_1:6722269:Sendinblue
+From: SEED Conference <seedconf@upv.es>
+List-Id: NjcyMjI2OS0yNzU5NTctNA== <NjcyMjI2OS0yNzU5NTctNA==.list-id.mailin.fr>
+List-Unsubscribe: <mailto:unsubscribe@shared-p100-i6.d.sp1-brevo.net?subject=unsub-v7js0as97t3j&body=v7js0as97t3j>,<https://bqay9.r.a.d.sendibm1.com/mk/un/li/sh/7nVTPdbLJ2bPbgKjM8yh8T94GN5hvLa/M-9fNpT39YiH>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-Id: <202306110100.v7js0as97t3j@shared-p100-i6.d.sp1-brevo.net>
+Precedence: bulk
+Reply-To: davcalab@hotmail.it
+X-Csa-Complaints: csa-complaints@eco.de
+X-Mailer: Sendinblue
+X-Mailin-Campaign: 1
+X-Mailin-Client: 6722269
+X-sib-id: q8mJGGLxnp-4PwAA3wvbAXymQDo7KlhwdJAWp01qieKpB7prcxvIAIwE4VfDe2qkRM4RvUZBThWthd3rpuXhKVmkcnN6c8S5WlMlr-Uun5s56fzlcnHHkB4h_OBpJuKsfwDxmx4JdD6AJTOhTvVB1nZy4FxTPesQDz_AFDXd94pald47ffnQQ8LgB7Dd5r2J-1saXDjW21DSFeZZE2HDWSitvoaD
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Country: FR
+X-Migadu-Queue-Id: 8084C5A163
+X-Migadu-Scanner: mx12.migadu.com
+X-Migadu-Spam-Score: -7.80
+X-Spam-Score: -7.80
+
+---------?=_46479-8733943526469
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+International Conference on Sustainable Energy Education
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D
+
+###July 3 - 5, 2024. Valencia, Spain
+
+
+[ Visit seedconference.eu](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU=
+1aA2nfsTT64vLINZyxRSqZoaOsY/Th_7u-8AHmrc)
+
+###In this newsletter:
+
+*Click on the sections below to read more:*
+
+[**Call for Papers**](#papers)
+
+[Scope](#scope)
+
+[Topics of interest](#topics)
+
+[Important dates](#dates)
+
+[Publications and Awards](#publications)
+
+[Submission guidelines](#submission)
+
+[**Call for Workshops**](#workshop)
+
+[Review criteria](#review)
+
+[Proposals guidelines](#guidelines)
+
+[Important dates](#dates2)
+
+SEED 2024: Call for Papers
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+
+###Scope
+
+The **First International Conference on Sustainable Energy Education (SEED)=
+** aims to become a forum for researchers, academics, and practitioners to =
+exchange ideas, experiences, opinions, and research results relating to the=
+ preparation of students, teaching/learning methodologies, the organization=
+ of educational systems, partnerships and funding and governance related to=
+ Sustainable Energy Education.
+
+=C2=A0
+
+The **SEED** conference will be held on**July 3-5, 2024**, at the **Faculty=
+ of Business Administration and Management of the Universitat Polit=C3=A8cn=
+ica de Val=C3=A8ncia (UPV)**, which has been ranked as the best technical u=
+niversity in Spain by the Academic Ranking of World Universities since 2014=
+.
+
+###Topics of interest
+
+The Program Committee encourages the submission of extended abstracts that =
+communicate applied and empirical findings of interest to higher education =
+and vocational education & training professionals, researchers, and practit=
+ioners.
+
+Key topics include, but are not limited to, the following subjects:
+
+**Track 1: Teaching and Learning on Sustainable Energy Education**.
+
+Good practices related to:
+
+
+- Renewable energy sources and their development, use, and impact=20
+- Development and use of electric vehicles and the connection to the econom=
+y and the environment=20
+- Efficient use of energy technologies for conservation and reduction of wa=
+ste=20
+- Nature-Based Solutions (NBS)=20
+- Circular Economy models
+
+**Track 2: Partnerships, Collaboration on Sustainable Energy Education=C2=
+=A0**
+
+Good practices related to:
+
+
+- Traineeships & apprenticeships=20
+- Energy career and workforce development in the energy industry=20
+- Synthesis of energy information=20
+- HUBS in sustainable energy=20
+- Skill needs of the labor market
+
+**Track 3: Governance & Funding for Sustainable Energy Education**
+
+Good practices related to:
+
+
+- Financing models=20
+- Financial tools=C2=A0=20
+- Financing partnerships in energy=20
+- Business models for energy education=20
+- University spin-offs
+
+**Track 4: Sustainable Education**
+
+Good practices related to:
+
+
+- Competency-based learning and skill assessment=20
+- Education accreditation, quality, and assessment=20
+- Innovative materials and new tools for teaching=20
+- Teaching and learning experiences=20
+- Educational technology (e.g., virtual labs, e-learning)=C2=A0
+
+[ Read more](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2nfuMScaEJr=
+c21JlH0wJN8p4/6QyQtWbXGtF8call-for-papers/)
+
+###Important dates
+
+**January 26, 2024=C2=A0**
+Extended abstract submission deadline
+
+**February 2, 2024**
+Workshop proposals due
+
+**March 15, 2024**
+Author notification
+
+**April 26, 2024**
+Final version submission deadline
+
+**April 26, 2024**
+Early registration deadline for authors
+
+**July 3-5, 2024**
+Conference dates
+
+###Publications
+
+**All accepted extended abstracts will appear in the conference proceedings=
+ book, which will be assigned a=C2=A0DOI=C2=A0and=C2=A0ISBN**. They will be=
+ published in open access by=C2=A0UPV Press and submitted to be indexed in =
+major international bibliographic databases. In previous conferences we org=
+anized, proceedings were indexed in Scopus and the=C2=A0Thomson-Reuters Con=
+ference Proceedings Citation Index =E2=80=93 Web of Science Core Collection=
+=C2=A0(former ISI Proceedings).
+
+###Awards
+
+To the=C2=A0Best Paper=C2=A0and=C2=A0Best Practice.
+
+###Submission guidelines
+
+Authors worldwide are invited to submit original and unpublished extended a=
+bstracts not under review in any other conference or journal.=C2=A0
+All extended abstracts will be peer-reviewed by the Program Committee based=
+ on their significance, methodological soundness, originality, and clarity =
+of exposition.
+
+
+[ See the template](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2nfw=
+FS95XIQqU3g55BIo9sla/qNL_g6trUgFzwp-content/uploads/2023/09/sheet-seed2024.=
+docx)
+
+
+Submissions must be between 4 and 9 pages (A4 size), including 1 title page=
+ + 8 pages with the main text, figures, tables, and references. Submissions=
+ imply the willingness of at least one author to register, attend the confe=
+rence, and present their contribution.
+
+
+[ Read more](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng1uQibSE8=
+XqAl2VgOIW6b8/Q5fkVGNYIXC3)
+
+
+SEED is using the EasyChair platform to manage the submissions. The submiss=
+ion website is **EASY CHAIR SEED 2024**
+
+
+[ Submit on Easy Chair platform](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/s=
+h/7nVU1aA2ng3nQF6lChmID7MJqknIqXe/KZQqvRxdqdcg)
+
+
+If you have not previously used the platform, you must register first.
+
+SEED 2024: **Call for Workshops**
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D
+
+Researchers, academics, and practitioners are invited to submit proposals f=
+or workshops at the=C2=A0**SEED conference**. The purpose of workshops is t=
+o give room for presenting ideas and discussing preliminary results in an i=
+nteractive atmosphere while focusing on a specific topic. Workshops may be =
+proposed for=C2=A0**a minimum of 1.5 hours and a maximum of**3 hours in len=
+gth. It should encourage lively debates and stimulate the production of new=
+ ideas and the discussion of controversial issues.
+
+###Review Criteria
+
+The decision on acceptance or rejection of a workshop proposal will be made=
+**based on the overall quality**=C2=A0of the proposal and its potential to =
+attract a sufficiently broad community.=C2=A0
+
+###Proposal guidelines
+
+**All workshop proposals should be sent to=C2=A0**[**seedconf@upv.es**](mai=
+lto:seedconf@upv.es)**in English** as a single PDF file (2-6 pages) contain=
+ing the following sections:
+
+- Title and acronym.=20
+- Abstract: 150-200 word abstract describing the workshop purpose.
+- Objectives: a clear description of the workshop objectives.=C2=A0=20
+- Description of the topics and scope of the workshop.=20
+
+- Organizer: a short biographical sketch of the workshop organizer, describ=
+ing relevant experience and qualifications.=20
+- Intended audience: description of the anticipated audience, including exp=
+erience level and prerequisites, the expected number of participants to the=
+ workshop and how the workshop organizer will call for participation.=20
+- Rough agenda: 1-page outline of the workshop content describing the works=
+hop dynamics, including tentative speakers, format (panels, call for extend=
+ed abstracts, etc).
+- If the workshops consist of the selection & publication of =E2=80=9Cexten=
+ded abstracts=E2=80=9D (this is only a possibility):
+- Tentative dates=20
+- Review process=C2=A0=20
+- Publication opportunities=C2=A0=20
+
+
+- Infrastructure: Description of the infrastructure needed to carry out the=
+ workshop.=20
+- Statement from the organizers willing to publish an extended abstract of =
+the findings of the workshop (Final version submission deadline July 28, 20=
+24)=20
+- Maximum capacity of attendees=C2=A0=20
+- Other information: For instance, information that will let attendees know=
+ more about your workshop.
+
+
+[ Read more](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng5gPlc4BH=
+0kFTg817I5aUA/baR9VplsOd8L)
+
+**Resources provided by the SEED organizing committee:**
+
+
+- A link on the SEED website.=20
+- Management of registration for participants.=20
+- Setup of meeting space and related equipment.
+
+**The workshop organizer must take care of the following:**
+
+
+- Coordinating schedules and deadlines with the SEED organizing committee.=
+=20
+- Provide a brief description of the workshop for inclusion in the SEED web=
+site and the workshop program when it is final.=C2=A0
+=C2=A0
+
+[ Read more](https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng7ZPI7N9q=
+FCHpzwBTmsKQg/1E62g4kSK62G)
+
+###Important dates
+
+**February 2, 2024**
+Workshop proposals due
+
+**March 15, 2024**
+Author notification
+
+**April 26, 2024**
+Early registration deadline for authors
+
+**July 3-5, 2024**
+Conference dates
+
+**Remember, your workshop proposal should be sent by e-mail=C2=A0**
+**by February 2, 2024 to =C2=A0**[**seedconf@upv.es**](mailto:seedconf@upv.=
+es)**.**
+
+**If you have questions about the registration process, don=E2=80=99t hesit=
+ate to**[**contact us**](mailto:seedconf@upv.es)**!=C2=A0**
+
+**Sustainable Energy Education**
+Valencia, July 3-5, 2024
+
+The organizing committee looks forward to welcoming you to a fruitful confe=
+rence with open discussions and important networking to promote Sustainable=
+ Energy Education.
+
+This email was sent to=C2=A0lorenz@leutgeb.xyz
+
+You've received it because you've subscribed to our newsletter.
+
+[View in browser](https://bqay9.r.a.d.sendibm1.com/mk/mr/sh/7nVTPdZCTJDXPPE=
+cI4fEhMjJ1w8dTjK/gaIl0zxE_UEM) | [Unsubscribe](https://bqay9.r.a.d.sendibm1=
+.com/mk/un/sh/7nVTPdbLJ2bPbgKjM8yh8T94GN5hvLa/M-9fNpT39YiH)
+
+
+---------?=_46479-8733943526469
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=3D"http://www.w3.org/1999/xh=
+tml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micro=
+soft-com:office:office"><head><meta http-equiv=3D"Content-Type" content=3D"=
+text/html; charset=3Dutf-8"><meta http-equiv=3D"X-UA-Compatible" content=3D=
+"IE=3Dedge"><meta name=3D"format-detection" content=3D"telephone=3Dno"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"><=
+title>SEED '24 Valencia - Call for Papers</title><style type=3D"text/css" e=
+mogrify=3D"no">#outlook a{padding:0;}.ExternalClass{width:100%;}.ExternalCl=
+ass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalC=
+lass td, .ExternalClass div{line-height:100%;}table td{border-collapse:coll=
+apse;mso-line-height-rule:exactly;}.editable.image{font-size:0 !important;l=
+ine-height:0 !important;}.nl2go_preheader{display:none !important;mso-hide:=
+all !important;mso-line-height-rule:exactly;visibility:hidden !important;li=
+ne-height:0px !important;font-size:0px !important;}body{width:100% !importa=
+nt;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding=
+:0;}img{outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}a=
+ img{border:none;}table{border-collapse:collapse;mso-table-lspace:0pt;mso-t=
+able-rspace:0pt;}th{font-weight:normal;text-align:left;}*[class=3D"gmail-fi=
+x"]{display:none !important;}</style><style type=3D"text/css" emogrify=3D"n=
+o"> @media (max-width:600px){.gmx-killpill{content:' \03D1'}}</style><style=
+ type=3D"text/css" emogrify=3D"no">@media (max-width:600px){.gmx-killpill{c=
+ontent:' \03D1'}.r0-o{border-style:solid !important;margin:0 auto 0 auto !i=
+mportant;width:100% !important}.r1-i{background-color:#ffffff !important}.r=
+2-c{box-sizing:border-box !important;text-align:center !important;valign:to=
+p !important;width:100% !important}.r3-i{background-color:#ffffff !importan=
+t;padding-bottom:20px !important;padding-left:15px !important;padding-right=
+:15px !important;padding-top:20px !important}.r4-c{box-sizing:border-box !i=
+mportant;display:block !important;valign:top !important;width:100% !importa=
+nt}.r5-o{border-style:solid !important;width:100% !important}.r6-i{padding-=
+left:0px !important;padding-right:0px !important}.r7-o{border-style:solid !=
+important;margin:0 auto 0 auto !important;width:70% !important}.r8-i{paddin=
+g-bottom:0px !important;padding-left:10px !important;padding-right:10px !im=
+portant;padding-top:0px !important}.r9-c{box-sizing:border-box !important;t=
+ext-align:left !important;valign:top !important;width:100% !important}.r10-=
+o{border-style:solid !important;margin:0 auto 0 0 !important;width:100% !im=
+portant}.r11-i{padding-top:15px !important;text-align:center !important}.r1=
+2-i{padding-bottom:10px !important;padding-top:15px !important;text-align:c=
+enter !important}.r13-c{box-sizing:border-box !important;padding:0 !importa=
+nt;text-align:center !important;valign:top !important;width:100% !important=
+}.r14-o{border-style:solid !important;margin:0 auto 0 auto !important;margi=
+n-bottom:15px !important;margin-top:15px !important;width:100% !important}.=
+r15-i{padding:0 !important;text-align:center !important}.r16-r{background-c=
+olor:#438ac9 !important;border-color:#fbbc0d !important;border-radius:4px !=
+important;border-width:0px !important;box-sizing:border-box;height:initial =
+!important;padding:0 !important;padding-bottom:12px !important;padding-top:=
+12px !important;text-align:center !important;width:100% !important}.r17-i{p=
+adding-bottom:0px !important;padding-top:0px !important}.r18-i{background-c=
+olor:#e8bec7 !important}.r19-i{padding-bottom:0px !important;padding-left:1=
+0px !important;padding-right:10px !important;padding-top:6px !important}.r2=
+0-i{padding-top:0px !important;text-align:center !important}.r21-i{padding-=
+bottom:20px !important;padding-left:10px !important;padding-right:10px !imp=
+ortant;padding-top:0px !important}.r22-i{padding-bottom:15px !important;pad=
+ding-top:15px !important;text-align:center !important}.r23-i{padding-bottom=
+:20px !important;padding-left:10px !important;padding-right:10px !important=
+;padding-top:10px !important}.r24-i{padding-bottom:15px !important;padding-=
+top:15px !important;text-align:left !important}.r25-i{background-color:#eff=
+2f7 !important}.r26-i{padding-bottom:0px !important;padding-left:10px !impo=
+rtant;padding-right:10px !important;padding-top:20px !important}.r27-i{padd=
+ing-bottom:0px !important;padding-top:15px !important;text-align:left !impo=
+rtant}.r28-i{padding-bottom:20px !important;padding-left:10px !important;pa=
+dding-right:10px !important;padding-top:20px !important}.r29-i{padding-bott=
+om:5px !important;padding-left:10px !important;padding-right:14px !importan=
+t;padding-top:5px !important;text-align:left !important}.r30-i{padding-bott=
+om:5px !important;padding-left:10px !important;padding-right:9px !important=
+;padding-top:5px !important;text-align:left !important}.r31-i{padding-botto=
+m:5px !important;padding-left:10px !important;padding-right:10px !important=
+;padding-top:5px !important;text-align:left !important}.r32-r{background-co=
+lor:#fbbc0d !important;border-color:#fbbc0d !important;border-radius:4px !i=
+mportant;border-width:0px !important;box-sizing:border-box;height:initial !=
+important;padding:0 !important;padding-bottom:12px !important;padding-left:=
+5px !important;padding-right:5px !important;padding-top:12px !important;tex=
+t-align:center !important;width:100% !important}.r33-i{padding-bottom:20px =
+!important;padding-left:15px !important;padding-right:15px !important;paddi=
+ng-top:20px !important}.r34-i{padding-bottom:20px !important;padding-left:1=
+5px !important;padding-right:15px !important;padding-top:0px !important}.r3=
+5-o{border-style:solid !important;margin:0 auto 0 auto !important;width:10%=
+ !important}.r36-i{padding-bottom:10px !important;padding-top:10px !importa=
+nt}.r37-i{padding-bottom:5px !important;padding-right:0px !important;paddin=
+g-top:0px !important;text-align:center !important}.r38-i{padding-bottom:30p=
+x !important;padding-left:15px !important;padding-right:15px !important;pad=
+ding-top:0px !important}.r39-i{padding-bottom:30px !important;padding-left:=
+10px !important;padding-right:10px !important;padding-top:20px !important}.=
+r40-i{background-color:#dcdcdc !important;padding-bottom:16px !important;pa=
+dding-top:7px !important;text-align:left !important}.r41-i{padding-bottom:0=
+px !important;padding-left:10px !important;padding-right:9px !important;pad=
+ding-top:5px !important;text-align:left !important}.r42-i{padding-bottom:30=
+px !important;padding-left:10px !important;padding-right:10px !important;pa=
+dding-top:0px !important}.r43-i{padding-bottom:0px !important;padding-left:=
+0px !important;padding-right:0px !important;padding-top:0px !important}.r44=
+-i{background-color:#2466a1 !important}.r45-c{box-sizing:border-box !import=
+ant;text-align:center !important;valign:middle !important;width:100% !impor=
+tant}.r46-i{padding-bottom:10px !important;padding-left:15px !important;pad=
+ding-right:15px !important;padding-top:10px !important}.r47-c{box-sizing:bo=
+rder-box !important;display:block !important;valign:middle !important;width=
+:100% !important}.r48-i{color:#3b3f44 !important;padding-bottom:15px !impor=
+tant;padding-top:15px !important;text-align:center !important}.r49-i{backgr=
+ound-color:#438ac9 !important}.r50-i{padding-bottom:20px !important;padding=
+-left:15px !important;padding-right:15px !important;padding-top:30px !impor=
+tant}.r51-i{padding-bottom:0px !important;padding-top:15px !important}.r52-=
+i{color:#3b3f44 !important;padding-bottom:0px !important;padding-top:0px !i=
+mportant;text-align:center !important}.r53-i{color:#3b3f44 !important;paddi=
+ng-bottom:0px !important;padding-top:15px !important;text-align:center !imp=
+ortant}body{-webkit-text-size-adjust:none}.nl2go-responsive-hide{display:no=
+ne}.nl2go-body-table{min-width:unset !important}.mobshow{height:auto !impor=
+tant;overflow:visible !important;max-height:unset !important;visibility:vis=
+ible !important;border:none !important}.resp-table{display:inline-table !im=
+portant}.magic-resp{display:table-cell !important}}</style><style type=3D"t=
+ext/css">p, h1, h2, h3, h4, ol, ul{margin:0;}a, a:link{color:#e8195a;font-w=
+eight:normal;text-decoration:none}.nl2go-default-textstyle{color:#3b3f44;fo=
+nt-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-br=
+eak:break-word}.default-button{color:#000000;font-family:arial,helvetica,sa=
+ns-serif;font-size:16px;font-style:normal;font-weight:bold;line-height:1.15=
+;text-decoration:none;word-break:break-word}.default-heading1{color:#1F2D3D=
+;font-family:Arial;font-size:36px;word-break:break-word}.default-heading2{c=
+olor:#1F2D3D;font-family:Arial;font-size:32px;word-break:break-word}.defaul=
+t-heading3{color:#1F2D3D;font-family:Arial;font-size:24px;word-break:break-=
+word}.default-heading4{color:#1F2D3D;font-family:Arial;font-size:18px;word-=
+break:break-word}a[x-apple-data-detectors]{color:inherit !important;text-de=
+coration:inherit !important;font-size:inherit !important;font-family:inheri=
+t !important;font-weight:inherit !important;line-height:inherit !important;=
+}.no-show-for-you{border:none;display:none;float:none;font-size:0;height:0;=
+line-height:0;max-height:0;mso-hide:all;overflow:hidden;table-layout:fixed;=
+visibility:hidden;width:0;}</style><!--[if mso]><xml> <o:OfficeDocumentSett=
+ings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumen=
+tSettings> </xml><![endif]--><style type=3D"text/css">a:link{color:#e8195a;=
+font-weight:normal;text-decoration:none}</style></head><body bgcolor=3D"#ff=
+ffff" text=3D"#3b3f44" link=3D"#e8195a" yahoo=3D"fix" style=3D"background-c=
+olor:#ffffff"> <table cellpadding=3D"0" border=3D"0" cellspacing=3D"0" styl=
+e=3D" mso-hide:all;display:none"><tr><td>International Conference on Sustai=
+nable Energy Education&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;</td></tr></table> <!--[if mso]> <img width=3D"1" hei=
+ght=3D"1" src=3D"https://bqay9.r.a.d.sendibm1.com/mk/op/sh/7nVTPddU8lzHnxQq=
+QDI9ZZYpUo2mMxq/ATD78iKDdEpo" /> <![endif]--> <!--[if !mso]> <!----> <img s=
+tyle=3D"display:none" src=3D"https://bqay9.r.a.d.sendibm1.com/mk/op/sh/7nVT=
+PddU8lzHnxQqQDI9ZZYpUo2mMxq/ATD78iKDdEpo"/> <!-- <![endif]--> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" class=3D"n=
+l2go-body-table" width=3D"100%" style=3D"background-color:#ffffff;width:100=
+%"><tr><td> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation" width=3D"600" align=3D"center" class=3D"r0-o" style=3D"table=
+-layout:fixed;width:600px"><tr><td valign=3D"top" class=3D"r1-i" style=3D"b=
+ackground-color:#ffffff"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-o"=
+ style=3D"table-layout:fixed;width:100%"><tr><td class=3D"r3-i" style=3D"ba=
+ckground-color:#ffffff;padding-bottom:20px;padding-top:20px"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"font-we=
+ight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed=
+;width:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-left:15=
+px;padding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D"c=
+enter"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"200" class=3D"r7-o" style=3D"table-layout:fixed;width:2=
+00px"><tr><td style=3D"font-size:0px;line-height:0px"> <a href=3D"https://b=
+qay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2nfsTT64vLINZyxRSqZoaOsY/Th_7u-8A=
+Hmrc" target=3D"_blank" style=3D"color:#e8195a;font-weight:normal;text-deco=
+ration:none" sib_link_id=3D"0" templating=3D"n"> <img src=3D"https://bqay9.=
+img.a.d.sendibm1.com/im/sh/s7jc_LyRzLho.png?u=3D2BpAyz2gMiWnccbixrdEofTpqtq=
+26GgbsU" width=3D"200" border=3D"0" style=3D"display:block;width:100%" sib_=
+img_id=3D"0"></a> </td> </tr></table></td> </tr></table></td> </tr></table>=
+</th> </tr></table></td> </tr></table><table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" c=
+lass=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td class=3D"r8-i=
+"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" s=
+tyle=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"tabl=
+e-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"=
+r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" val=
+ign=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D"color:#3b3f44;=
+font-family:arial,helvetica,sans-serif;font-size:18px;word-break:break-word=
+;line-height:1.15;padding-top:15px;text-align:center"> <div><h1 class=3D"de=
+fault-heading1" style=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size=
+:36px;word-break:break-word"><span style=3D"color:#e8195a;font-family:Arial=
+;font-size:36px">International Conference on Sustainable Energy Education</=
+span></h1></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=
+=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"=
+presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;wi=
+dth:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r12-i nl2go-defa=
+ult-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-seri=
+f;font-size:18px;word-break:break-word;line-height:1;padding-bottom:10px;pa=
+dding-top:15px;text-align:center"> <div><h3 class=3D"default-heading3" styl=
+e=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size:24px;word-break:bre=
+ak-word"><span style=3D"color:#438ac9;font-family:Arial;font-size:24px">Jul=
+y 3 - 5, 2024. Valencia, Spain</span></h3></div> </td> </tr></table></td> <=
+/tr><tr><td class=3D"r13-c" align=3D"center" style=3D"align:center;padding-=
+bottom:15px;padding-top:15px;valign:top"> <table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation" width=3D"300" class=3D"r14-o" =
+style=3D"background-color:#438ac9;border-collapse:separate;border-color:#fb=
+bc0d;border-radius:4px;border-style:solid;border-width:0px;table-layout:fix=
+ed;width:300px"><tr><td height=3D"18" align=3D"center" valign=3D"top" class=
+=3D"r15-i nl2go-default-textstyle" style=3D"word-break:break-word;backgroun=
+d-color:#438ac9;border-radius:4px;color:#000000;font-family:arial,helvetica=
+,sans-serif;font-size:16px;font-style:normal;line-height:1.15;padding-botto=
+m:12px;padding-top:12px;text-align:center"> <a href=3D"https://bqay9.r.a.d.=
+sendibm1.com/mk/cl/f/sh/7nVU1aA2nfuMScaEJrc21JlH0wJN8p4/6QyQtWbXGtF8" class=
+=3D"r16-r default-button" target=3D"_blank" data-btn=3D"1" style=3D"font-st=
+yle:normal;font-weight:bold;line-height:1.15;text-decoration:none;word-brea=
+k:break-word;word-wrap:break-word;display:block;-webkit-text-size-adjust:no=
+ne;color:#000000;font-family:arial,helvetica,sans-serif;font-size:16px" sib=
+_link_id=3D"1" templating=3D"n"> <span><span style=3D"color:#ffffff">Visit =
+seedconference.eu</span></span></a> </td> </tr></table></td> </tr><tr><td c=
+lass=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation" width=3D"600" class=3D"r0-o" style=3D"ta=
+ble-layout:fixed;width:600px"><tr><td class=3D"r17-i" style=3D"font-size:0p=
+x;line-height:0px"> <a href=3D"https://bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/=
+7nVU1aA2nfwFS95XIQqU3g55BIo9sla/qNL_g6trUgFz" target=3D"_blank" style=3D"co=
+lor:#e8195a;font-weight:normal;text-decoration:none" sib_link_id=3D"2" temp=
+lating=3D"n"> <img src=3D"https://bqay9.img.a.d.sendibm1.com/im/sh/zfPFFIYy=
+HHqm.jpg?u=3D2BpAyz2gMiWnceUiUMwDNtvsDDeCSlTLp0" width=3D"600" border=3D"0"=
+ style=3D"display:block;width:100%" sib_img_id=3D"1"></a> </td> </tr></tabl=
+e></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></tab=
+le></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-o" sty=
+le=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r18-i"=
+ style=3D"background-color:#e8bec7"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D"center" cl=
+ass=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r19-=
+i" style=3D"padding-top:6px"> <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" vali=
+gn=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"to=
+p" class=3D"r6-i"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"left">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%">=
+<tr><td align=3D"center" valign=3D"top" class=3D"r11-i nl2go-default-textst=
+yle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-siz=
+e:18px;line-height:1.5;word-break:break-word;padding-top:15px;text-align:ce=
+nter"> <div><h3 class=3D"default-heading3" style=3D"margin:0;color:#1f2d3d;=
+font-family:Arial;font-size:24px;word-break:break-word"><span style=3D"colo=
+r:#e8195a">In this newsletter:</span></h3></div> </td> </tr></table></td> <=
+/tr></table></td> </tr></table></th> </tr></table></td> </tr></table></td> =
+</tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"t=
+able-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r18-i" style=
+=3D"background-color:#e8bec7"> <table cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r=
+0-o" style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r8-i"> <tabl=
+e width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"=
+font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout=
+:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" s=
+tyle=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"t=
+op" class=3D"r20-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-fam=
+ily:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-break:br=
+eak-word;text-align:center"> <div><p style=3D"margin:0"><span style=3D"colo=
+r:#e8195a;font-size:15px"><i>Click on the sections below to read more:</i><=
+/span></p></div> </td> </tr></table></td> </tr></table></td> </tr></table><=
+/th> </tr></table></td> </tr></table></td> </tr></table><table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr=
+><td valign=3D"top" class=3D"r18-i" style=3D"background-color:#e8bec7"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"600" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;w=
+idth:600px"><tr><td class=3D"r21-i" style=3D"padding-bottom:20px"> <table w=
+idth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation"><tr><th width=3D"50%" valign=3D"top" class=3D"r4-c" style=3D"font=
+-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fix=
+ed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr=
+><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=
+=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" =
+class=3D"r22-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:=
+arial,helvetica,sans-serif;font-size:18px;word-break:break-word;line-height=
+:1.15;padding-bottom:15px;padding-top:15px;text-align:center"> <div><p styl=
+e=3D"margin:0"><a href=3D"#papers" style=3D"color:#e8195a;font-weight:norma=
+l;text-decoration:none"><span style=3D"color:#e8195a"><strong>Call for Pape=
+rs</strong></span></a></p><p style=3D"margin:0"><a href=3D"#scope" style=3D=
+"color:#e8195a;font-weight:normal;text-decoration:none"><span style=3D"colo=
+r:#e8195a;font-size:15px">Scope</span></a></p><p style=3D"margin:0"><a href=
+=3D"#topics" style=3D"color:#e8195a;font-weight:normal;text-decoration:none=
+"><span style=3D"color:#e8195a;font-size:15px">Topics of interest</span></a=
+></p><p style=3D"margin:0"><a href=3D"#dates" style=3D"color:#e8195a;font-w=
+eight:normal;text-decoration:none"><span style=3D"color:#e8195a;font-size:1=
+5px">Important dates</span></a></p><p style=3D"margin:0"><a href=3D"#public=
+ations" style=3D"color:#e8195a;font-weight:normal;text-decoration:none"><sp=
+an style=3D"color:#e8195a;font-size:15px">Publications and Awards</span></a=
+></p><p style=3D"margin:0"><a href=3D"#submission" style=3D"color:#e8195a;f=
+ont-weight:normal;text-decoration:none"><span style=3D"color:#e8195a;font-s=
+ize:15px">Submission guidelines</span></a></p></div> </td> </tr></table></t=
+d> </tr></table></td> </tr></table></th> <th width=3D"50%" valign=3D"top" c=
+lass=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o=
+" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r=
+6-i"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"left"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=
+=3D"center" valign=3D"top" class=3D"r22-i nl2go-default-textstyle" style=3D=
+"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;word-b=
+reak:break-word;line-height:1.15;padding-bottom:15px;padding-top:15px;text-=
+align:center"> <div><p style=3D"margin:0"><a href=3D"#workshop" style=3D"co=
+lor:#e8195a;font-weight:normal;text-decoration:none"><span style=3D"color:#=
+e8195a"><strong>Call for Workshops</strong></span></a></p><p style=3D"margi=
+n:0"><a href=3D"#review" style=3D"color:#e8195a;font-weight:normal;text-dec=
+oration:none"><span style=3D"color:#e8195a;font-size:15px">Review criteria<=
+/span></a></p><p style=3D"margin:0"><a href=3D"#guidelines" style=3D"color:=
+#e8195a;font-weight:normal;text-decoration:none"><span style=3D"color:#e819=
+5a;font-size:15px">Proposals guidelines</span></a></p><p style=3D"margin:0"=
+><a href=3D"#dates2" style=3D"color:#e8195a;font-weight:normal;text-decorat=
+ion:none"><span style=3D"color:#e8195a;font-size:15px">Important dates</spa=
+n></a></p></div> </td> </tr></table></td> </tr></table></td> </tr></table><=
+/th> </tr></table></td> </tr></table></td> </tr></table><table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" a=
+lign=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr=
+><td valign=3D"top" class=3D"r1-i" style=3D"background-color:#ffffff"> <tab=
+le cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" w=
+idth=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;w=
+idth:100%"><tr><td class=3D"r23-i" style=3D"padding-bottom:20px;padding-top=
+:10px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4=
+-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D=
+"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <tab=
+le width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"=
+presentation"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" clas=
+s=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center=
+" valign=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D"color:#3b=
+3f44;font-family:arial,helvetica,sans-serif;font-size:18px;word-break:break=
+-word;line-height:1.5;padding-top:15px;text-align:center"> <div><h1 class=
+=3D"default-heading1" style=3D"margin:0;color:#1f2d3d;font-family:Arial;fon=
+t-size:36px;word-break:break-word"><a name=3D"papers" style=3D"color:inheri=
+t;text-decoration:inherit;font-weight:inherit;font-style:inherit"><span sty=
+le=3D"color:#438ac9">SEED 2024: Call for Papers</span></a></h1></div> </td>=
+ </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"r11-i nl2go-default-textstyle" style=
+=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;wor=
+d-break:break-word;line-height:1.5;padding-top:15px;text-align:center"> <di=
+v><h3 class=3D"default-heading3" style=3D"margin:0;color:#1f2d3d;font-famil=
+y:Arial;font-size:24px;word-break:break-word"><a name=3D"scope" style=3D"co=
+lor:inherit;text-decoration:inherit;font-weight:inherit;font-style:inherit"=
+>Scope</a></h3></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fix=
+ed;width:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r24-i nl2go-d=
+efault-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-s=
+erif;font-size:18px;line-height:1.5;word-break:break-word;padding-bottom:15=
+px;padding-top:15px;text-align:left"> <div><p style=3D"margin:0"><span styl=
+e=3D"font-size:16px">The <strong>First International Conference on Sustaina=
+ble Energy Education (SEED)</strong> aims to become a forum for researchers=
+, academics, and practitioners to exchange ideas, experiences, opinions, an=
+d research results relating to the preparation of students, teaching/learni=
+ng methodologies, the organization of educational systems, partnerships and=
+ funding and governance related to Sustainable Energy Education.</span></p>=
+<p style=3D"margin:0">=C2=A0</p><p style=3D"margin:0"><span style=3D"font-s=
+ize:16px">The <strong>SEED</strong> conference will be held on<strong> July=
+ 3-5, 2024</strong>, at the <strong>Faculty of Business Administration and =
+Management of the Universitat Polit=C3=A8cnica de Val=C3=A8ncia (UPV)</stro=
+ng>, which has been ranked as the best technical university in Spain by the=
+ Academic Ranking of World Universities since 2014.</span></p></div> </td> =
+</tr></table></td> </tr></table></td> </tr></table></th> </tr></table></td>=
+ </tr></table></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=
+=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" cl=
+ass=3D"r25-i" style=3D"background-color:#eff2f7"> <table cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D=
+"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><td cl=
+ass=3D"r26-i" style=3D"padding-top:20px"> <table width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=
+=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <tabl=
+e cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wi=
+dth=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td=
+ valign=3D"top" class=3D"r6-i"> <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" al=
+ign=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixe=
+d;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r11-i nl2go-=
+default-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-=
+serif;font-size:18px;word-break:break-word;line-height:1.5;padding-top:15px=
+;text-align:center"> <div><h3 class=3D"default-heading3" style=3D"margin:0;=
+color:#1f2d3d;font-family:Arial;font-size:24px;word-break:break-word"><a na=
+me=3D"topics" style=3D"color:inherit;text-decoration:inherit;font-weight:in=
+herit;font-style:inherit">Topics of interest</a></h3></div> </td> </tr></ta=
+ble></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"left"=
+ valign=3D"top" class=3D"r27-i nl2go-default-textstyle" style=3D"color:#3b3=
+f44;font-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;w=
+ord-break:break-word;padding-top:15px;text-align:left"> <div><p style=3D"ma=
+rgin:0"><span style=3D"font-size:16px">The Program Committee encourages the=
+ submission of extended abstracts that communicate applied and empirical fi=
+ndings of interest to higher education and vocational education & training =
+professionals, researchers, and practitioners.</span></p><p style=3D"margin=
+:0"><span style=3D"font-size:16px">Key topics include, but are not limited =
+to, the following subjects:</span></p></div> </td> </tr></table></td> </tr>=
+</table></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr=
+></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-l=
+ayout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r25-i" style=3D"bac=
+kground-color:#eff2f7"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" =
+style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r28-i" style=3D"p=
+adding-bottom:20px;padding-top:20px"> <table width=3D"100%" cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"50=
+%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=
+=3D"top" class=3D"r6-i"> <table width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"=
+left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:=
+100%"><tr><td align=3D"left" valign=3D"top" class=3D"r29-i nl2go-default-te=
+xtstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font=
+-size:18px;line-height:1.5;word-break:break-word;padding-bottom:5px;padding=
+-left:10px;padding-right:14px;padding-top:5px;text-align:left"> <div><p sty=
+le=3D"margin:0"><span style=3D"font-size:18px"><strong>Track 1: Teaching an=
+d Learning on Sustainable Energy Education</strong>.</span></p><p style=3D"=
+margin:0"><span style=3D"font-size:15px">Good practices related to:</span><=
+/p><ul style=3D"margin:0"><li><span style=3D"font-size:15px">Renewable ener=
+gy sources and their development, use, and impact</span></li><li><span styl=
+e=3D"font-size:15px">Development and use of electric vehicles and the conne=
+ction to the economy and the environment</span></li><li><span style=3D"font=
+-size:15px">Efficient use of energy technologies for conservation and reduc=
+tion of waste</span></li><li><span style=3D"font-size:15px">Nature-Based So=
+lutions (NBS)</span></li><li><span style=3D"font-size:15px">Circular Econom=
+y models</span></li></ul></div> </td> </tr></table></td> </tr></table></td>=
+ </tr></table></th> <th width=3D"50%" valign=3D"top" class=3D"r4-c" style=
+=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-l=
+ayout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10=
+-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"left" valign=
+=3D"top" class=3D"r30-i nl2go-default-textstyle" style=3D"color:#3b3f44;fon=
+t-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-bre=
+ak:break-word;padding-bottom:5px;padding-left:10px;padding-right:9px;paddin=
+g-top:5px;text-align:left"> <div><p style=3D"margin:0"><span style=3D"font-=
+size:18px"><strong>Track 2: Partnerships, Collaboration on Sustainable Ener=
+gy Education=C2=A0</strong></span></p><p style=3D"margin:0"><span style=3D"=
+font-size:15px">Good practices related to:</span></p><ul style=3D"margin:0"=
+><li><span style=3D"font-size:15px">Traineeships & apprenticeships</span></=
+li><li><span style=3D"font-size:15px">Energy career and workforce developme=
+nt in the energy industry</span></li><li><span style=3D"font-size:15px">Syn=
+thesis of energy information</span></li><li><span style=3D"font-size:15px">=
+HUBS in sustainable energy</span></li><li><span style=3D"font-size:15px">Sk=
+ill needs of the labor market</span></li></ul></div> </td> </tr></table></t=
+d> </tr></table></td> </tr></table></th> </tr></table></td> </tr></table></=
+td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D=
+"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r25-i" styl=
+e=3D"background-color:#eff2f7"> <table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"=
+r0-o" style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r21-i" styl=
+e=3D"padding-bottom:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"50%" valign=
+=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" =
+class=3D"r6-i"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"left"> <t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr=
+><td align=3D"left" valign=3D"top" class=3D"r31-i nl2go-default-textstyle" =
+style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18p=
+x;line-height:1.5;word-break:break-word;padding-bottom:5px;padding-left:10p=
+x;padding-right:10px;padding-top:5px;text-align:left"> <div><p style=3D"mar=
+gin:0"><span style=3D"font-size:18px"><strong>Track 3: Governance & Funding=
+ for Sustainable Energy Education</strong></span></p><p style=3D"margin:0">=
+<span style=3D"font-size:15px">Good practices related to:</span></p><ul sty=
+le=3D"margin:0"><li><span style=3D"font-size:15px">Financing models</span><=
+/li><li><span style=3D"font-size:15px">Financial tools=C2=A0</span></li><li=
+><span style=3D"font-size:15px">Financing partnerships in energy</span></li=
+><li><span style=3D"font-size:15px">Business models for energy education</s=
+pan></li><li><span style=3D"font-size:15px">University spin-offs</span></li=
+></ul></div> </td> </tr></table></td> </tr></table></td> </tr></table></th>=
+ <th width=3D"50%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:norma=
+l"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%=
+"><tr><td valign=3D"top" class=3D"r6-i"> <table width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=
+=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-=
+layout:fixed;width:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r30=
+-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial,helvet=
+ica,sans-serif;font-size:18px;line-height:1.5;word-break:break-word;padding=
+-bottom:5px;padding-left:10px;padding-right:9px;padding-top:5px;text-align:=
+left"> <div><p style=3D"margin:0"><span style=3D"font-size:18px"><strong>Tr=
+ack 4: Sustainable Education</strong></span></p><p style=3D"margin:0"><span=
+ style=3D"font-size:15px">Good practices related to:</span></p><ul style=3D=
+"margin:0"><li><span style=3D"font-size:15px">Competency-based learning and=
+ skill assessment</span></li><li><span style=3D"font-size:15px">Education a=
+ccreditation, quality, and assessment</span></li><li><span style=3D"font-si=
+ze:15px">Innovative materials and new tools for teaching</span></li><li><sp=
+an style=3D"font-size:15px">Teaching and learning experiences</span></li><l=
+i><span style=3D"font-size:15px">Educational technology (e.g., virtual labs=
+, e-learning)=C2=A0</span></li></ul></div> </td> </tr></table></td> </tr></=
+table></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr><=
+/table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-lay=
+out:fixed;width:100%"><tr><td valign=3D"top" class=3D"r25-i" style=3D"backg=
+round-color:#eff2f7"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" styl=
+e=3D"table-layout:fixed;width:600px"><tr><td class=3D"r21-i" style=3D"paddi=
+ng-bottom:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" cl=
+ass=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o"=
+ style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6=
+-i"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation"><tr><td class=3D"r13-c" align=3D"center" style=3D"al=
+ign:center;padding-bottom:15px;padding-top:15px;valign:top"> <table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"30=
+0" class=3D"r14-o" style=3D"background-color:#fbbc0d;border-collapse:separa=
+te;border-color:#fbbc0d;border-radius:4px;border-style:solid;border-width:0=
+px;table-layout:fixed;width:300px"><tr><td height=3D"18" align=3D"center" v=
+align=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"word-break:b=
+reak-word;background-color:#fbbc0d;border-radius:4px;color:#000000;font-fam=
+ily:arial,helvetica,sans-serif;font-size:16px;font-style:normal;line-height=
+:1.15;padding-bottom:12px;padding-left:5px;padding-right:5px;padding-top:12=
+px;text-align:center"> <a href=3D"https://bqay9.r.a.d.sendibm1.com/mk/cl/f/=
+sh/7nVU1aA2nfy8RfaqH04w62OtLfIwci6/8PZPTqb8M3fP" class=3D"r32-r default-but=
+ton" target=3D"_blank" data-btn=3D"2" style=3D"font-style:normal;font-weigh=
+t:bold;line-height:1.15;text-decoration:none;word-break:break-word;word-wra=
+p:break-word;display:block;-webkit-text-size-adjust:none;color:#000000;font=
+-family:arial,helvetica,sans-serif;font-size:16px" sib_link_id=3D"3" templa=
+ting=3D"n"> <span>Read more</span></a> </td> </tr></table></td> </tr></tabl=
+e></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr></tab=
+le><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-layout:=
+fixed;width:100%"><tr><td valign=3D"top" class=3D"r18-i" style=3D"backgroun=
+d-color:#e8bec7"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" style=3D=
+"table-layout:fixed;width:600px"><tr><td class=3D"r33-i" style=3D"padding-b=
+ottom:20px;padding-top:20px"> <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" vali=
+gn=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"to=
+p" class=3D"r6-i" style=3D"padding-left:15px;padding-right:15px"> <table wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"=
+r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" val=
+ign=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D"color:#3b3f44;=
+font-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-=
+break:break-word;padding-top:15px;text-align:center"> <div><h3 class=3D"def=
+ault-heading3" style=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size:=
+24px;word-break:break-word"><a name=3D"dates" style=3D"color:inherit;text-d=
+ecoration:inherit;font-weight:inherit;font-style:inherit"><span style=3D"co=
+lor:#e8195a">Important dates</span></a></h3></div> </td> </tr></table></td>=
+ </tr></table></td> </tr></table></th> </tr></table></td> </tr></table></td=
+> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"t=
+able-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r18-i" style=
+=3D"background-color:#e8bec7"> <table cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r=
+0-o" style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r34-i" style=
+=3D"padding-bottom:20px"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"33.33%" valign=
+=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" =
+class=3D"r6-i" style=3D"padding-left:7px;padding-right:7px"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"27" class=3D"r35=
+-o" style=3D"table-layout:fixed;width:27px"><tr><td class=3D"r36-i" style=
+=3D"font-size:0px;line-height:0px;padding-bottom:10px;padding-top:10px"> <i=
+mg src=3D"https://bqay9.img.a.d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2Bp=
+Ayz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D"27" border=3D"0" style=3D"display=
+:block;width:100%" sib_img_id=3D"3"></td> </tr></table></td> </tr><tr><td c=
+lass=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"ta=
+ble-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=
+=3D"r37-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial=
+,helvetica,sans-serif;font-size:18px;word-break:break-word;line-height:1;pa=
+dding-bottom:5px;text-align:center"> <div><p style=3D"margin:0"><span style=
+=3D"color:#e8195a;font-size:14px"><strong>January 26, 2024=C2=A0</strong></=
+span><br><span style=3D"color:#e8195a;font-size:14px">Extended abstract sub=
+mission deadline</span></p></div> </td> </tr></table></td> </tr></table></t=
+d> </tr></table></th> <th width=3D"33.33%" valign=3D"top" class=3D"r4-c" st=
+yle=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table=
+-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"pa=
+dding-left:7px;padding-right:7px"> <table width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c"=
+ align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation" width=3D"27" class=3D"r35-o" style=3D"table-layout:fi=
+xed;width:27px"><tr><td class=3D"r36-i" style=3D"font-size:0px;line-height:=
+0px;padding-bottom:10px;padding-top:10px"> <img src=3D"https://bqay9.img.a.=
+d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAWMpwvrGXBl2pi=
+2" width=3D"27" border=3D"0" style=3D"display:block;width:100%" sib_img_id=
+=3D"3"></td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%">=
+<tr><td align=3D"center" valign=3D"top" class=3D"r37-i nl2go-default-textst=
+yle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-siz=
+e:18px;word-break:break-word;line-height:1;padding-bottom:5px;text-align:ce=
+nter"> <div><p style=3D"margin:0"><span style=3D"color:#e8195a;font-size:14=
+px"><strong>February 2, 2024</strong></span><br><span style=3D"color:#e8195=
+a;font-size:14px">Workshop proposals due</span></p></div> </td> </tr></tabl=
+e></td> </tr></table></td> </tr></table></th> <th width=3D"33.33%" valign=
+=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" =
+class=3D"r6-i" style=3D"padding-left:7px;padding-right:7px"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"27" class=3D"r35=
+-o" style=3D"table-layout:fixed;width:27px"><tr><td class=3D"r36-i" style=
+=3D"font-size:0px;line-height:0px;padding-bottom:10px;padding-top:10px"> <i=
+mg src=3D"https://bqay9.img.a.d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2Bp=
+Ayz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D"27" border=3D"0" style=3D"display=
+:block;width:100%" sib_img_id=3D"3"></td> </tr></table></td> </tr><tr><td c=
+lass=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"ta=
+ble-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=
+=3D"r37-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial=
+,helvetica,sans-serif;font-size:18px;word-break:break-word;line-height:1;pa=
+dding-bottom:5px;text-align:center"> <div><p style=3D"margin:0"><span style=
+=3D"color:#e8195a;font-size:14px"><strong>March 15, 2024</strong></span><br=
+><span style=3D"color:#e8195a;font-size:14px">Author notification</span></p=
+></div> </td> </tr></table></td> </tr></table></td> </tr></table></th> </tr=
+></table></td> </tr></table></td> </tr></table><table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"c=
+enter" class=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td valig=
+n=3D"top" class=3D"r18-i" style=3D"background-color:#e8bec7"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"6=
+00" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px=
+"><tr><td class=3D"r38-i" style=3D"padding-bottom:30px"> <table width=3D"10=
+0%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation">=
+<tr><th width=3D"33.33%" valign=3D"top" class=3D"r4-c" style=3D"font-weight=
+:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;widt=
+h:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-left:7px;pad=
+ding-right:7px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D"center">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"27" class=3D"r35-o" style=3D"table-layout:fixed;width:27px"><t=
+r><td class=3D"r36-i" style=3D"font-size:0px;line-height:0px;padding-bottom=
+:10px;padding-top:10px"> <img src=3D"https://bqay9.img.a.d.sendibm1.com/im/=
+sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D"27" bo=
+rder=3D"0" style=3D"display:block;width:100%" sib_img_id=3D"3"></td> </tr><=
+/table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"ce=
+nter" valign=3D"top" class=3D"r37-i nl2go-default-textstyle" style=3D"color=
+:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;word-break:b=
+reak-word;line-height:1;padding-bottom:5px;text-align:center"> <div><p styl=
+e=3D"margin:0"><span style=3D"color:#e8195a;font-size:14px"><strong>April 2=
+6, 2024</strong></span><br><span style=3D"color:#e8195a;font-size:14px">Fin=
+al version submission deadline</span></p></div> </td> </tr></table></td> </=
+tr></table></td> </tr></table></th> <th width=3D"33.33%" valign=3D"top" cla=
+ss=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" =
+style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-=
+i" style=3D"padding-left:7px;padding-right:7px"> <table width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td =
+class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation" width=3D"27" class=3D"r35-o" style=3D"t=
+able-layout:fixed;width:27px"><tr><td class=3D"r36-i" style=3D"font-size:0p=
+x;line-height:0px;padding-bottom:10px;padding-top:10px"> <img src=3D"https:=
+//bqay9.img.a.d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNY=
+AWMpwvrGXBl2pi2" width=3D"27" border=3D"0" style=3D"display:block;width:100=
+%" sib_img_id=3D"3"></td> </tr></table></td> </tr><tr><td class=3D"r9-c" al=
+ign=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixe=
+d;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r37-i nl2go-=
+default-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-=
+serif;font-size:18px;word-break:break-word;line-height:1;padding-bottom:5px=
+;text-align:center"> <div><p style=3D"margin:0"><span style=3D"color:#e8195=
+a;font-size:14px"><strong>April 26, 2024</strong></span><br><span style=3D"=
+color:#e8195a;font-size:14px">Early registration deadline for authors</span=
+></p></div> </td> </tr></table></td> </tr></table></td> </tr></table></th> =
+<th width=3D"33.33%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:nor=
+mal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:10=
+0%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-left:7px;padding=
+-right:7px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D"center"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"27" class=3D"r35-o" style=3D"table-layout:fixed;width:27px"><tr><t=
+d class=3D"r36-i" style=3D"font-size:0px;line-height:0px;padding-bottom:10p=
+x;padding-top:10px"> <img src=3D"https://bqay9.img.a.d.sendibm1.com/im/sh/E=
+YxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D"27" border=
+=3D"0" style=3D"display:block;width:100%" sib_img_id=3D"3"></td> </tr></tab=
+le></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" clas=
+s=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center=
+" valign=3D"top" class=3D"r37-i nl2go-default-textstyle" style=3D"color:#3b=
+3f44;font-family:arial,helvetica,sans-serif;font-size:18px;word-break:break=
+-word;line-height:1;padding-bottom:5px;text-align:center"> <div><p style=3D=
+"margin:0"><span style=3D"color:#e8195a;font-size:14px"><strong>July 3-5, 2=
+024</strong></span><br><span style=3D"color:#e8195a;font-size:14px">Confere=
+nce dates</span></p></div> </td> </tr></table></td> </tr></table></td> </tr=
+></table></th> </tr></table></td> </tr></table></td> </tr></table><table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"600" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:=
+600px"><tr><td valign=3D"top" class=3D"r1-i" style=3D"background-color:#fff=
+fff"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-layo=
+ut:fixed;width:100%"><tr><td class=3D"r28-i" style=3D"padding-bottom:20px;p=
+adding-top:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" c=
+lass=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o=
+" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r=
+6-i"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"left"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=
+=3D"center" valign=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D=
+"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;word-b=
+reak:break-word;line-height:1.5;padding-top:15px;text-align:center"> <div><=
+h3 class=3D"default-heading3" style=3D"margin:0;color:#1f2d3d;font-family:A=
+rial;font-size:24px;word-break:break-word"><a name=3D"publications" style=
+=3D"color:inherit;text-decoration:inherit;font-weight:inherit;font-style:in=
+herit">Publications</a></h3></div> </td> </tr></table></td> </tr><tr><td cl=
+ass=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"tab=
+le-layout:fixed;width:100%"><tr><td align=3D"left" valign=3D"top" class=3D"=
+r24-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial,hel=
+vetica,sans-serif;font-size:18px;line-height:1.5;word-break:break-word;padd=
+ing-bottom:15px;padding-top:15px;text-align:left"> <div><p style=3D"margin:=
+0"><span style=3D"font-size:16px"><strong>All accepted extended abstracts w=
+ill appear in the conference proceedings book, which will be assigned a=C2=
+=A0DOI=C2=A0and=C2=A0ISBN</strong>. They will be published in open access b=
+y=C2=A0UPV Press and submitted to be indexed in major international bibliog=
+raphic databases. In previous conferences we organized, proceedings were in=
+dexed in Scopus and the=C2=A0Thomson-Reuters Conference Proceedings Citatio=
+n Index =E2=80=93 Web of Science Core Collection=C2=A0(former ISI Proceedin=
+gs).</span></p></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fix=
+ed;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r11-i nl2go=
+-default-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans=
+-serif;font-size:18px;word-break:break-word;line-height:1.5;padding-top:15p=
+x;text-align:center"> <div><h3 class=3D"default-heading3" style=3D"margin:0=
+;color:#1f2d3d;font-family:Arial;font-size:24px;word-break:break-word">Awar=
+ds</h3></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D=
+"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width=
+:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r24-i nl2go-default-t=
+extstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;fon=
+t-size:18px;line-height:1.5;word-break:break-word;padding-bottom:15px;paddi=
+ng-top:15px;text-align:left"> <div><p style=3D"margin:0"><span style=3D"fon=
+t-size:16px">To the=C2=A0Best Paper=C2=A0and=C2=A0Best Practice.</span></p>=
+</div> </td> </tr></table></td> </tr></table></td> </tr></table></th> </tr>=
+</table></td> </tr></table></td> </tr></table><table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"ce=
+nter" class=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=
+=3D"top" class=3D"r25-i" style=3D"background-color:#eff2f7"> <table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"60=
+0" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"=
+><tr><td class=3D"r39-i" style=3D"padding-bottom:30px;padding-top:20px"> <t=
+able width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" styl=
+e=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-l=
+ayout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10=
+-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" valign=
+=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D"color:#3b3f44;fon=
+t-family:arial,helvetica,sans-serif;font-size:18px;word-break:break-word;li=
+ne-height:1.5;padding-top:15px;text-align:center"> <div><h3 class=3D"defaul=
+t-heading3" style=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size:24p=
+x;word-break:break-word"><a name=3D"submission" style=3D"color:inherit;text=
+-decoration:inherit;font-weight:inherit;font-style:inherit">Submission guid=
+elines</a></h3></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fix=
+ed;width:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r27-i nl2go-d=
+efault-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-s=
+erif;font-size:18px;line-height:1.5;word-break:break-word;padding-top:15px;=
+text-align:left"> <div><p style=3D"margin:0"><span style=3D"font-size:16px"=
+>Authors worldwide are invited to submit original and unpublished extended =
+abstracts not under review in any other conference or journal.=C2=A0</span>=
+<br><span style=3D"font-size:16px">All extended abstracts will be peer-revi=
+ewed by the Program Committee based on their significance, methodological s=
+oundness, originality, and clarity of exposition.</span></p></div> </td> </=
+tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"center" style=3D"ali=
+gn:center;padding-bottom:15px;padding-top:15px;valign:top"> <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"300=
+" class=3D"r14-o" style=3D"background-color:#fbbc0d;border-collapse:separat=
+e;border-color:#fbbc0d;border-radius:4px;border-style:solid;border-width:0p=
+x;table-layout:fixed;width:300px"><tr><td height=3D"18" align=3D"center" va=
+lign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"word-break:br=
+eak-word;background-color:#fbbc0d;border-radius:4px;color:#000000;font-fami=
+ly:arial,helvetica,sans-serif;font-size:16px;font-style:normal;line-height:=
+1.15;padding-bottom:12px;padding-left:5px;padding-right:5px;padding-top:12p=
+x;text-align:center"> <a href=3D"https://bqay9.r.a.d.sendibm1.com/mk/cl/f/s=
+h/7nVU1aA2ng01RC69FZJO8OihW1njMec/oFYckDL9_UPM" class=3D"r32-r default-butt=
+on" target=3D"_blank" data-btn=3D"3" style=3D"font-style:normal;font-weight=
+:bold;line-height:1.15;text-decoration:none;word-break:break-word;word-wrap=
+:break-word;display:block;-webkit-text-size-adjust:none;color:#000000;font-=
+family:arial,helvetica,sans-serif;font-size:16px" sib_link_id=3D"4" templat=
+ing=3D"n"> <span>See the template</span></a> </td> </tr></table></td> </tr>=
+<tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" st=
+yle=3D"table-layout:fixed;width:100%"><tr><td align=3D"left" valign=3D"top"=
+ class=3D"r27-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family=
+:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-break:break=
+-word;padding-top:15px;text-align:left"> <div><p style=3D"margin:0"><span s=
+tyle=3D"font-size:16px">Submissions must be between 4 and 9 pages (A4 size)=
+, including 1 title page + 8 pages with the main text, figures, tables, and=
+ references. Submissions imply the willingness of at least one author to re=
+gister, attend the conference, and present their contribution.</span></p></=
+div> </td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"center"=
+ style=3D"align:center;padding-bottom:15px;padding-top:15px;valign:top"> <t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"300" class=3D"r14-o" style=3D"background-color:#fbbc0d;border-col=
+lapse:separate;border-color:#fbbc0d;border-radius:4px;border-style:solid;bo=
+rder-width:0px;table-layout:fixed;width:300px"><tr><td height=3D"18" align=
+=3D"center" valign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D=
+"word-break:break-word;background-color:#fbbc0d;border-radius:4px;color:#00=
+0000;font-family:arial,helvetica,sans-serif;font-size:16px;font-style:norma=
+l;line-height:1.15;padding-bottom:12px;padding-left:5px;padding-right:5px;p=
+adding-top:12px;text-align:center"> <a href=3D"https://bqay9.r.a.d.sendibm1=
+.com/mk/cl/f/sh/7nVU1aA2ng1uQibSE8XqAl2VgOIW6b8/Q5fkVGNYIXC3" class=3D"r32-=
+r default-button" target=3D"_blank" data-btn=3D"4" style=3D"font-style:norm=
+al;font-weight:bold;line-height:1.15;text-decoration:none;word-break:break-=
+word;word-wrap:break-word;display:block;-webkit-text-size-adjust:none;color=
+:#000000;font-family:arial,helvetica,sans-serif;font-size:16px" sib_link_id=
+=3D"5" templating=3D"n"> <span>Read more</span></a> </td> </tr></table></td=
+> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r1=
+0-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"left" valign=
+=3D"top" class=3D"r27-i nl2go-default-textstyle" style=3D"color:#3b3f44;fon=
+t-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-bre=
+ak:break-word;padding-top:15px;text-align:left"> <div><p style=3D"margin:0"=
+><span style=3D"font-size:16px">SEED is using the EasyChair platform to man=
+age the submissions. The submission website is <strong>EASY CHAIR SEED 2024=
+</strong></span></p></div> </td> </tr></table></td> </tr><tr><td class=3D"r=
+13-c" align=3D"center" style=3D"align:center;padding-bottom:15px;padding-to=
+p:15px;valign:top"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"300" class=3D"r14-o" style=3D"background-co=
+lor:#fbbc0d;border-collapse:separate;border-color:#fbbc0d;border-radius:4px=
+;border-style:solid;border-width:0px;table-layout:fixed;width:300px"><tr><t=
+d height=3D"18" align=3D"center" valign=3D"top" class=3D"r15-i nl2go-defaul=
+t-textstyle" style=3D"word-break:break-word;background-color:#fbbc0d;border=
+-radius:4px;color:#000000;font-family:arial,helvetica,sans-serif;font-size:=
+16px;font-style:normal;line-height:1.15;padding-bottom:12px;padding-left:5p=
+x;padding-right:5px;padding-top:12px;text-align:center"> <a href=3D"https:/=
+/bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng3nQF6lChmID7MJqknIqXe/KZQqvR=
+xdqdcg" class=3D"r32-r default-button" target=3D"_blank" data-btn=3D"5" sty=
+le=3D"font-style:normal;font-weight:bold;line-height:1.15;text-decoration:n=
+one;word-break:break-word;word-wrap:break-word;display:block;-webkit-text-s=
+ize-adjust:none;color:#000000;font-family:arial,helvetica,sans-serif;font-s=
+ize:16px" sib_link_id=3D"6" templating=3D"n"> <span>Submit on Easy Chair pl=
+atform</span></a> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" alig=
+n=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;w=
+idth:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r27-i nl2go-defau=
+lt-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif=
+;font-size:18px;line-height:1.5;word-break:break-word;padding-top:15px;text=
+-align:left"> <div><p style=3D"margin:0"><span style=3D"font-size:16px">If =
+you have not previously used the platform, you must register first.</span><=
+/p></div> </td> </tr></table></td> </tr></table></td> </tr></table></th> </=
+tr></table></td> </tr></table></td> </tr></table><table cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D"=
+center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><td val=
+ign=3D"top" class=3D"r1-i" style=3D"background-color:#ffffff"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:100=
+%"><tr><td class=3D"r28-i" style=3D"padding-bottom:20px;padding-top:20px"> =
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" styl=
+e=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-l=
+ayout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10=
+-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" valign=
+=3D"top" class=3D"r11-i nl2go-default-textstyle" style=3D"color:#3b3f44;fon=
+t-family:arial,helvetica,sans-serif;font-size:18px;word-break:break-word;li=
+ne-height:1.5;padding-top:15px;text-align:center"> <div><h1 class=3D"defaul=
+t-heading1" style=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size:36p=
+x;word-break:break-word"><a name=3D"workshop" style=3D"color:inherit;text-d=
+ecoration:inherit;font-weight:inherit;font-style:inherit"><span style=3D"co=
+lor:#438ac9">SEED 2024: <strong>Call for Workshops</strong></span></a></h1>=
+</div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%">=
+<tr><td align=3D"left" valign=3D"top" class=3D"r24-i nl2go-default-textstyl=
+e" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:=
+18px;line-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:=
+15px;text-align:left"> <div><p style=3D"margin:0"><span style=3D"font-size:=
+16px">Researchers, academics, and practitioners are invited to submit propo=
+sals for workshops at the=C2=A0<strong>SEED conference</strong>. The purpos=
+e of workshops is to give room for presenting ideas and discussing prelimin=
+ary results in an interactive atmosphere while focusing on a specific topic=
+. Workshops may be proposed for=C2=A0<strong>a minimum of 1.5 hours and a m=
+aximum of </strong>3 hours in length. It should encourage lively debates an=
+d stimulate the production of new ideas and the discussion of controversial=
+ issues.</span></p></div> </td> </tr></table></td> </tr><tr><td class=3D"r9=
+-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout=
+:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r11-i n=
+l2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,=
+sans-serif;font-size:18px;word-break:break-word;line-height:1.5;padding-top=
+:15px;text-align:center"> <div><h3 class=3D"default-heading3" style=3D"marg=
+in:0;color:#1f2d3d;font-family:Arial;font-size:24px;word-break:break-word">=
+<a name=3D"review" style=3D"color:inherit;text-decoration:inherit;font-weig=
+ht:inherit;font-style:inherit">Review Criteria</a></h3></div> </td> </tr></=
+table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"le=
+ft" valign=3D"top" class=3D"r24-i nl2go-default-textstyle" style=3D"color:#=
+3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;line-height:1.=
+5;word-break:break-word;padding-bottom:15px;padding-top:15px;text-align:lef=
+t"> <div><p style=3D"margin:0"><span style=3D"font-size:16px">The decision =
+on acceptance or rejection of a workshop proposal will be made<strong> base=
+d on the overall quality</strong>=C2=A0of the proposal and its potential to=
+ attract a sufficiently broad community.=C2=A0</span></p></div> </td> </tr>=
+</table></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr=
+></table></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-=
+o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"=
+r25-i" style=3D"background-color:#eff2f7"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D"center=
+" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><td class=3D"=
+r28-i" style=3D"padding-bottom:20px;padding-top:20px"> <table width=3D"100%=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><t=
+r><th width=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:nor=
+mal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"prese=
+ntation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:10=
+0%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=3D"100%" cellspacin=
+g=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=
+=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-=
+layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r=
+11-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial,helv=
+etica,sans-serif;font-size:18px;word-break:break-word;line-height:1.5;paddi=
+ng-top:15px;text-align:center"> <div><h3 class=3D"default-heading3" style=
+=3D"margin:0;color:#1f2d3d;font-family:Arial;font-size:24px;word-break:brea=
+k-word"><a name=3D"guidelines" style=3D"color:inherit;text-decoration:inher=
+it;font-weight:inherit;font-style:inherit">Proposal guidelines</a></h3></di=
+v> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr>=
+<td align=3D"left" valign=3D"top" class=3D"r24-i nl2go-default-textstyle" s=
+tyle=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px=
+;line-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px=
+;text-align:left"> <div><p style=3D"margin:0"><span style=3D"font-size:16px=
+"><strong>All workshop proposals should be sent to=C2=A0</strong></span><a =
+href=3D"mailto:seedconf@upv.es" target=3D"_blank" style=3D"color:#e8195a;fo=
+nt-weight:normal;text-decoration:none"><span style=3D"color:#212121;font-si=
+ze:16px"><strong>seedconf@upv.es</strong></span></a><span style=3D"font-siz=
+e:16px"><strong> in English</strong> as a single PDF file (2-6 pages) conta=
+ining the following sections:</span></p></div> </td> </tr></table></td> </t=
+r><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" =
+style=3D"table-layout:fixed;width:100%"><tr><td align=3D"left" valign=3D"to=
+p" class=3D"r40-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-fami=
+ly:arial,helvetica,sans-serif;font-size:18px;word-break:break-word;backgrou=
+nd-color:#dcdcdc;line-height:1;padding-bottom:16px;padding-top:7px;text-ali=
+gn:left"> <div><ul style=3D"margin:0"><li><span style=3D"font-size:12px">Ti=
+tle and acronym.</span></li><li><span style=3D"font-size:12px">Abstract: 15=
+0-200 word abstract describing the workshop purpose.</span><ul style=3D"mar=
+gin:0"><li><span style=3D"font-size:12px">Objectives: a clear description o=
+f the workshop objectives.=C2=A0</span></li><li><span style=3D"font-size:12=
+px">Description of the topics and scope of the workshop.</span></li></ul></=
+li><li><span style=3D"font-size:12px">Organizer: a short biographical sketc=
+h of the workshop organizer, describing relevant experience and qualificati=
+ons.</span></li><li><span style=3D"font-size:12px">Intended audience: descr=
+iption of the anticipated audience, including experience level and prerequi=
+sites, the expected number of participants to the workshop and how the work=
+shop organizer will call for participation.</span></li><li><span style=3D"f=
+ont-size:12px">Rough agenda: 1-page outline of the workshop content describ=
+ing the workshop dynamics, including tentative speakers, format (panels, ca=
+ll for extended abstracts, etc).</span><ul style=3D"margin:0"><li><span sty=
+le=3D"font-size:12px">If the workshops consist of the selection & publicati=
+on of =E2=80=9Cextended abstracts=E2=80=9D (this is only a possibility):</s=
+pan><ul style=3D"margin:0"><li><span style=3D"font-size:12px">Tentative dat=
+es</span></li><li><span style=3D"font-size:12px">Review process=C2=A0</span=
+></li><li><span style=3D"font-size:12px">Publication opportunities=C2=A0</s=
+pan></li></ul></li></ul></li><li><span style=3D"font-size:12px">Infrastruct=
+ure: Description of the infrastructure needed to carry out the workshop.</s=
+pan></li><li><span style=3D"font-size:12px">Statement from the organizers w=
+illing to publish an extended abstract of the findings of the workshop (Fin=
+al version submission deadline July 28, 2024)</span></li><li><span style=3D=
+"font-size:12px">Maximum capacity of attendees=C2=A0</span></li><li><span s=
+tyle=3D"font-size:12px">Other information: For instance, information that w=
+ill let attendees know more about your workshop.</span></li></ul></div> </t=
+d> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"center" style=
+=3D"align:center;padding-bottom:15px;padding-top:15px;valign:top"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"300" class=3D"r14-o" style=3D"background-color:#fbbc0d;border-collapse:=
+separate;border-color:#fbbc0d;border-radius:4px;border-style:solid;border-w=
+idth:0px;table-layout:fixed;width:300px"><tr><td height=3D"18" align=3D"cen=
+ter" valign=3D"top" class=3D"r15-i nl2go-default-textstyle" style=3D"word-b=
+reak:break-word;background-color:#fbbc0d;border-radius:4px;color:#000000;fo=
+nt-family:arial,helvetica,sans-serif;font-size:16px;font-style:normal;line-=
+height:1.15;padding-bottom:12px;padding-left:5px;padding-right:5px;padding-=
+top:12px;text-align:center"> <a href=3D"https://bqay9.r.a.d.sendibm1.com/mk=
+/cl/f/sh/7nVU1aA2ng5gPlc4BH0kFTg817I5aUA/baR9VplsOd8L" class=3D"r32-r defau=
+lt-button" target=3D"_blank" data-btn=3D"6" style=3D"font-style:normal;font=
+-weight:bold;line-height:1.15;text-decoration:none;word-break:break-word;wo=
+rd-wrap:break-word;display:block;-webkit-text-size-adjust:none;color:#00000=
+0;font-family:arial,helvetica,sans-serif;font-size:16px" sib_link_id=3D"7" =
+templating=3D"n"> <span>Read more</span></a> </td> </tr></table></td> </tr>=
+</table></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr=
+></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-l=
+ayout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r25-i" style=3D"bac=
+kground-color:#eff2f7"> <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" =
+style=3D"table-layout:fixed;width:600px"><tr><td class=3D"r8-i"> <table wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presen=
+tation"><tr><th width=3D"50%" valign=3D"top" class=3D"r4-c" style=3D"font-w=
+eight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed=
+;width:100%"><tr><td valign=3D"top" class=3D"r6-i"> <table width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><=
+td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=
+=3D"table-layout:fixed;width:100%"><tr><td align=3D"left" valign=3D"top" cl=
+ass=3D"r31-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:ar=
+ial,helvetica,sans-serif;font-size:18px;line-height:1.5;word-break:break-wo=
+rd;padding-bottom:5px;padding-left:10px;padding-right:10px;padding-top:5px;=
+text-align:left"> <div><p style=3D"margin:0"><span style=3D"font-size:18px"=
+><strong>Resources provided by the SEED organizing committee:</strong></spa=
+n></p><ul style=3D"margin:0"><li><span style=3D"font-size:15px">A link on t=
+he SEED website.</span></li><li><span style=3D"font-size:15px">Management o=
+f registration for participants.</span></li><li><span style=3D"font-size:15=
+px">Setup of meeting space and related equipment.</span></li></ul></div> </=
+td> </tr></table></td> </tr></table></td> </tr></table></th> <th width=3D"5=
+0%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valig=
+n=3D"top" class=3D"r6-i"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" align=3D=
+"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width=
+:100%"><tr><td align=3D"left" valign=3D"top" class=3D"r41-i nl2go-default-t=
+extstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;fon=
+t-size:18px;line-height:1.5;word-break:break-word;padding-left:10px;padding=
+-right:9px;padding-top:5px;text-align:left"> <div><p style=3D"margin:0"><sp=
+an style=3D"font-size:18px"><strong>The workshop organizer must take care o=
+f the following:</strong></span></p><ul style=3D"margin:0"><li><span style=
+=3D"font-size:15px">Coordinating schedules and deadlines with the SEED orga=
+nizing committee.</span></li><li><span style=3D"font-size:15px">Provide a b=
+rief description of the workshop for inclusion in the SEED website and the =
+workshop program when it is final.=C2=A0</span><br>=C2=A0</li></ul></div> <=
+/td> </tr></table></td> </tr></table></td> </tr></table></th> </tr></table>=
+</td> </tr></table></td> </tr></table><table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" c=
+lass=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top=
+" class=3D"r25-i" style=3D"background-color:#eff2f7"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" alig=
+n=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><t=
+d class=3D"r42-i" style=3D"padding-bottom:30px"> <table width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th =
+width=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> =
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><t=
+r><td valign=3D"top" class=3D"r43-i"> <table width=3D"100%" cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r1=
+3-c" align=3D"center" style=3D"align:center;padding-bottom:15px;padding-top=
+:15px;valign:top"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation" width=3D"300" class=3D"r14-o" style=3D"background-col=
+or:#fbbc0d;border-collapse:separate;border-color:#fbbc0d;border-radius:4px;=
+border-style:solid;border-width:0px;table-layout:fixed;width:300px"><tr><td=
+ height=3D"18" align=3D"center" valign=3D"top" class=3D"r15-i nl2go-default=
+-textstyle" style=3D"word-break:break-word;background-color:#fbbc0d;border-=
+radius:4px;color:#000000;font-family:arial,helvetica,sans-serif;font-size:1=
+6px;font-style:normal;line-height:1.15;padding-bottom:12px;padding-left:5px=
+;padding-right:5px;padding-top:12px;text-align:center"> <a href=3D"https://=
+bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng7ZPI7N9qFCHpzwBTmsKQg/1E62g4k=
+SK62G" class=3D"r32-r default-button" target=3D"_blank" data-btn=3D"7" styl=
+e=3D"font-style:normal;font-weight:bold;line-height:1.15;text-decoration:no=
+ne;word-break:break-word;word-wrap:break-word;display:block;-webkit-text-si=
+ze-adjust:none;color:#000000;font-family:arial,helvetica,sans-serif;font-si=
+ze:16px" sib_link_id=3D"8" templating=3D"n"> <span>Read more</span></a> </t=
+d> </tr></table></td> </tr></table></td> </tr></table></th> </tr></table></=
+td> </tr></table></td> </tr></table><table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" clas=
+s=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" c=
+lass=3D"r18-i" style=3D"background-color:#e8bec7"> <table cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=
+=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:600px"><tr><td=
+ class=3D"r33-i" style=3D"padding-bottom:20px;padding-top:20px"> <table wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presen=
+tation"><tr><th width=3D"100%" valign=3D"top" class=3D"r4-c" style=3D"font-=
+weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixe=
+d;width:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-left:1=
+5px;padding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r9-c" align=3D"=
+left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:=
+100%"><tr><td align=3D"center" valign=3D"top" class=3D"r11-i nl2go-default-=
+textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;fo=
+nt-size:18px;line-height:1.5;word-break:break-word;padding-top:15px;text-al=
+ign:center"> <div><h3 class=3D"default-heading3" style=3D"margin:0;color:#1=
+f2d3d;font-family:Arial;font-size:24px;word-break:break-word"><a name=3D"da=
+tes2" style=3D"color:inherit;text-decoration:inherit;font-weight:inherit;fo=
+nt-style:inherit"><span style=3D"color:#e8195a">Important dates</span></a><=
+/h3></div> </td> </tr></table></td> </tr></table></td> </tr></table></th> <=
+/tr></table></td> </tr></table></td> </tr></table><table cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=
+=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:100%"><tr><td =
+valign=3D"top" class=3D"r18-i" style=3D"background-color:#e8bec7"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"600" align=3D"center" class=3D"r0-o" style=3D"table-layout:fixed;width:=
+600px"><tr><td class=3D"r38-i" style=3D"padding-bottom:30px"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tr><th width=3D"25%" valign=3D"top" class=3D"r4-c" style=3D"font-wei=
+ght:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:fixed=
+;width:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-left:7p=
+x;padding-right:7px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D"c=
+enter"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"20" class=3D"r35-o" style=3D"table-layout:fixed;width:2=
+0px"><tr><td class=3D"r36-i" style=3D"font-size:0px;line-height:0px;padding=
+-bottom:10px;padding-top:10px"> <img src=3D"https://bqay9.img.a.d.sendibm1.=
+com/im/sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D=
+"20" border=3D"0" style=3D"display:block;width:100%" sib_img_id=3D"3"></td>=
+ </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"r37-i nl2go-default-textstyle" style=
+=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;wor=
+d-break:break-word;line-height:1;padding-bottom:5px;text-align:center"> <di=
+v><p style=3D"margin:0"><span style=3D"color:#e8195a;font-size:14px"><stron=
+g>February 2, 2024</strong></span><br><span style=3D"color:#e8195a;font-siz=
+e:14px">Workshop proposals due</span></p></div> </td> </tr></table></td> </=
+tr></table></td> </tr></table></th> <th width=3D"25%" valign=3D"top" class=
+=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r5-o" st=
+yle=3D"table-layout:fixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i"=
+ style=3D"padding-left:7px;padding-right:7px"> <table width=3D"100%" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><td cl=
+ass=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation" width=3D"20" class=3D"r35-o" style=3D"tab=
+le-layout:fixed;width:20px"><tr><td class=3D"r36-i" style=3D"font-size:0px;=
+line-height:0px;padding-bottom:10px;padding-top:10px"> <img src=3D"https://=
+bqay9.img.a.d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAW=
+MpwvrGXBl2pi2" width=3D"20" border=3D"0" style=3D"display:block;width:100%"=
+ sib_img_id=3D"3"></td> </tr></table></td> </tr><tr><td class=3D"r9-c" alig=
+n=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;w=
+idth:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r37-i nl2go-def=
+ault-textstyle" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-ser=
+if;font-size:18px;word-break:break-word;line-height:1;padding-bottom:5px;te=
+xt-align:center"> <div><p style=3D"margin:0"><span style=3D"color:#e8195a;f=
+ont-size:14px"><strong>March 15, 2024</strong></span><br><span style=3D"col=
+or:#e8195a;font-size:14px">Author notification</span></p></div> </td> </tr>=
+</table></td> </tr></table></td> </tr></table></th> <th width=3D"25%" valig=
+n=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D"to=
+p" class=3D"r6-i" style=3D"padding-left:7px;padding-right:7px"> <table widt=
+h=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation"><tr><td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"20" class=3D"r3=
+5-o" style=3D"table-layout:fixed;width:20px"><tr><td class=3D"r36-i" style=
+=3D"font-size:0px;line-height:0px;padding-bottom:10px;padding-top:10px"> <i=
+mg src=3D"https://bqay9.img.a.d.sendibm1.com/im/sh/EYxyrNYQUoKx.png?u=3D2Bp=
+Ayz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=3D"20" border=3D"0" style=3D"display=
+:block;width:100%" sib_img_id=3D"3"></td> </tr></table></td> </tr><tr><td c=
+lass=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"ta=
+ble-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=
+=3D"r37-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:arial=
+,helvetica,sans-serif;font-size:18px;word-break:break-word;line-height:1;pa=
+dding-bottom:5px;text-align:center"> <div><p style=3D"margin:0"><span style=
+=3D"color:#e8195a;font-size:14px"><strong>April 26, 2024</strong></span><br=
+><span style=3D"color:#e8195a;font-size:14px">Early registration deadline f=
+or authors</span></p></div> </td> </tr></table></td> </tr></table></td> </t=
+r></table></th> <th width=3D"25%" valign=3D"top" class=3D"r4-c" style=3D"fo=
+nt-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation" width=3D"100%" class=3D"r5-o" style=3D"table-layout:f=
+ixed;width:100%"><tr><td valign=3D"top" class=3D"r6-i" style=3D"padding-lef=
+t:7px;padding-right:7px"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tr><td class=3D"r2-c" align=3D=
+"center"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation" width=3D"20" class=3D"r35-o" style=3D"table-layout:fixed;width=
+:20px"><tr><td class=3D"r36-i" style=3D"font-size:0px;line-height:0px;paddi=
+ng-bottom:10px;padding-top:10px"> <img src=3D"https://bqay9.img.a.d.sendibm=
+1.com/im/sh/EYxyrNYQUoKx.png?u=3D2BpAyz2gMiWnciGhXNYAWMpwvrGXBl2pi2" width=
+=3D"20" border=3D"0" style=3D"display:block;width:100%" sib_img_id=3D"3"></=
+td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td a=
+lign=3D"center" valign=3D"top" class=3D"r37-i nl2go-default-textstyle" styl=
+e=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:18px;wo=
+rd-break:break-word;line-height:1;padding-bottom:5px;text-align:center"> <d=
+iv><p style=3D"margin:0"><span style=3D"color:#e8195a;font-size:14px"><stro=
+ng>July 3-5, 2024</strong></span><br><span style=3D"color:#e8195a;font-size=
+:14px">Conference dates</span></p></div> </td> </tr></table></td> </tr></ta=
+ble></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr></t=
+able><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presen=
+tation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-layou=
+t:fixed;width:100%"><tr><td valign=3D"top" class=3D"r44-i" style=3D"backgro=
+und-color:#2466a1"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" style=
+=3D"table-layout:fixed;width:600px"><tr><td class=3D"r46-i" style=3D"paddin=
+g-bottom:10px;padding-top:10px"> <table width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" v=
+align=3D"middle" class=3D"r47-c" style=3D"font-weight:normal"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=
+=3D"top" class=3D"r6-i" style=3D"padding-left:15px;padding-right:15px"> <ta=
+ble width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation"><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"cente=
+r" valign=3D"top" class=3D"r48-i nl2go-default-textstyle" style=3D"font-fam=
+ily:arial,helvetica,sans-serif;word-break:break-word;color:#3b3f44;font-siz=
+e:18px;line-height:1.15;padding-bottom:15px;padding-top:15px;text-align:cen=
+ter"> <div><p style=3D"margin:0"><span style=3D"color:#ffffff;font-size:14p=
+x"><strong>Remember, your workshop proposal should be sent by e-mail=C2=A0<=
+/strong></span><br><span style=3D"color:#ffffff;font-size:14px"><strong>by =
+February 2, 2024 to =C2=A0</strong></span><a href=3D"mailto:seedconf@upv.es=
+" target=3D"_blank" style=3D"color:#e8195a;font-weight:normal;text-decorati=
+on:none"><span style=3D"color:#ffffff;font-size:14px"><strong>seedconf@upv.=
+es</strong></span></a><a target=3D"_blank" style=3D"color:#e8195a;font-weig=
+ht:normal;text-decoration:none"><span style=3D"color:#ffffff;font-size:14px=
+"><strong>.</strong></span></a></p><p style=3D"margin:0"><span style=3D"col=
+or:#ffffff;font-size:14px"><strong>If you have questions about the registra=
+tion process, don=E2=80=99t hesitate to </strong></span><a href=3D"mailto:s=
+eedconf@upv.es" target=3D"_blank" style=3D"color:#e8195a;font-weight:normal=
+;text-decoration:none"><span style=3D"color:#ffffff;font-size:14px"><strong=
+>contact us</strong></span></a><span style=3D"color:#ffffff;font-size:14px"=
+><strong>!=C2=A0</strong></span></p></div> </td> </tr></table></td> </tr></=
+table></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr><=
+/table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-lay=
+out:fixed;width:100%"><tr><td valign=3D"top" class=3D"r49-i" style=3D"backg=
+round-color:#438ac9"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" styl=
+e=3D"table-layout:fixed;width:600px"><tr><td class=3D"r50-i" style=3D"paddi=
+ng-bottom:20px;padding-top:30px"> <table width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" =
+valign=3D"top" class=3D"r4-c" style=3D"font-weight:normal"> <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100=
+%" class=3D"r5-o" style=3D"table-layout:fixed;width:100%"><tr><td valign=3D=
+"top" class=3D"r6-i" style=3D"padding-left:15px;padding-right:15px"> <table=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation"><tr><td class=3D"r2-c" align=3D"center"> <table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"171" class=
+=3D"r7-o" style=3D"table-layout:fixed;width:171px"><tr><td class=3D"r51-i" =
+style=3D"font-size:0px;line-height:0px;padding-top:15px"> <a href=3D"https:=
+//bqay9.r.a.d.sendibm1.com/mk/cl/f/sh/7nVU1aA2ng9SOocg8PTeKCJkLqHf4NC/kSUHo=
+1JdM_Xl" target=3D"_blank" style=3D"color:#e8195a;font-weight:normal;text-d=
+ecoration:none" sib_link_id=3D"9" templating=3D"n"> <img src=3D"https://bqa=
+y9.img.a.d.sendibm1.com/im/sh/ITWGiRffAgUB.jpg?u=3D2BpAyz2gMiWnck9h3sr95bHz=
+IB4hYFpZeY" width=3D"171" border=3D"0" style=3D"display:block;width:100%" s=
+ib_img_id=3D"4"></a> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" a=
+lign=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixe=
+d;width:100%"><tr><td align=3D"center" valign=3D"top" class=3D"r52-i nl2go-=
+default-textstyle" style=3D"font-family:arial,helvetica,sans-serif;word-bre=
+ak:break-word;color:#3b3f44;font-size:18px;line-height:1.5;text-align:cente=
+r"> <div><p style=3D"margin:0;font-size:14px"><span style=3D"color:#ffffff;=
+font-size:18px"><strong>Sustainable Energy Education</strong></span><br><sp=
+an style=3D"color:#ffffff;font-size:18px">Valencia, July 3-5, 2024</span></=
+p></div> </td> </tr></table></td> </tr><tr><td class=3D"r9-c" align=3D"left=
+"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion" width=3D"100%" class=3D"r10-o" style=3D"table-layout:fixed;width:100%=
+"><tr><td align=3D"center" valign=3D"top" class=3D"r22-i nl2go-default-text=
+style" style=3D"color:#3b3f44;font-family:arial,helvetica,sans-serif;font-s=
+ize:18px;word-break:break-word;line-height:1.15;padding-bottom:15px;padding=
+-top:15px;text-align:center"> <div><p style=3D"margin:0"><span style=3D"col=
+or:#ffffff;font-size:14px">The organizing committee looks forward to welcom=
+ing you to a fruitful conference with open discussions and important networ=
+king to promote Sustainable Energy Education.</span></p></div> </td> </tr><=
+/table></td> </tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r10-o" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"ce=
+nter" valign=3D"top" class=3D"r53-i nl2go-default-textstyle" style=3D"font-=
+family:arial,helvetica,sans-serif;word-break:break-word;color:#3b3f44;font-=
+size:18px;line-height:1.5;padding-top:15px;text-align:center"> <div><p styl=
+e=3D"margin:0;font-size:14px"><span style=3D"color:#ffffff">This email was =
+sent to=C2=A0lorenz@leutgeb.xyz</span></p></div> </td> </tr></table></td> <=
+/tr><tr><td class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o=
+" style=3D"table-layout:fixed;width:100%"><tr><td align=3D"center" valign=
+=3D"top" class=3D"r52-i nl2go-default-textstyle" style=3D"font-family:arial=
+,helvetica,sans-serif;word-break:break-word;color:#3b3f44;font-size:18px;li=
+ne-height:1.5;text-align:center"> <div><p style=3D"margin:0;font-size:14px"=
+><span style=3D"color:#ffffff">You've received it because you've subscribed=
+ to our newsletter.</span></p></div> </td> </tr></table></td> </tr><tr><td =
+class=3D"r9-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation" width=3D"100%" class=3D"r10-o" style=3D"t=
+able-layout:fixed;width:100%"><tr><td align=3D"center" valign=3D"top" class=
+=3D"r48-i nl2go-default-textstyle" style=3D"font-family:arial,helvetica,san=
+s-serif;word-break:break-word;color:#3b3f44;font-size:18px;line-height:1.5;=
+padding-bottom:15px;padding-top:15px;text-align:center"> <div><p style=3D"m=
+argin:0;font-size:14px"><a href=3D"https://bqay9.r.a.d.sendibm1.com/mk/mr/s=
+h/7nVTPdZCTJDXPPEcI4fEhMjJ1w8dTjK/gaIl0zxE_UEM" style=3D"color:#e8195a;font=
+-weight:normal;text-decoration:none"><span style=3D"color:#ffffff">View in =
+browser</span></a><span style=3D"color:#ffffff"> | </span><a href=3D"https:=
+//bqay9.r.a.d.sendibm1.com/mk/un/sh/7nVTPdbLJ2bPbgKjM8yh8T94GN5hvLa/M-9fNpT=
+39YiH" style=3D"color:#e8195a;font-weight:normal;text-decoration:none"><spa=
+n style=3D"color:#ffffff">Unsubscribe</span></a></p></div> </td> </tr></tab=
+le></td> </tr></table></td> </tr></table></th> </tr></table></td> </tr></ta=
+ble></td> </tr></table></td> </tr></table> </body></html>=20
+
+---------?=_46479-8733943526469--
