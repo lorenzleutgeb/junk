@@ -1,0 +1,281 @@
+Return-Path: <ivy.hsu@apacsci.net>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp1.migadu.com ([2001:41d0:303:e16b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms13.migadu.com with LMTPS
+	id kMJXI6aMrWfPTQAA62LTzQ:P1
+	(envelope-from <ivy.hsu@apacsci.net>)
+	for <lorenz@leutgeb.xyz>; Thu, 13 Feb 2025 06:09:42 +0000
+Received: from aspmx1.migadu.com ([2001:41d0:303:e16b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp1.migadu.com with LMTPS
+	id kMJXI6aMrWfPTQAA62LTzQ
+	(envelope-from <ivy.hsu@apacsci.net>)
+	for <lorenz@leutgeb.xyz>; Thu, 13 Feb 2025 07:09:42 +0100
+X-Envelope-To: lorenz@leutgeb.xyz
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=apacsci-net.20230601.gappssmtp.com header.s=20230601 header.b=cfalhpwM;
+	spf=pass (aspmx1.migadu.com: domain of ivy.hsu@apacsci.net designates 2607:f8b0:4864:20::641 as permitted sender) smtp.mailfrom=ivy.hsu@apacsci.net;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1739426981;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=tsuDmpYIm/jtdNrAAA83ULCHzLwqKARzvpq//1KYu0w=;
+	b=TaRxYcJDp+gFqxiB24ODqt1mtNh0qlQr1M2N3VDh8y6T/Gml+tHAhbzW/n/3i5v1fyUVVQ
+	qNeI8N5FINJHqfkvJYWBl8zoaOvUrTLPWoNAtmE121EjKX/yNeSTgtj9O/D+s4g/hQuGkn
+	B4nSoIRqiqzplMQRZY7Bz+ltQdlfSxE=
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1739426981; a=rsa-sha256; cv=none;
+	b=d4KW6/dV0XThhQL4b1JxtgSKMpKFDNio6VaJKcd/Of6W4dGknpLbcP3dNIhSKFbgP1I16A
+	7mEveO7FwChFwZoj+CYMhsN/kp6ELlyJ6D8rUioNsBkh4CVszdungZalyq/6NyGsTKs9Rh
+	/03pTyB3Gzvo6J6kIYD0Abc8TKPNbsw=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=apacsci-net.20230601.gappssmtp.com header.s=20230601 header.b=cfalhpwM;
+	spf=pass (aspmx1.migadu.com: domain of ivy.hsu@apacsci.net designates 2607:f8b0:4864:20::641 as permitted sender) smtp.mailfrom=ivy.hsu@apacsci.net;
+	dmarc=none
+Received: from mail-pl1-x641.google.com (mail-pl1-x641.google.com [IPv6:2607:f8b0:4864:20::641])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 7FC7B81CF4
+	for <lorenz@leutgeb.xyz>; Thu, 13 Feb 2025 07:09:38 +0100 (CET)
+Received: by mail-pl1-x641.google.com with SMTP id d9443c01a7336-21f40deb941so10737615ad.2
+        for <lorenz@leutgeb.xyz>; Wed, 12 Feb 2025 22:09:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=apacsci-net.20230601.gappssmtp.com; s=20230601; t=1739426976; x=1740031776; darn=leutgeb.xyz;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=tsuDmpYIm/jtdNrAAA83ULCHzLwqKARzvpq//1KYu0w=;
+        b=cfalhpwMocDhOJWZ3HMQwWEyB4k4NqZ0CPmdPkZTBu2rouO5xBnOKikC9JHJqoYAlr
+         jc00UrQ7YfyuECj+ErTiwijPoDyVzQ4oSqaYACiRHquyK8jet/NHZma/agLyXRH5zutM
+         cFiqwTcCy40dao9r9Lcca6WmUF+htXZOby949ekZTkzLZ7AUFGeKRWdR+Q8HhllzpXR9
+         KFmi3upIBST0+/DFj3LduTUEgQBiaWJhDRYuJJ6E0yzNmakGIyYyhkP+ML77Z5G5+9XV
+         O1rlYgthTg2Leny82ODNXFsHwVxwcLz7Kxl6D2xYq9V7zgH4b4VLFtQ+zwdpV5yyrbmP
+         7i8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739426976; x=1740031776;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tsuDmpYIm/jtdNrAAA83ULCHzLwqKARzvpq//1KYu0w=;
+        b=Eh29bEi1zxMIrreCjCOEvrkWVyLVnhrMDQ+4EZ13RKlyHhU+HQ5YdZKo8Q5f+hhqF9
+         Pr6UHXkrYabfKlS6yUxz1jXZAVqNGczlX3pfhBtjDdGL6rZr4Jre/03NmaSvht9t7iid
+         eO2CKebQdNhDdYzrJg7dIqRh8GjjuuNUXSxKDfm5//OhGDZcaZW7lTMXsSsKz5c6ZDkK
+         qxQ7FiUSEPk5O9/vRsSf8bHkkhsxtqA/ztC0dTUBVVx2ef5KHbDgNq1+u3k/zkjc7I8B
+         0GpFqrsNw92bQTb2QJurQuhjSKQ5Z7v7PXG9SvBqvZvzwgSYq14Lebs3ceTaV0oWKfZ5
+         s4Tg==
+X-Gm-Message-State: AOJu0YxTwWK1LAwjGWC+ZrVokDhluur3AVmFPq99VM4BZKzn49c+c6VG
+	vXuzrHeoaW3U1jhI+kdkiqcS1/y5FKkh+vwscYZJF4fu9cDb54vQQtOMdDrI6saRPLQq3MP/jko
+	mczecMY43ibfMl6FEv6rFkDYfkAuf0PldIlrqm6WBcAokdYzWwEJqTQ==
+X-Gm-Gg: ASbGncsS/G0FLZ/369G3zbCykkdxq6JIySerDAYaWLPX5nnq5vlYWEajfTa+iMRoNAy
+	Q1Slj915NrTPCm+6xa0tb/WFiCj54XUj4b2v4VxpWFamBDUfm22H2bfwB5o/vQzMtoTYc9vhZGQ
+	==
+X-Google-Smtp-Source: AGHT+IEowc0Wmcj/4ire6/gJ5xdzCMcOVA1agFxiJmjGq3EMxPCWFTv/OZ2WPFFUfolKvgcUZFHZAushhUM736VTaa0=
+X-Received: by 2002:a05:6902:200e:b0:e5b:38e5:d5d6 with SMTP id
+ 3f1490d57ef6-e5da813ba1fmr2070598276.12.1739426462906; Wed, 12 Feb 2025
+ 22:01:02 -0800 (PST)
+Received: from 776393159873 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 13 Feb 2025 01:01:00 -0500
+MIME-Version: 1.0
+From: Ivy Hsu <ivy.hsu@apacsci.net>
+Date: Thu, 13 Feb 2025 01:01:00 -0500
+X-Gm-Features: AWEUYZlxJTDFGJ4LB4AB2czcYTTDVMd0CVz-0Hl-pbO5VtC9y8Gp4ZJlSzFdOL4
+Message-ID: <CAGKth3n03bJsfHA-5xC8xGhD0L6fa2dTxZD87gMSndx_ieX0_w@mail.gmail.com>
+Subject: [Indexed by SCOPUS & EI ] Outstanding Bioengineers Contribute
+ submissions to Journal Molecular & Cellular Biomechanics (ISSN 1556-5300)
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="0000000000006f4afe062dffc806"
+X-Migadu-Country: US
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Spam-Score: -2.79
+X-Spam-Score: -2.79
+X-Migadu-Queue-Id: 7FC7B81CF4
+X-Migadu-Scanner: mx13.migadu.com
+
+--0000000000006f4afe062dffc806
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Dr. Leutgeb,
+
+I hope this message finds you well. I am reaching out to extend a warm
+invitation for you to consider contributing your esteemed research to
+Molecular & Cellular Biomechanics (MCB), a distinguished journal at the
+forefront of bio-Engineering research.
+
+
+
+Here are a few compelling reasons to choose MCB:
+
+1. Indexed: Ei Compendex, Scopus and Engineering Village.(Citescore:1.7 )
+
+2. Fast Publication: First decision is provided approximately 14 days after
+submission.
+
+3. Nice Editorial Process: Assistant Editors will provide the one-to-one
+service.
+
+4. Short Publication Times: Acceptance to publication is undertaken in 3
+days.
+
+
+
+
+
+By submitting your manuscript to MCB, you will join a dynamic community of
+researchers dedicated to shaping the future of biomechanics. We eagerly
+await the opportunity to review your innovative contributions and
+potentially feature them in our esteemed publication.
+
+
+
+Thank you for considering Molecular & Cellular Biomechanics as a platform
+for sharing your groundbreaking research.
+
+
+
+MCB Editorial Office
+
+Sin-Chn Scientific Press Pte. Ltd
+
+Address: 73 UPPER PAYA LEBAR ROAD #07-02B, CENTRO BIANCO, Singapore
+
+
+
+kind regards,
+
+--
+
+Commissioning Editor,
+Mr. Loweth Poh
+
+--0000000000006f4afe062dffc806
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p class=3D"MsoNormal" align=3D"justify" style=3D"margin:0=
+pt;text-indent:0pt;text-align:justify;font-family:Calibri;font-size:10.5pt"=
+><span style=3D"letter-spacing:0pt;font-size:10.5pt">Dear Dr. Leutgeb,</spa=
+n><span style=3D"letter-spacing:0pt;font-size:10.5pt"></span></p><p class=
+=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-indent:0pt;text-a=
+lign:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-sp=
+acing:0pt;font-size:10.5pt">I hope this message finds you well. I am reachi=
+ng out to extend a warm invitation for you to consider contributing your es=
+teemed research to Molecular &amp; Cellular Biomechanics (MCB), a distingui=
+shed journal at the forefront of bio-Engineering research.</span><span styl=
+e=3D"letter-spacing:0pt;font-size:10.5pt"></span></p><p class=3D"MsoNormal"=
+ align=3D"justify" style=3D"margin:0pt;text-indent:0pt;text-align:justify;f=
+ont-family:Calibri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font=
+-size:10.5pt">=C2=A0</span></p><p class=3D"MsoNormal" align=3D"justify" sty=
+le=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:Calibri;fon=
+t-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt">Here are=
+ a few compelling reasons to choose MCB:=C2=A0</span><span style=3D"letter-=
+spacing:0pt;font-size:10.5pt"></span></p><p class=3D"MsoNormal" align=3D"ju=
+stify" style=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:C=
+alibri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt=
+">1. Indexed: Ei Compendex, Scopus and Engineering Village.</span><span sty=
+le=3D"font-family:&quot;Times New Roman&quot;;letter-spacing:0pt;font-size:=
+10.5pt;background-image:initial;background-position:initial;background-size=
+:initial;background-repeat:initial;background-origin:initial;background-cli=
+p:initial">(Citescore:1.7=C2=A0)</span><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;;letter-spacing:0pt;font-size:10.5pt"></span></p><p class=
+=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-indent:0pt;text-a=
+lign:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-sp=
+acing:0pt;font-size:10.5pt">2. Fast Publication: First decision is provided=
+ approximately 14 days after submission.</span><span style=3D"letter-spacin=
+g:0pt;font-size:10.5pt"></span></p><p class=3D"MsoNormal" align=3D"justify"=
+ style=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:Calibri=
+;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt">3. N=
+ice Editorial Process: Assistant Editors will provide the one-to-one servic=
+e.</span><span style=3D"letter-spacing:0pt;font-size:10.5pt"></span></p><p =
+class=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-indent:0pt;t=
+ext-align:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"lett=
+er-spacing:0pt;font-size:10.5pt">4. Short Publication Times: Acceptance to =
+publication is undertaken in 3 days.</span><span style=3D"letter-spacing:0p=
+t;font-size:10.5pt"></span></p><p class=3D"MsoNormal" align=3D"justify" sty=
+le=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:Calibri;fon=
+t-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt">=C2=A0</=
+span></p><p class=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-=
+indent:0pt;text-align:justify;font-family:Calibri;font-size:10.5pt"><span s=
+tyle=3D"letter-spacing:0pt;font-size:10.5pt">=C2=A0</span></p><p class=3D"M=
+soNormal" align=3D"justify" style=3D"margin:0pt;text-indent:0pt;text-align:=
+justify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-spacing=
+:0pt;font-size:10.5pt">By submitting your manuscript to MCB, you will join =
+a dynamic community of researchers dedicated to shaping the future of biome=
+chanics. We eagerly await the opportunity to review your innovative contrib=
+utions and potentially feature them in our esteemed publication.</span><spa=
+n style=3D"letter-spacing:0pt;font-size:10.5pt"></span></p><p class=3D"MsoN=
+ormal" align=3D"justify" style=3D"margin:0pt;text-indent:0pt;text-align:jus=
+tify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-spacing:0p=
+t;font-size:10.5pt">=C2=A0</span></p><p class=3D"MsoNormal" align=3D"justif=
+y" style=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:Calib=
+ri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt">Th=
+ank you for considering Molecular &amp; Cellular Biomechanics as a platform=
+ for sharing your groundbreaking research.</span><span style=3D"letter-spac=
+ing:0pt;font-size:10.5pt"></span></p><p class=3D"MsoNormal" align=3D"justif=
+y" style=3D"margin:0pt;text-indent:0pt;text-align:justify;font-family:Calib=
+ri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt">=
+=C2=A0</span></p><p class=3D"MsoNormal" align=3D"justify" style=3D"margin:0=
+pt;text-align:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"=
+letter-spacing:0pt;font-size:10.5pt;background-image:initial;background-pos=
+ition:initial;background-size:initial;background-repeat:initial;background-=
+origin:initial;background-clip:initial">MCB=C2=A0Editorial Office</span><sp=
+an style=3D"font-size:10.5pt"></span></p><p class=3D"MsoNormal" align=3D"ju=
+stify" style=3D"margin:0pt;text-align:justify;font-family:Calibri;font-size=
+:10.5pt"><span style=3D"letter-spacing:0pt;font-size:10.5pt;background-imag=
+e:initial;background-position:initial;background-size:initial;background-re=
+peat:initial;background-origin:initial;background-clip:initial">Sin-Chn Sci=
+entific Press Pte. Ltd</span><span style=3D"font-size:10.5pt"></span></p><p=
+ class=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-align:justi=
+fy;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;=
+font-size:10.5pt;background-image:initial;background-position:initial;backg=
+round-size:initial;background-repeat:initial;background-origin:initial;back=
+ground-clip:initial">Address: 73 UPPER PAYA LEBAR ROAD #07-02B, CENTRO BIAN=
+CO, Singapore</span><span style=3D"font-size:10.5pt"></span></p><p class=3D=
+"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-align:justify;font-f=
+amily:Calibri;font-size:10.5pt"><span style=3D"font-family:=E5=AE=8B=E4=BD=
+=93;letter-spacing:0pt;font-size:10.5pt;background-image:initial;background=
+-position:initial;background-size:initial;background-repeat:initial;backgro=
+und-origin:initial;background-clip:initial"><font face=3D"=E5=AE=8B=E4=BD=
+=93">=C2=A0</font></span><span style=3D"font-size:10.5pt"></span></p><p cla=
+ss=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-align:justify;f=
+ont-family:Calibri;font-size:10.5pt"><span style=3D"letter-spacing:0pt;font=
+-size:10.5pt;background-image:initial;background-position:initial;backgroun=
+d-size:initial;background-repeat:initial;background-origin:initial;backgrou=
+nd-clip:initial">kind regards,</span><span style=3D"font-size:10.5pt"></spa=
+n></p><p class=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-ali=
+gn:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-spac=
+ing:0pt;font-size:10.5pt;background-image:initial;background-position:initi=
+al;background-size:initial;background-repeat:initial;background-origin:init=
+ial;background-clip:initial">--</span><span style=3D"font-size:10.5pt"></sp=
+an></p><p class=3D"MsoNormal" align=3D"justify" style=3D"margin:0pt;text-al=
+ign:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"letter-spa=
+cing:0pt;font-size:10.5pt;background-image:initial;background-position:init=
+ial;background-size:initial;background-repeat:initial;background-origin:ini=
+tial;background-clip:initial">Commissioning Editor,</span><span style=3D"fo=
+nt-size:10.5pt"></span></p><h3 style=3D"margin-left:0pt;text-indent:0pt;lin=
+e-height:12pt;background-image:initial;background-position:initial;backgrou=
+nd-size:initial;background-repeat:initial;background-origin:initial;backgro=
+und-clip:initial;margin-top:5pt;margin-bottom:5pt;font-family:=E5=AE=8B=E4=
+=BD=93;font-size:13.5pt"><span style=3D"font-family:&quot;Times New Roman&q=
+uot;;color:rgb(0,0,0);letter-spacing:0pt;font-weight:normal;font-size:9pt;b=
+ackground-image:initial;background-position:initial;background-size:initial=
+;background-repeat:initial;background-origin:initial;background-clip:initia=
+l">Mr. </span><span style=3D"font-family:&quot;Times New Roman&quot;;color:=
+rgb(31,31,31);letter-spacing:0pt;font-weight:normal;font-size:9pt;backgroun=
+d-image:initial;background-position:initial;background-size:initial;backgro=
+und-repeat:initial;background-origin:initial;background-clip:initial">Lowet=
+h Poh</span><span style=3D"font-family:&quot;Times New Roman&quot;;color:rg=
+b(31,31,31);letter-spacing:0pt;font-weight:normal;font-size:9pt;background-=
+image:initial;background-position:initial;background-size:initial;backgroun=
+d-repeat:initial;background-origin:initial;background-clip:initial"></span>=
+</h3><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:jus=
+tify;font-family:Calibri;font-size:10.5pt"><span style=3D"font-size:10.5pt"=
+>=C2=A0</span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;t=
+ext-align:justify;font-family:Calibri;font-size:10.5pt"><span style=3D"font=
+-size:10.5pt">=C2=A0</span></p></div>
+<img src=3D"https://apacsci-net.hmailroute.net/oLvoxbcAAoZsuKf4vVJElZLpZ9-x=
+ieoK8cil7-OSW6EGB-wmt8gbyhjaetaMT3WdwnSgBeLGJ5nmsoqXyR7wM9Z4D75ug2Bq473uL0-=
+RQiWUiwIZ4ESrAVFyaoFyKwkNxbt1kaXhMJoW8L9qYKC7uwGsYiSSu8CBbqIgJI5Eb3kajgmNl1=
+" alt=3D"">
+
+--0000000000006f4afe062dffc806--

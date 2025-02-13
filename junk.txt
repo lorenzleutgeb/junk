@@ -23,6 +23,7 @@
 *@amjcst.net
 *@amjlifesci.org
 *@apacsci-pub.net
+*@apacsci.net
 *@aris-journal.com
 *@arste.org
 *@athens-conferences.com
