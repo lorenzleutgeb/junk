@@ -1,0 +1,257 @@
+Return-Path: <bounce+c8d8aa.313e-lorenz.leutgeb=posteo.de@leutgeb.xyz>
+Delivered-To: lorenz.leutgeb@posteo.de
+Received: from proxy02.posteo.name ([127.0.0.1])
+	by dovecot12 (Dovecot) with LMTP id k79cCyJzol3YrQIAJesNpQ
+	for <lorenz.leutgeb@posteo.de>; Sun, 13 Oct 2019 02:45:44 +0200
+Received: from proxy02.posteo.de ([127.0.0.1])
+	by proxy02.posteo.name (Dovecot) with LMTP id NjYGLz9zol3ptwEAGFAyLg
+	; Sun, 13 Oct 2019 02:45:44 +0200
+Received: from mailin01.posteo.de (unknown [10.0.0.61])
+	by proxy02.posteo.de (Postfix) with ESMTPS id 46rNK40DPmzydt
+	for <lorenz.leutgeb@posteo.de>; Sun, 13 Oct 2019 02:45:44 +0200 (CEST)
+Received: from mx01.posteo.de (mailin02.posteo.de [127.0.0.1])
+	by mailin01.posteo.de (Postfix) with ESMTPS id EE3C4207C4
+	for <lorenz.leutgeb@posteo.de>; Sun, 13 Oct 2019 02:45:43 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at posteo.de
+X-Spam-Flag: NO
+X-Spam-Score: -0.988
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.988 tagged_above=-1000 required=8
+	tests=[ALL_TRUSTED=-1, HTML_FONT_LOW_CONTRAST=0.001,
+	HTML_MESSAGE=0.001, POSTEO_GENERICS_LP_CCOUNT=0.01] autolearn=disabled
+Authentication-Results: mailin01.posteo.de (amavisd-new);
+	dkim=pass (1024-bit key) header.d=leutgeb.xyz header.b=qqESbDaa;
+	dkim=pass (2048-bit key)
+	header.d=ajpediatrics-org.20150623.gappssmtp.com header.b=yoDG6IS7
+Received: from m32-19.eu.mailgun.net (m32-19.eu.mailgun.net [141.193.32.19])
+	by mx01.posteo.de (Postfix) with ESMTPS id 46rNK30gDhzyy0
+	for <lorenz.leutgeb@posteo.de>; Sun, 13 Oct 2019 02:45:43 +0200 (CEST)
+Authentication-Results: mx01.posteo.de; dmarc=none (p=none dis=none) header.from=ajpediatrics.org
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=leutgeb.xyz; q=dns/txt; s=pic;
+ t=1570927542; h=Content-Type: To: Subject: Message-ID: Date: From:
+ MIME-Version; bh=1cupDAVIAOI4J4uHo8KPTFRtXvT+oX9I1A+MfKejXdE=; b=qqESbDaaXLV1fD7CxO7twATGi96c7YyqOSKMk9Dx5Ful1NMwKH+eIjdBSboXvC5r4RaCFzKC
+ Rcpg9m1URS2DBacRZYSuYesgILzI+YcadWHAA9sLus5TimyLaWBedfSBeCTDfby+PaTeynqI
+ uQXgbc0+E1Rh7WAG8owGsztnjfU=
+X-Mailgun-Sending-Ip: 141.193.32.19
+X-Mailgun-Spam-Rules: DKIM_SIGNED, DKIM_VALID, HTML_FONT_LOW_CONTRAST,
+ HTML_MESSAGE, RCVD_IN_DNSWL_NONE, RCVD_IN_MSPIKE_H2, SPF_HELO_NONE, SPF_NONE
+X-Mailgun-Dkim-Check-Result: Pass
+X-Mailgun-Spf: Neutral
+X-Mailgun-Sscore: 0.0
+X-Mailgun-Sflag: No
+X-Mailgun-Incoming: Yes
+X-Envelope-From: <journal@ajpediatrics.org>
+Received: from mail-wr1-f68.google.com (mail-wr1-f68.google.com [209.85.221.68])
+ by mxa.mailgun.org with ESMTP id 5da273b5.7f77089066b0-smtp-in-n02;
+ Sun, 13 Oct 2019 00:45:41 -0000 (UTC)
+Received: by mail-wr1-f68.google.com with SMTP id n14so15618037wrw.9
+        for <lorenz@leutgeb.xyz>; Sat, 12 Oct 2019 17:45:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ajpediatrics-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=1cupDAVIAOI4J4uHo8KPTFRtXvT+oX9I1A+MfKejXdE=;
+        b=yoDG6IS7u8QpZT1tp1KSE3n4lNuE6iQafCkLmlFB+APQKZ0CFzfgE9k5ecucB0vZzF
+         t8bB1IGxIpSzyiRcm/JdpWLFWSfzdBB8zoE0GH9/ZbXcOxjAt2uDO2vRYoPoSxncZxKp
+         hX+HGZfLl1uyqU+xRR5tMVeA09nfBdvZLpu3qh9ioFpHDZWQgH0wWvTlqDh9ds8668i4
+         vYQNnZhecM6aERGd/mJhvLf6hmK13gzRBFFAtP3/7IBwOdbUnCM2k7g8y8EvUOk0LU0B
+         U56w1Q7lD9T35TLFGUpFgQl4y8TgEjwdAlZ7qrFEHzySjKu4zaCf2FaqpWpiWsagezxc
+         YxyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=1cupDAVIAOI4J4uHo8KPTFRtXvT+oX9I1A+MfKejXdE=;
+        b=CpccuBPU0Y6Zn9VVYDZOWUMuFsOJ7aHdJh3daSrC7RxjZY1o7h78oPCHujOszhc3G8
+         B26wTtYS+h1Za+NoryS5Rty+sHJ/N2n4v+zthuWUFKMVSxb7I1dl7JY/WEnTfCuqNAGv
+         s0u/Hb4mjakbiqtC4+Aiv6U8hJMxjY2m6KZOKZL/2q4IJq+CjfkvJbFaWeXXR27S4gMI
+         tFw94wBOlxJFG4V7CubJGWqlwRzup4CB3EFuvtVkjexnUKSK92N5Yu1BGmyu2DzFCXHM
+         oL7tqmr3oqTtzhEvj7bPEica4skpTooGqOgDs2zCyi0B4LW+56sSM+aIVS0sW77alXUW
+         2dog==
+X-Gm-Message-State: APjAAAXZ8XrLv+CpVnd7v5ezimMZRPuu3LrwtbkBFeZbY55Baba2KPG4
+	Ei6G4C5ctk/QgNeVi8qzJKPg5b+se1JnVvis0xmZpX4Pi/p6Zw==
+X-Google-Smtp-Source: APXvYqyoTN47yBbfda/CiWBlPK/55Hvqub5W0FRtLMXA5lK3RzEuRjbgR5JmyGoH931YLiH+BN7AGkz3z6f3iSxWB3s=
+X-Received: by 2002:a5d:5705:: with SMTP id a5mr19986036wrv.112.1570927540268;
+ Sat, 12 Oct 2019 17:45:40 -0700 (PDT)
+MIME-Version: 1.0
+From: Journal AJP <journal@ajpediatrics.org>
+Date: Sun, 13 Oct 2019 08:45:29 +0800
+Message-ID: <CAPNhcKhgA2zzfA=FOmCcTbbGDz3MQW64oYpYuPwhuxr-LxKWLQ@mail.gmail.com>
+Subject: Dear Leutgeb, L; Weinzierl, A: A Formal Invitation from the Editorial
+ Board of Mathematics and Computer Science
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="000000000000017ddf0594c01274"
+
+--000000000000017ddf0594c01274
+Content-Type: text/plain; charset="UTF-8"
+
+Mathematics and Computer Science
+ISSN Online: 2575-6028, ISSN Print: 2575-6036
+Current Issue: Vol.4, No.2, 2019
+Dear Leutgeb, L; Weinzierl, A,
+We are very happy to have the opportunity to read your article titled
+"Techniques
+for Efficient Lazy-Grounding ASP Solving". We feel that your research field
+is in line with Mathematics and Computer Science. We sincerely invite you,
+on behalf of the Editorial Board of Members, to contribute your valuable
+unpublished research articles to our journal for publication.
+Selected Journals
+There are 300+ journals covering nearly all disciplines in our platform
+like Applied Physics, Forestry, Health, Water Resources, Systems Science,
+Civil Engineering, Industrial Engineering, Finance, Political Science,
+Sustainable Development, etc.
+To get more information, please feel free to visit:
+http://www.mathcomputer.org/journals
+American Journal of Applied Mathematics
+International Journal of Theoretical and Applied Mathematics
+Science Journal of Applied Mathematics and Statistics
+American Journal of Mathematical and Computer Modelling
+American Journal of Electrical and Computer Engineering
+Efficient Publication
+1. Fast Publication Service
+Your paper can be published online within 45-60 days since the date of
+submission.
+3. Professional Revision Suggestion
+More than 3 peer reviewers from all over the world will carefully
+scrutinize each submitted paper. Our Professional Reviewers will advise
+helpful suggestions to assist the authors in further improvement of their
+articles.
+2. Quickly Response
+The author will be provided with timely feedback about each submission, and
+our authors will be provided with prompt replies for every one of their
+enquiries.
+Guidelines for Contribute your Paper
+1. Useful notes and manuscript template to help you prepare your paper are
+below: http://www.mathcomputer.org/submission
+3. Preparing your paper according to the template.
+2. Log in and send your manuscript by the submission system.
+This is the abstract and title of your paper:
+Title: Techniques for Efficient Lazy-Grounding ASP Solving
+Abstract: Answer-Set Programming (ASP) is a well-known and expressive logic
+programming paradigm based on efficient solvers. State-of-the-art ASP
+solvers require the ASP program to be variable-free, they thus ground the
+program upfront at the cost of a potential exponential explosion of the
+space required. Lazy-grounding, where solving and grounding are
+interleaved, circumvents this grounding bottleneck, but the resulting
+solvers lack many important search techniques and optimizations. The
+recently introduced ASP solver Alpha combines lazy-grounding with
+conflict-driven nogood learning (CDNL), a core technique of efficient ASP
+solving. This work presents how techniques for efficient propagation can be
+lifted to the lazy-grounding setting. The Alpha solver and its components
+are presented and detailed benchmarks comparing Alpha to other ASP solvers
+demonstrate the feasibility of this approach.
+Yours truly,
+Emma Wood
+Editorial Office Assistant
+
+--000000000000017ddf0594c01274
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br style=3D"color:rgb(0,0,0);font-family:&quot;Microsoft =
+YaHei&quot;;font-size:medium"><br style=3D"color:rgb(0,0,0);font-family:&qu=
+ot;Microsoft YaHei&quot;;font-size:medium"><div style=3D"font-family:Arial;=
+font-size:13px;line-height:22px;color:rgb(5,0,0);background:rgba(223,224,21=
+2,0.2);padding:20px 116px 132px 12px;width:1346.39px;text-align:justify"><d=
+iv style=3D"width:800px;background:rgb(255,253,255)"><div style=3D"text-ali=
+gn:left;padding:16px 43px;background:rgb(246,245,245);border-bottom:8px sol=
+id rgba(27,170,161,0.3)"><div style=3D"padding:5px 0px 6px"><div style=3D"f=
+ont-size:20px;font-family:&quot;Times New Roman&quot;;font-style:italic;fon=
+t-weight:bold;line-height:27px">Mathematics and Computer Science</div></div=
+><div style=3D"display:table-cell;vertical-align:middle;width:610px;font-fa=
+mily:&quot;Times New Roman&quot;;font-size:14px;font-style:italic"><div sty=
+le=3D"font-weight:bold;padding-bottom:4px">ISSN Online: 2575-6028, ISSN Pri=
+nt: 2575-6036</div><div style=3D"font-weight:bold">Current Issue: Vol.4, No=
+.2, 2019</div></div><div style=3D"display:table-cell;vertical-align:top;wid=
+th:130px"><img src=3D"http://img.mathcomputer.org/logo/2244.gif" border=3D"=
+0" width=3D"130px;"></div></div><div style=3D"background-image:initial;back=
+ground-position:initial;background-size:initial;background-repeat:initial;b=
+ackground-origin:initial;background-clip:initial;border-bottom:5px solid rg=
+b(246,245,245);padding:17px 30px 25px"><div style=3D"padding-bottom:10px">D=
+ear Leutgeb, L; Weinzierl, A,</div><div>We are very happy to have the oppor=
+tunity to read your article titled &quot;<span style=3D"font-style:italic">=
+Techniques for Efficient Lazy-Grounding ASP Solving</span>&quot;. We feel t=
+hat your research field is in line with=C2=A0<span style=3D"font-style:ital=
+ic">Mathematics and Computer Science</span>. We sincerely invite you, on be=
+half of the Editorial Board of Members, to contribute your valuable unpubli=
+shed research articles to our journal for publication.</div></div><div styl=
+e=3D"background-image:initial;background-position:initial;background-size:i=
+nitial;background-repeat:initial;background-origin:initial;background-clip:=
+initial;border-bottom:5px solid rgb(246,245,245);padding:22px 30px 18px"><d=
+iv style=3D"padding-bottom:18px;font-family:&quot;Times New Roman&quot;;fon=
+t-size:18px"><div style=3D"padding:0px;text-align:center;line-height:22px">=
+<div style=3D"display:inline-block;background:rgba(27,170,161,0.9);font-wei=
+ght:bold;color:rgb(255,253,255);padding:3px 7px;margin-bottom:5px">Selected=
+ Journals</div></div></div><div style=3D"padding-bottom:10px"><div style=3D=
+"padding-bottom:10px">There are 300+ journals covering nearly all disciplin=
+es in our platform like Applied Physics, Forestry, Health, Water Resources,=
+ Systems Science, Civil Engineering, Industrial Engineering, Finance, Polit=
+ical Science, Sustainable Development, etc.</div><div style=3D"padding:0px"=
+>To get more information, please feel free to visit:=C2=A0<a href=3D"http:/=
+/www.mathcomputer.org/journals" border=3D"0" target=3D"_blank" style=3D"tex=
+t-decoration-line:none;color:rgb(0,49,255);white-space:nowrap;font-weight:b=
+old">http://www.mathcomputer.org/journals</a></div></div><div style=3D"line=
+-height:30px;font-weight:bold"><div style=3D"padding:0px">American Journal =
+of Applied Mathematics</div><div style=3D"padding:0px">International Journa=
+l of Theoretical and Applied Mathematics</div><div style=3D"padding:0px">Sc=
+ience Journal of Applied Mathematics and Statistics</div><div style=3D"padd=
+ing:0px">American Journal of Mathematical and Computer Modelling</div><div =
+style=3D"padding:0px">American Journal of Electrical and Computer Engineeri=
+ng</div></div></div><div style=3D"background-image:initial;background-posit=
+ion:initial;background-size:initial;background-repeat:initial;background-or=
+igin:initial;background-clip:initial;border-bottom:5px solid rgb(246,245,24=
+5);padding:22px 30px 18px"><div style=3D"padding-bottom:18px;font-family:&q=
+uot;Times New Roman&quot;;font-size:18px"><div style=3D"padding:0px;text-al=
+ign:center;line-height:22px"><div style=3D"display:inline-block;background:=
+rgba(27,170,161,0.9);font-weight:bold;color:rgb(252,255,255);padding:3px 7p=
+x;margin-bottom:5px">Efficient Publication</div></div></div><div><div style=
+=3D"display:table-cell;vertical-align:top;width:325px;padding-right:40px"><=
+div style=3D"padding-bottom:20px"><div style=3D"padding-bottom:6px;font-wei=
+ght:bold">1. Fast Publication Service</div><div>Your paper can be published=
+ online within 45-60 days since the date of submission.</div></div><div><di=
+v style=3D"padding-bottom:6px;font-weight:bold">3. Professional Revision Su=
+ggestion</div><div>More than 3 peer reviewers from all over the world will =
+carefully scrutinize each submitted paper. Our Professional Reviewers will =
+advise helpful suggestions to assist the authors in further improvement of =
+their articles.</div></div></div><div style=3D"display:table-cell;vertical-=
+align:top;width:350px;padding-left:35px"><div style=3D"padding-bottom:6px;f=
+ont-weight:bold">2. Quickly Response</div><div>The author will be provided =
+with timely feedback about each submission, and our authors will be provide=
+d with prompt replies for every one of their enquiries.</div></div></div></=
+div><div style=3D"background-image:initial;background-position:initial;back=
+ground-size:initial;background-repeat:initial;background-origin:initial;bac=
+kground-clip:initial;border-bottom:5px solid rgb(246,245,245);padding:22px =
+30px 18px"><div style=3D"padding-bottom:18px;font-family:&quot;Times New Ro=
+man&quot;;font-size:18px"><div style=3D"padding:0px;text-align:center;line-=
+height:22px"><div style=3D"display:inline-block;background:rgba(27,170,161,=
+0.9);font-weight:bold;color:rgb(255,255,253);padding:3px 7px;margin-bottom:=
+5px">Guidelines for Contribute your Paper</div></div></div><div><div style=
+=3D"display:table-cell;vertical-align:top;width:325px;padding-right:40px;te=
+xt-align:left"><div style=3D"padding-bottom:18px">1. Useful notes and manus=
+cript template to help you prepare your paper are below:=C2=A0<a href=3D"ht=
+tp://www.mathcomputer.org/submission" border=3D"0" target=3D"_blank" style=
+=3D"text-decoration-line:none;color:rgb(0,49,255);white-space:nowrap;font-w=
+eight:bold">http://www.mathcomputer.org/submission</a></div><div>3. Prepari=
+ng your paper according to the template.</div></div><div style=3D"display:t=
+able-cell;vertical-align:top;width:350px;padding-left:35px;text-align:left"=
+>2. Log in and send your manuscript by the submission system.</div></div></=
+div><div style=3D"background-image:initial;background-position:initial;back=
+ground-size:initial;background-repeat:initial;background-origin:initial;bac=
+kground-clip:initial;border-bottom:8px solid rgb(27,170,161);padding:22px 3=
+0px 18px"><div style=3D"font-weight:bold;padding-bottom:5px">This is the ab=
+stract and title of your paper:</div><div>Title: Techniques for Efficient L=
+azy-Grounding ASP Solving</div><div>Abstract: Answer-Set Programming (ASP) =
+is a well-known and expressive logic programming paradigm based on efficien=
+t solvers. State-of-the-art ASP solvers require the ASP program to be varia=
+ble-free, they thus ground the program upfront at the cost of a potential e=
+xponential explosion of the space required. Lazy-grounding, where solving a=
+nd grounding are interleaved, circumvents this grounding bottleneck, but th=
+e resulting solvers lack many important search techniques and optimizations=
+. The recently introduced ASP solver Alpha combines lazy-grounding with con=
+flict-driven nogood learning (CDNL), a core technique of efficient ASP solv=
+ing. This work presents how techniques for efficient propagation can be lif=
+ted to the lazy-grounding setting. The Alpha solver and its components are =
+presented and detailed benchmarks comparing Alpha to other ASP solvers demo=
+nstrate the feasibility of this approach.</div><div style=3D"line-height:28=
+px;padding-top:18px"><div>Yours truly,</div><div>Emma Wood</div><div>Editor=
+ial Office Assistant</div></div></div></div></div></div>
+
+--000000000000017ddf0594c01274--

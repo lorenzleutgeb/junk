@@ -20,6 +20,7 @@
 *@ajentom.com
 *@ajmodener.org
 *@ajomse.org
+*@ajpediatrics.org
 *@amcst.net
 *@amjcst.net
 *@amjlifesci.org
