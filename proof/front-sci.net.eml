@@ -1,0 +1,213 @@
+Return-Path: <emily.lee@front-sci.net>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp10.migadu.com ([2001:41d0:8:6d80::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms5.migadu.com with LMTPS
+	id mFF7GOaO52PQIgEAbAwnHQ
+	(envelope-from <emily.lee@front-sci.net>)
+	for <lorenz@leutgeb.xyz>; Sat, 11 Feb 2023 13:49:42 +0100
+Received: from aspmx1.migadu.com ([2001:41d0:8:6d80::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp10.migadu.com with LMTPS
+	id oOqKF+aO52N98gAAG6o9tA
+	(envelope-from <emily.lee@front-sci.net>)
+	for <lorenz@leutgeb.xyz>; Sat, 11 Feb 2023 13:49:42 +0100
+Received: from mail-lf1-x12b.google.com (mail-lf1-x12b.google.com [IPv6:2a00:1450:4864:20::12b])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 532DC29EEF
+	for <lorenz@leutgeb.xyz>; Sat, 11 Feb 2023 13:49:41 +0100 (CET)
+Received: by mail-lf1-x12b.google.com with SMTP id h24so12451433lfv.6
+        for <lorenz@leutgeb.xyz>; Sat, 11 Feb 2023 04:49:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=front-sci-net.20210112.gappssmtp.com; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ZvkviN6hXPWSXWhkexZyuDpj61MO1jgg93WBmaVGFQ4=;
+        b=DYSUeGxv9TsxEi/1I5ZDFZlRSsJ5sAE5cKQFW/jynEQptvGHfmgfSgnEJe0dYiqw5n
+         GdrqA4GDi3gt675gRfV/e2BG4PKFWs1pcAhSqfbhPXaqdTg+RGwfNlI8EwclWsB2KzpD
+         Nhkfxx8w7KGC0exs7xQcjZ3qqlnTpxiOSyHnqPYp7bKKQ634e0cwUoyMC2RuMtOdydc1
+         9MQuC4InTfBs7QFxu6Mwd1IY9b65ikOybLBfP744x8AYLKm2fshPYPLqKcsu9CShCHGX
+         inSXYUc+oPvvQDS4ZShU8J4TCMryd0l1JfY8+Z6QfXd/z0YBg/ilcYNn25BkHdhFAw/k
+         RS+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ZvkviN6hXPWSXWhkexZyuDpj61MO1jgg93WBmaVGFQ4=;
+        b=kj0ZwANPKtbuuBWheMB0i3jC1UK/QecOQ7fUIRMN8lQEqpxvAdTeN1Uj7NfVRuQU6i
+         PzldgIzCLA7Mr6A28+HqsgTpxZaJr4Zp9cuFD8GLZ96/veY11v6LPkx2OpLaBAjjx3eP
+         RvL/Xt2VD+GR+CYj+YEOsEAuCzIf0TGIduKdqFOnEK5a8Cyn0IBMEy8dJB5+grM6QS4h
+         cZY6DbMu4aNXVAdWZr9nUbfnUIncsPjeZJqhuecxyk6bzQ9vIGxQkzJQnPCX3ICHpqFr
+         SggefTRq0xOyjYJoG2J+tdih0xB2hVlZJSo9btB52fZvpyUwS22ughIrhuV+Jm/eXFRE
+         neew==
+X-Gm-Message-State: AO0yUKU6s4HOJ6Qbyo+DgX9zSlXifMU8GK7PaAraCjFA1kZqIN42/kuI
+	sHtfUD/yzF/BbpGK0CxmC6d5JIg0AvvG/98N2J4FUFOFL/WrNEOM
+X-Google-Smtp-Source: AK7set8kgiX35c6wV3qWqZ3OdFrp6MB52vODEOqm7UppZ7zrcmRsEWA8CX3cjkLQDX6kjBeIsp1uE2VtLa2GqfOSeHM=
+X-Received: by 2002:ac2:4e47:0:b0:4a2:3d2c:34ac with SMTP id
+ f7-20020ac24e47000000b004a23d2c34acmr2532844lfr.41.1676119780552; Sat, 11 Feb
+ 2023 04:49:40 -0800 (PST)
+Received: from 776393159873 named unknown by gmailapi.google.com with
+ HTTPREST; Sat, 11 Feb 2023 04:49:40 -0800
+MIME-Version: 1.0
+From: Emily Lee <emily.lee@front-sci.net>
+Date: Sat, 11 Feb 2023 04:49:40 -0800
+Message-ID: <CALGTGijXZcZWMzH94A6RRFaMuaa7QWRqtgVzQEN0FHkeuFBZ7w@mail.gmail.com>
+Subject: /Journal of Autonomous Intelligence/ has been indexed in Scopus:
+ Calling for Papers
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="0000000000001efab305f46c0c6d"
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Country: US
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1676119781; a=rsa-sha256; cv=none;
+	b=SHF7E1pEidaqKsesJhzGLqrJvg/yDbQ8zvzONKhUnAG7GlQIKuEzv3UB/S/rpN5qwaZQr6
+	TIgY86ON0wwKlqP5i+XCeBW61sB1j8jQO/s+V2lzLm/yy3tDAbLOpBAzrVed1ejpnMQHQs
+	gg/9WfHWd2cpAlyFxVabEYr7DER8gJY=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=front-sci-net.20210112.gappssmtp.com header.s=20210112 header.b=DYSUeGxv;
+	dmarc=none;
+	spf=softfail (aspmx1.migadu.com: 2a00:1450:4864:20::12b is neither permitted nor denied by domain of emily.lee@front-sci.net) smtp.mailfrom=emily.lee@front-sci.net
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1676119781;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=ZvkviN6hXPWSXWhkexZyuDpj61MO1jgg93WBmaVGFQ4=;
+	b=PQ2SiOfTeAS1ifI1zoZcby3znIjS4MWPrNwtGaQ9+r7wtxvePW7z25nt5reCtyZiyW34kC
+	Mw9vuxYQQaTk3oswB2KbLIHGSQoOyMCw9fl5HLvPG6b2fMnYc8n4wFxPOkxz2M54VctALU
+	rnSguCdcBq9eaY6N83nkYNSEUasWV7o=
+X-Migadu-Spam-Score: -3.92
+X-Spam-Score: -3.92
+X-Migadu-Queue-Id: 532DC29EEF
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=front-sci-net.20210112.gappssmtp.com header.s=20210112 header.b=DYSUeGxv;
+	dmarc=none;
+	spf=softfail (aspmx1.migadu.com: 2a00:1450:4864:20::12b is neither permitted nor denied by domain of emily.lee@front-sci.net) smtp.mailfrom=emily.lee@front-sci.net
+X-Migadu-Scanner: scn1.migadu.com
+
+--0000000000001efab305f46c0c6d
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Dr. Leutgeb,
+
+/Journal of Autonomous Intelligence/ (ISSN: 2630-5046; Journal of
+Autonomous Intelligence
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=5e346f47-53fc-4298-9ae8-6e3dff9415cf&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>)
+is a peer-reviewed interdisciplinary journal that publishes original
+research and review articles covering all aspects of autonomous
+intelligence with emphasis on artificial intelligence and robotic
+self-learning.
+
+We are delighted to share with you that our journal has been tracked by
+Scopus from 09 September 2022. You can find the tracking information
+here: *indexed
+information of JAI*
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=fdbcb697-875b-47fe-abe4-62f5886a94b3&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>.
+The CitesScores will be released at the end of May 2023 and then you can
+find out our journal in Scopus. Therefore, we take great pleasure to invite
+you to submit papers to our journal.
+
+The APC of USD 1250 in 2023 applies to published papers. But we are
+glad to *waive
+the full APC* for any papers submitted *before 01 June 2023 *for
+celebrating this progress.
+
+We would appreciate receiving your reply within two weeks about your
+decision. For any questions or concerns, please feel free to let us know.
+
+Looking forward to hearing from you.
+
+Best regards,
+Emily Lee
+-- 
+
+Ms. Emily Lee
+
+Managing Editor of JAI
+
+Frontier Scientific Publishing
+21 Serangoon North Avenue 5, #03-03 Ban Teck Han Building, Singapore
+(554864)
+
+
+*Latest Special Issues*
+
+* The Edge-Cloud Continuum: From IoT to Serverless Computing*
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=4c75e5a6-95f8-424c-b4c1-1779bd65d263&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>
+
+*UAVs: Recent Trends and Future Visions*
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=413dd97f-1eed-43a4-83aa-b0b8bb01eddc&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>
+
+*Image Processing Technologies: Applications and Innovations*
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=67e3e072-ccfb-43db-a35c-1c5630f22d88&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>
+
+*Machine Learning Applied to Intelligent Transportation Systems*
+<http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/x/d?c=29175739&l=e6587756-dbcd-4fa9-865d-1017b4f244ec&r=275f0b67-82ce-4d4f-b3d7-5884b7dc1f65>
+
+--0000000000001efab305f46c0c6d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div style=3D"font-family:arial,sans-serif">Dear Dr. Leutg=
+eb,</div><div style=3D"font-family:arial,sans-serif"><br>/Journal of Autono=
+mous Intelligence/ (ISSN: 2630-5046;=C2=A0<a href=3D"http://ec2-52-33-3-241=
+.us-west-2.compute.amazonaws.com/x/d?c=3D29175739&amp;l=3D5e346f47-53fc-429=
+8-9ae8-6e3dff9415cf&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65">Journal o=
+f Autonomous Intelligence</a>) is a peer-reviewed interdisciplinary journal=
+ that publishes original research and review articles covering all aspects =
+of autonomous intelligence with emphasis on artificial intelligence and rob=
+otic self-learning.<br><br>We are delighted to share with you that our jour=
+nal has been tracked by Scopus from 09 September 2022. You can find the tra=
+cking information here:=C2=A0<a href=3D"http://ec2-52-33-3-241.us-west-2.co=
+mpute.amazonaws.com/x/d?c=3D29175739&amp;l=3Dfdbcb697-875b-47fe-abe4-62f588=
+6a94b3&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65" target=3D"_blank"><i><=
+b>indexed information of JAI</b></i></a>. The CitesScores will be released =
+at the end of May 2023 and then you can find out our journal in Scopus. The=
+refore, we take great pleasure to invite you to submit papers to our journa=
+l.<br><br>The APC of USD 1250 in 2023 applies to published papers. But we a=
+re glad to=C2=A0<b>waive the full APC</b>=C2=A0for any papers submitted=C2=
+=A0<b>before 01 June 2023=C2=A0</b><span style=3D"font-family:Arial,Helveti=
+ca,sans-serif">for celebrating this progress</span>.</div><div style=3D"fon=
+t-family:arial,sans-serif"><br>We would appreciate receiving your reply wit=
+hin two weeks about your decision. For any questions or concerns, please fe=
+el free to let us know.</div><div style=3D"font-family:arial,sans-serif"><b=
+r>Looking forward to hearing from you.</div><div style=3D"font-family:arial=
+,sans-serif"><br></div><div style=3D"font-family:arial,sans-serif">Best reg=
+ards,</div><div style=3D"font-family:arial,sans-serif">Emily Lee</div>-- <b=
+r><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signat=
+ure"><div dir=3D"ltr"><p class=3D"MsoNormal"><font face=3D"arial, sans-seri=
+f" size=3D"1"><span style=3D"color:rgb(0,0,0)">Ms. </span><span style=3D"co=
+lor:rgb(0,0,0)">Emily Lee</span><br></font></p><p class=3D"MsoNormal"><span=
+ style=3D"color:rgb(0,0,0)"><font face=3D"arial, sans-serif" size=3D"1">Man=
+aging Editor of JAI</font></span></p><p class=3D"MsoNormal"><font face=3D"a=
+rial, sans-serif" size=3D"1">Frontier Scientific Publishing</font></p><span=
+ style=3D"color:rgb(34,34,34)"><font face=3D"arial, sans-serif" size=3D"1">=
+21 Serangoon North Avenue 5, #03-03 Ban Teck Han Building, Singapore (55486=
+4)</font></span><br><p class=3D"MsoNormal"><br></p><p class=3D"MsoNormal"><=
+i><font face=3D"times new roman, serif">Latest Special Issues</font></i></p=
+><p class=3D"MsoNormal"><a href=3D"http://ec2-52-33-3-241.us-west-2.compute=
+.amazonaws.com/x/d?c=3D29175739&amp;l=3D4c75e5a6-95f8-424c-b4c1-1779bd65d26=
+3&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65" target=3D"_blank"><i><font =
+face=3D"georgia, serif" size=3D"1"> The Edge-Cloud Continuum: From IoT to S=
+erverless Computing</font></i></a></p><p class=3D"MsoNormal"><font face=3D"=
+georgia, serif" size=3D"1"><a href=3D"http://ec2-52-33-3-241.us-west-2.comp=
+ute.amazonaws.com/x/d?c=3D29175739&amp;l=3D413dd97f-1eed-43a4-83aa-b0b8bb01=
+eddc&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65" target=3D"_blank"><i>UAV=
+s: Recent Trends and Future Visions</i></a><br></font></p><p class=3D"MsoNo=
+rmal"><font face=3D"georgia, serif" size=3D"1"><a href=3D"http://ec2-52-33-=
+3-241.us-west-2.compute.amazonaws.com/x/d?c=3D29175739&amp;l=3D67e3e072-ccf=
+b-43db-a35c-1c5630f22d88&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65" targ=
+et=3D"_blank"><i>Image Processing Technologies: Applications and Innovation=
+s</i></a><br></font></p><p class=3D"MsoNormal"><a href=3D"http://ec2-52-33-=
+3-241.us-west-2.compute.amazonaws.com/x/d?c=3D29175739&amp;l=3De6587756-dbc=
+d-4fa9-865d-1017b4f244ec&amp;r=3D275f0b67-82ce-4d4f-b3d7-5884b7dc1f65" targ=
+et=3D"_blank"><font face=3D"georgia, serif" size=3D"1"><i>Machine Learning =
+Applied to Intelligent Transportation Systems</i></font></a><br></p></div><=
+/div></div>
+<img src=3D"http://ec2-52-33-3-241.us-west-2.compute.amazonaws.com/OzqNT9U_=
+4GWwWja0p6FyDHtIayuP6C9ovPdV5mwMfwOWYpFsaZnIjQk3MKY2Bhrc-1XrqvOt6EiZpv11nlp=
+0uVa0sKwbSNewufWeCzvl5C2L7SVlm2F5Vp24vLR5X4D3nRMxa92ynRyho-ZRgMbz01SlmV-jfz=
+xosw87gajLV4MajgmyIALDQor31Ja">
+
+--0000000000001efab305f46c0c6d--
