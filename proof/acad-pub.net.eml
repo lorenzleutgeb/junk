@@ -1,0 +1,200 @@
+Return-Path: <audsley.poh@acad-pub.net>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp10.migadu.com ([2001:41d0:403:4789::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms9.migadu.com with LMTPS
+	id aHmmCYQg22TXEwEASxT56A
+	(envelope-from <audsley.poh@acad-pub.net>)
+	for <lorenz@leutgeb.xyz>; Tue, 15 Aug 2023 08:51:48 +0200
+Received: from aspmx1.migadu.com ([2001:41d0:403:4789::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp10.migadu.com with LMTPS
+	id wGLeCIQg22QFVAAAG6o9tA
+	(envelope-from <audsley.poh@acad-pub.net>)
+	for <lorenz@leutgeb.xyz>; Tue, 15 Aug 2023 08:51:48 +0200
+Received: from mail-lj1-x234.google.com (mail-lj1-x234.google.com [IPv6:2a00:1450:4864:20::234])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 230EE5B589
+	for <lorenz@leutgeb.xyz>; Tue, 15 Aug 2023 08:51:47 +0200 (CEST)
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=acad-pub-net.20221208.gappssmtp.com header.s=20221208 header.b=2gXmqYBu;
+	spf=pass (aspmx1.migadu.com: domain of audsley.poh@acad-pub.net designates 2a00:1450:4864:20::234 as permitted sender) smtp.mailfrom=audsley.poh@acad-pub.net;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1692082307;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=whQpMG+8smHkrymqYxAGWGpv/KSypEynlTvhJIHlKqk=;
+	b=pyXopYGVgHWKReBFN7J4XT7auY9F7QUfy9i+XEIAx4kslwFVs+H32KXjpKrBakU+dEDXsf
+	vlEvEi5jltfcfwrIFKxNFESCuog1RKHOrI1ZvpfbNDNwliWFp1vn6BzOO0V7+wezHRvFvY
+	YzQZREigXzHaogBAOGH5kwdXsHaZUIg=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=acad-pub-net.20221208.gappssmtp.com header.s=20221208 header.b=2gXmqYBu;
+	spf=pass (aspmx1.migadu.com: domain of audsley.poh@acad-pub.net designates 2a00:1450:4864:20::234 as permitted sender) smtp.mailfrom=audsley.poh@acad-pub.net;
+	dmarc=none
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1692082307; a=rsa-sha256; cv=none;
+	b=AQbHAwGvKPAo5ti1BiSXZLaMX+AxaWUFvuwfA6syGtCe3S5dSc2oLgU8FtFB/YOajck4Nx
+	u4tD+ap5v0GUMHY7SXhiU1+7ftQ0epK66eLV5+ukbNiS1k/Sp9NUsc0cqAn3RSaxtv8QEY
+	4p//aGABW56kujlE7hsNrg0ofu2/E6M=
+Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2b9f0b7af65so76945941fa.1
+        for <lorenz@leutgeb.xyz>; Mon, 14 Aug 2023 23:51:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=acad-pub-net.20221208.gappssmtp.com; s=20221208; t=1692082304; x=1692687104;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=whQpMG+8smHkrymqYxAGWGpv/KSypEynlTvhJIHlKqk=;
+        b=2gXmqYBuOHZ4RLsjyOymS/yHV6HCN17tAzwVVZ89bk159ECiuh6E+VXHj+ArvBjRdK
+         NumhKj68feGN51YhkQ6lZSDGmwEghUqpIoU39eJKq+OYaKYnc9LKfa+2bWCjHDBF8Pkn
+         x/dsLmBQ2Qy9P9L0mleWpC+1Zz7NdpF8fismgX6632oVqr5CECnG/QMlEWXk9rLmOIkS
+         UfgxB4omiotEnYT3WbuGgOPciBNAE7RfbQlKidLOmqX31Y1Y6ADYZW9hUbywLlJ+Wrwl
+         IvQEFGTQTrsnif1Q8SOIX/4bCNrCGMdmQGb4tximTzO+8sU8LVzpBlC83+Z/3mQgZHfY
+         8QIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692082304; x=1692687104;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=whQpMG+8smHkrymqYxAGWGpv/KSypEynlTvhJIHlKqk=;
+        b=DdqiqImk/RbsdQ9FkZWugFZZ0dqE7tL7FNr+RwzgZEv810eOYcvR9VMO9PTMXFJlzy
+         KtpTjKjLJDsuxZSt9oMjkH2ULTGX48eDoBdzq7PHxGqZHJiihKwoXlA6SxudVX0i0vgf
+         LP+CEvNLmjb72GI7B/o790fgCIukeT0BgmQBZoj3edVE0ZSjq7VAzUA8obsudEX1eRpP
+         eyYpaiexyR0RdGLWQmK4+OPCg6ZPJAAHivxvvNBsHukHOIkRJAdS7LabqmcITR9bllma
+         X5b7RNiv4W0EW81dqefvxc9IJdPblv3gvrhekXi7JVb8OZGBSbozQYDLVv/WJp417Ex2
+         B/4g==
+X-Gm-Message-State: AOJu0YzDARTQBaAjic6n2LI1zvItfpl9QfpFKv/ZF93vDeN3QArEXhD3
+	KiBK7H2xGIIdVKRKsuPpvwQRz3FotCciH6oIu4D+o+zGwkRofBAzN4ZHKA==
+X-Google-Smtp-Source: AGHT+IEs85pO5h6DPogKEfkzdkETuwlPhQWFlMpSKSM3zOszXrvoRJqpcKPhqz1kNGezvF2jL2Nft9tNbDGjkaFdhEU=
+X-Received: by 2002:a2e:87cb:0:b0:2b9:f007:990f with SMTP id
+ v11-20020a2e87cb000000b002b9f007990fmr8625426ljj.51.1692082304523; Mon, 14
+ Aug 2023 23:51:44 -0700 (PDT)
+Received: from 776393159873 named unknown by gmailapi.google.com with
+ HTTPREST; Mon, 14 Aug 2023 23:51:39 -0700
+MIME-Version: 1.0
+From: Audsley Poh <audsley.poh@acad-pub.net>
+Date: Mon, 14 Aug 2023 23:51:39 -0700
+Message-ID: <CAGsSeLmcMGgfk5s06rXXPyrd0GCmqnw6H8_do4GNgkWprQcp1A@mail.gmail.com>
+Subject: Paper Invitation: [Journal of Autonomous Intelligence] (Citescore
+ 1.1) The first CiteScore has been released by Scopus
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="000000000000b1309f0602f09cdc"
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Country: US
+X-Migadu-Queue-Id: 230EE5B589
+X-Migadu-Scanner: mx1.migadu.com
+X-Spam-Score: -4.05
+X-Migadu-Spam-Score: -4.05
+
+--000000000000b1309f0602f09cdc
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Colleague,
+
+
+
+Hope you are doing well,
+
+
+
+Thank you for reading the paper invitation from our journal /Journal of
+Autonomous Intelligence/ (ISSN: 2630-5046).
+
+
+
+I'm happy to let you know that we are glad to waive 50% of the APC: 750 USD
+(original: 1500 usd) of articles from you or your friends or your excellent
+students before 30 September 2023 to celebrate the great progress that our
+journal has received the first CiteScore of 1.1 in the Scopus category of
+Computer Science.
+
+
+
+Waivers are limited and distributed on a first come, first served basis. If
+you would like to reserve a quota, please reply to us with "reserve".
+
+
+
+JAI is a peer-reviewed interdisciplinary journal that publishes original
+research and review articles covering all aspects of autonomous
+intelligence with emphasis on artificial intelligence and robotic
+self-learning.
+
+
+
+We are expecting high quality papers from you or your colleagues or your
+excellent students.
+
+Could you please let me know if you have any interests?
+
+--000000000000b1309f0602f09cdc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><p class=3D"MsoNormal" s=
+tyle=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font-family:=E7=AD=89=E7=
+=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5pt">Dear Colleague,</=
+span><span style=3D"font-size:10.5pt"></span></p><p class=3D"MsoNormal" sty=
+le=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font-family:=E7=AD=89=E7=
+=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5pt">=C2=A0</span></p>=
+<p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;=
+font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:1=
+0.5pt">Hope you are doing well,</span><span style=3D"font-size:10.5pt"></sp=
+an></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:j=
+ustify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font=
+-size:10.5pt">=C2=A0</span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0=
+pt 0.0001pt;text-align:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.=
+5pt"><span style=3D"font-size:10.5pt">Thank you for reading the paper invit=
+ation from our journal /Journal of Autonomous Intelligence/ (ISSN: 2630-504=
+6).</span><span style=3D"font-size:10.5pt"></span></p><p class=3D"MsoNormal=
+" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font-family:=E7=AD=89=
+=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5pt">=C2=A0</span><=
+/p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justi=
+fy;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-siz=
+e:10.5pt">I&#39;m happy to let you know that we are glad to waive 50% of th=
+e APC: 750 USD (original: 1500 usd) of articles from you or your friends or=
+ your excellent students before 30 </span><span style=3D"font-size:10.5pt">=
+<font face=3D"=E7=AD=89=E7=BA=BF">September</font></span><span style=3D"fon=
+t-size:10.5pt">=C2=A02023 to celebrate the great progress that our journal =
+has received the first CiteScore of 1.1 in the Scopus category of Computer =
+Science.</span><span style=3D"font-size:10.5pt"></span></p><p class=3D"MsoN=
+ormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font-family:=E7=
+=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5pt">=C2=A0</=
+span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align=
+:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"fo=
+nt-size:10.5pt">Waivers are limited and distributed on a first come, first =
+served basis. If you would like to reserve a quota, please reply to us with=
+ &quot;reserve&quot;.</span><span style=3D"font-size:10.5pt"></span></p><p =
+class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;fon=
+t-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5=
+pt">=C2=A0</span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001p=
+t;text-align:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span=
+ style=3D"font-size:10.5pt">JAI is a peer-reviewed interdisciplinary journa=
+l that publishes original research and review articles covering all aspects=
+ of autonomous intelligence with emphasis on artificial intelligence and ro=
+botic self-learning.</span><span style=3D"font-size:10.5pt"></span></p><p c=
+lass=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font=
+-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5p=
+t">=C2=A0</span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt=
+;text-align:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span =
+style=3D"font-size:10.5pt">We are expecting high quality papers from you or=
+ your colleagues or your excellent students. </span><span style=3D"font-siz=
+e:10.5pt"></span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001p=
+t;text-align:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span=
+ style=3D"font-size:10.5pt">Could you please let me know if you have any in=
+terests?</span><span style=3D"font-size:10.5pt"></span></p><p class=3D"MsoN=
+ormal" style=3D"margin:0pt 0pt 0.0001pt;text-align:justify;font-family:=E7=
+=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"font-size:10.5pt">=C2=A0</=
+span></p><p class=3D"MsoNormal" style=3D"margin:0pt 0pt 0.0001pt;text-align=
+:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:10.5pt"><span style=3D"fo=
+nt-size:10.5pt">=C2=A0</span></p><p class=3D"MsoNormal" style=3D"margin:0pt=
+ 0pt 0.0001pt;text-align:justify;font-family:=E7=AD=89=E7=BA=BF;font-size:1=
+0.5pt"><span style=3D"font-size:10.5pt">=C2=A0</span></p></div>
+</div>
+</div>
+<img src=3D"http://ec2-44-229-154-224.us-west-2.compute.amazonaws.com/F9y6-=
+v3HrB2jCS8zN8W8V8o9vdlOJAdhzeIx6zy6UjiyB2mBC-3ImJR2QwRLGXqcBYo0Ot3w4hzw7UyX=
+SJjasNVu4ngBRuNa45SxLJl2oJshiraOVLv0wZNR5fdqRM7AfLcyGKt6G-jj7b4vaQ-7HhS2Izw=
+F57xj0pvt7sLMHv0ajgmFxCXi_3kJBjxf4ZUUG2sbPKV-mOq">
+
+--000000000000b1309f0602f09cdc--
