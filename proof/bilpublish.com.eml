@@ -1,0 +1,160 @@
+Return-Path: <editor-1003@bilpublish.com>
+Delivered-To: lorenz
+Received: from zak ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by idas.mpi-inf.mpg.de with LMTPS
+	id +LlcBdpgrWcFSTcAQ6f/oA:P1
+	(envelope-from <editor-1003@bilpublish.com>)
+	for <lorenz>; Thu, 13 Feb 2025 04:02:50 +0100
+Received: from jupiter.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by zak with LMTPS
+	id +LlcBdpgrWcFSTcAQ6f/oA
+	(envelope-from <editor-1003@bilpublish.com>)
+	for <lorenz@imap-inf0.mpi-inf.mpg.de>; Thu, 13 Feb 2025 04:02:50 +0100
+Received: from mail-pj1-f52.google.com ([209.85.216.52]:39745)
+	by jupiter.mpi-klsb.mpg.de (envelope-from <editor-1003@bilpublish.com>) 
+	with esmtps (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_128_GCM:128)
+	(Exim 4.98) id 1tiPV0-0000000CdXz-12wK
+	for lorenz@mpi-inf.mpg.de;
+	Thu, 13 Feb 2025 04:02:50 +0100
+Received: by mail-pj1-f52.google.com with SMTP id 98e67ed59e1d1-2f9f90103bbso100089a91.3
+        for <lorenz@mpi-inf.mpg.de>; Wed, 12 Feb 2025 19:02:45 -0800 (PST)
+X-Notes-Item: [BB]   R_SPF_NA  FROM_HAS_DN  FROM_EQ_ENVFROM  MISSING_MIME_VERSION  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  NEURAL_HAM  MID_RHS_MATCH_FROM  RBL_SENDERSCORE_REPUT_8  RCVD_VIA_SMTP_AUTH  ASN  BAD_REP_POLICIES  DKIM_TRACE  REPLYTO_DOM_NEQ_TO_DOM  REPLYTO_DOM_NEQ_FROM_DOM  REPLYTO_DN_EQ_FROM_DN  TO_MATCH_ENVRCPT_ALL  RCVD_TLS_LAST  R_DKIM_ALLOW  RCVD_COUNT_THREE  MIME_BASE64_TEXT  DMARC_NA  RWL_MAILSPIKE_GOOD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  RCVD_IN_DNSWL_NONE  HAS_REPLYTO  BAYES_SPAM  
+    [H] RCVD_IN_MSPIKE_H3 RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID RCVD_IN_MSPIKE_WL BAYES_00 ;
+    name=$DNSBLSite
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bilpublish-com.20230601.gappssmtp.com; s=20230601; t=1739415763; x=1740020563; darn=mpi-inf.mpg.de;
+        h=message-id:date:reply-to:content-transfer-encoding:to:subject:from
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=GwxKOINkp2Rl0bYJ2HL15guk5KQuqzFQUfMvMC6zrIA=;
+        b=tYEX97x1OvKVvESvqyE+eRMPEbpJll9vJq0ML1FyfyEI6/Xp3v4aHlcMcHR+UTUpoS
+         01H5zG0VMCWssNqpas96tvY2ekFYy4AQYTiaR87yx9qwUAkBHKYa0c6KXJtx5K+lDA0C
+         Vbqve/+5+Pcwd5sTPsiW5C7LMexUMxjhHp/iX7J7TRqqfotwouZuUXA2r7IENnh2Z8UR
+         a3SbwLts+kYhA6FY4H9JQ4n4cieAfrVEWJ48wBwv11UP0q7wIK5qQvfVJF+HlPUFRCnL
+         V9UUvKIlF7n6VMudmicIhiTzh/0EkYpPUgFJ8Inem8QqMn0AbL3wFlpL+qngwRhiXu4D
+         en8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739415763; x=1740020563;
+        h=message-id:date:reply-to:content-transfer-encoding:to:subject:from
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=GwxKOINkp2Rl0bYJ2HL15guk5KQuqzFQUfMvMC6zrIA=;
+        b=cTVJfVU9cJhKv4AL0fjr+b7Kebd7llWs7QOSk8aGOvHMQL5hJw8iLeMUOF/pLkGAwc
+         YZoK9s2gbrI8Eaxe1Eus4QhhcFGPqCQn3OqX1pp6VDHzfEVufhCb+mJLMlMYjsEyVP20
+         +CnOV1efZDJA4ZzDW6lIbmJ143T+J69nKHkG472Rp0uInPLm9HV51EXiNj73Al+9Lnbf
+         9NEQ2rSzw+UaBfXE19rXnp3SCPexbrERE/ydnBo8xc+0bKb38v5DOdu7Gp6vLLQ/qNkm
+         enQfCHguvKXY8REgLFokMy+D1OPdnkhzwLOQrUhvwevLRqgUPtRyx+2I0vwKSwjPlwbw
+         XQKQ==
+X-Gm-Message-State: AOJu0YxN0V617RPvfrZCrytOL9A0phoPLEMG0XExx2GSeEzbMZUupsEY
+	jtzCO/mN0+1YF8NQ4D7BoFbWnpbJfhiex6RG9p6AVJ7RrwV/NhvSkI4IiJLMn2Lfj3yIEf5fbxq
+	z
+X-Gm-Gg: ASbGncvVzgTYYV1hX9bh+JQMWYFSrQ71bRpgCFi4CAtVCozXZ466Y5ewHieNLJbvO0Q
+	DU2fIPrFUATO5P3bEIBpl00O/98YSQqCv17DcEyYD0kL1PIhov8R1S1X94yYxtNO40Z/IZ6s+Q4
+	kuzxvL9cXCtm890X37Iv6XbAyku5loynsulHueLX6J1GbC5KbAoRSSJKVvrc6WRyXdw+ujdnHo3
+	33mPs6TD+NPIJ6l2tZtKC1FaEmP86/BdJYe9ab4yp875fh82GWEW7HUr9sPdyumJA3rEJU4ekrB
+	UmpwbERz68sqEQMghw==
+X-Google-Smtp-Source: AGHT+IG1gULsN8llAiMFYhaQZefJEX6KKQ9uTBfk3icPgt8zD06+W72+Cep0YlR2UFj9YNiH0qeNUg==
+X-Received: by 2002:a05:6a00:1ad4:b0:725:f1f2:43eb with SMTP id d2e1a72fcca58-7322c41f1aamr3233563b3a.6.1739415763361;
+        Wed, 12 Feb 2025 19:02:43 -0800 (PST)
+Received: from editor-1003 ([198.44.172.179])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7324254627dsm185789b3a.3.2025.02.12.19.02.42
+        for <lorenz@mpi-inf.mpg.de>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 12 Feb 2025 19:02:42 -0800 (PST)
+From: "editor-1003" <editor-1003@bilpublish.com>
+Subject: Urban Planning and Construction invites submissions and is
+ completely free of charge
+To: lorenz@mpi-inf.mpg.de
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: Base64
+Reply-To: "editor-1003" <upc@bilpub.com>
+Date: Thu, 13 Feb 2025 11:02:45 +0800
+Message-Id: <20250213110244807.13688@bilpublish.com>
+X-Mailer: Foxmail 7.2.21.453[cn]
+X-MPI-No-Header-Rewrite: yes
+X-RSPAMD-Score: 2.0 (++)
+X-RSPAMD-Report: Action: no action
+ Symbol: R_SPF_NA(0.00)
+ Symbol: FROM_HAS_DN(0.00)
+ Symbol: FROM_EQ_ENVFROM(0.00)
+ Symbol: MISSING_MIME_VERSION(2.00)
+ Symbol: TO_DN_NONE(0.00)
+ Symbol: PREVIOUSLY_DELIVERED(0.00)
+ Symbol: MIME_GOOD(-0.10)
+ Symbol: NEURAL_HAM(0.00)
+ Symbol: MID_RHS_MATCH_FROM(0.00)
+ Symbol: RBL_SENDERSCORE_REPUT_8(0.00)
+ Symbol: RCVD_VIA_SMTP_AUTH(0.00)
+ Symbol: ASN(0.00)
+ Symbol: BAD_REP_POLICIES(0.10)
+ Symbol: DKIM_TRACE(0.00)
+ Symbol: REPLYTO_DOM_NEQ_TO_DOM(0.00)
+ Symbol: REPLYTO_DOM_NEQ_FROM_DOM(0.00)
+ Symbol: REPLYTO_DN_EQ_FROM_DN(0.00)
+ Symbol: TO_MATCH_ENVRCPT_ALL(0.00)
+ Symbol: RCVD_TLS_LAST(0.00)
+ Symbol: R_DKIM_ALLOW(0.00)
+ Symbol: RCVD_COUNT_THREE(0.00)
+ Symbol: MIME_BASE64_TEXT(0.10)
+ Symbol: DMARC_NA(0.00)
+ Symbol: RWL_MAILSPIKE_GOOD(-0.10)
+ Symbol: ARC_NA(0.00)
+ Symbol: RCPT_COUNT_ONE(0.00)
+ Symbol: MIME_TRACE(0.00)
+ Symbol: RCVD_IN_DNSWL_NONE(0.00)
+ Symbol: HAS_REPLYTO(0.00)
+ Symbol: BAYES_SPAM(0.01)
+ Message-ID: 20250213110244807.13688@bilpublish.com
+X-RSPAMD-Bar: ++
+X-Spam-MPI-Report: Content analysis details:
+ * -0.0 RCVD_IN_MSPIKE_H3 RBL: Good reputation (+3)
+ *      [209.85.216.52 listed in wl.mailspike.net]
+ * -0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at https://www.dnswl.org/, no
+ *      trust
+ *      [209.85.216.52 listed in list.dnswl.org]
+ *  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+ *      valid
+ * -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ * -0.0 RCVD_IN_MSPIKE_WL Mailspike good senders
+ * -1.9 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0000]
+ -------------------------------------------------------------------------------
+ * -1.9 Total Score
+X-Spam-MPI-Level: [BB]   R_SPF_NA  FROM_HAS_DN  FROM_EQ_ENVFROM  MISSING_MIME_VERSION  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  NEURAL_HAM  MID_RHS_MATCH_FROM  RBL_SENDERSCORE_REPUT_8  RCVD_VIA_SMTP_AUTH  ASN  BAD_REP_POLICIES  DKIM_TRACE  REPLYTO_DOM_NEQ_TO_DOM  REPLYTO_DOM_NEQ_FROM_DOM  REPLYTO_DN_EQ_FROM_DN  TO_MATCH_ENVRCPT_ALL  RCVD_TLS_LAST  R_DKIM_ALLOW  RCVD_COUNT_THREE  MIME_BASE64_TEXT  DMARC_NA  RWL_MAILSPIKE_GOOD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  RCVD_IN_DNSWL_NONE  HAS_REPLYTO  BAYES_SPAM  
+    [H] RCVD_IN_MSPIKE_H3 RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID RCVD_IN_MSPIKE_WL BAYES_00 
+X-MPI-Decontamination: EDD05356589C3B69B0349FBC5ECEB8B916C9A672
+
+RGVhciBEciBMZXV0Z2ViLCBMb3JlbnoNCg0KSSBob3BlIHlvdSBoYXZlIGEgZ29vZCB0aW1lLg0K
+VGhhbmsgeW91IGZvciB0YWtpbmcgYSBmZXcgbWludXRlcyB0byByZWFkIHRoaXMgZW1haWwuDQoN
+ClRoaXMgaXMgRWxzYSwgdGhlIGNvb3JkaW5hdG9yIG9mIEphcGFuIEJpbGluZ3VhbCBQdWJsaXNo
+aW5nIENvLg0KSSBrbm93IHlvdSByZWNlaXZlIG1hbnkgc2ltaWxhciByZXF1ZXN0cyBldmVyeSBk
+YXkuIEkgaG9wZSB0aGlzIGVtYWlsIG1ha2VzIGEgZGlmZmVyZW5jZSB0byB5b3UuIFNpbmNlIHdl
+IGFyZSBzbyBpbXByZXNzZWQgYnkgeW91ciBpbnNpZ2h0cyBpbnRvIFVyYmFuIFBsYW5uaW5nIGFu
+ZCBDb25zdHJ1Y3Rpb24gcmVsYXRlZCBmaWVsZHMsIFdlIHJlY29tbWVuZCB0aGUgam91cm5hbCBV
+cmJhbiBQbGFubmluZyBhbmQgQ29uc3RydWN0aW9uLCBVcmJhbiBQbGFubmluZyBhbmQgQ29uc3Ry
+dWN0aW9uwqBpcyBhIGpvdXJuYWwgZGVkaWNhdGVkIHRvIHRoZSBzdHVkeSBhbmQgYWR2YW5jZW1l
+bnQgb2YgdXJiYW4gcGxhbm5pbmcgYW5kIGNvbnN0cnVjdGlvbiAgcHJhY3RpY2VzLiBJdHMgbWFp
+biBvYmplY3RpdmUgaXMgdG8gZGlzc2VtaW5hdGUgcmVzZWFyY2gsIGtub3dsZWRnZSwgYW5kIGlu
+bm92YXRpdmUgaWRlYXMgcmVsYXRlZCB0byB1cmJhbiBwbGFubmluZywgIGRlc2lnbiwgZGV2ZWxv
+cG1lbnQsIGFuZCBjb25zdHJ1Y3Rpb24uVGhlIGpvdXJuYWwgc2Vla3MgdG8gcHJvdmlkZSBhIHBs
+YXRmb3JtIGZvciByZXNlYXJjaGVycywgcHJhY3RpdGlvbmVycywgIGFuZCBwb2xpY3ltYWtlcnMg
+dG8gY29udHJpYnV0ZSBhbmQgZXhjaGFuZ2UgaWRlYXMgb24gdmFyaW91cyBhc3BlY3RzIG9mIHVy
+YmFuIHBsYW5uaW5nIGFuZCBjb25zdHJ1Y3Rpb24uICBZb3UgYXJlIGNvcmRpYWxseSBpbnZpdGVk
+IHRvIHN1Ym1pdCBuZXcgcmVzZWFyY2ggcmVzdWx0cyB0byB0aGUgam91cm5hbCwgYW5kIHdlIHdv
+dWxkIGxpa2UgdG8gZXhwcmVzcyBvdXIgc2luY2VyZSBncmF0aXR1ZGUgdG8gZXZlcnkgYXV0aG9y
+IHdobyBoYXMgY29udHJpYnV0ZWQgdG8gdGhlIGpvdXJuYWwuDQoNCkFmdGVyIHN1Ym1pc3Npb24s
+IHdlIHdpbGwgZ28gdGhyb3VnaCBhIHN0cmljdCByZXZpZXcgdG8gZW5zdXJlIHRoZSBxdWFsaXR5
+IG9mIHRoZSBqb3VybmFsLCBhbmQgeW91IGRvIG5vdCBuZWVkIHRvIHBheSBhbnkgZmVlcyBkdXJp
+bmcgdGhlIHdob2xlIHByb2Nlc3MNCklmIHlvdSBkbyBub3QgaGF2ZSBhIGNvcHkgbm93LCB5b3Ug
+Y2FuIGFsc28gYXBwbHkgdG8gam9pbiB0aGUgZWRpdG9yaWFsIGJvYXJkLiBXZSBhbHNvIGV4cHJl
+c3Mgb3VyIGdyYXRpdHVkZSB0byB0aGUgZWRpdG9yaWFsIGJvYXJkIGZvciBjb250cmlidXRpbmcg
+dG8gdGhlIGpvdXJuYWwgYW5kIHN1cHBvcnQgdGhlIHdlbGZhcmUgcG9saWN5Lg0KV2UgaGF2ZSB0
+aGUgYWJpbGl0eSwgY29uZmlkZW5jZSBhbmQgZXhwZXJpZW5jZSB0byBtYWtlIHRoaXMgam91cm5h
+bCBiZXR0ZXIgYW5kIGJldHRlciwgYW5kIG1ha2UgZ3JlYXRlciBjb250cmlidXRpb25zIHRvIHRo
+ZSBpbmR1c3RyeSwgb2YgY291cnNlLCBjYW4gbm90IGJlIHNlcGFyYXRlZCBmcm9tIHRoZSBzdHJv
+bmcgc3VwcG9ydCBvZiBvdXRzdGFuZGluZyBzY2hvbGFycw0KSWYgb3VyIGludml0YXRpb24gZG9l
+cyBub3QgYXBwZWFsIHRvIHlvdSwgcGxlYXNlIGxldCB1cyBrbm93LiBTbyB3ZSBkb24ndCBib3Ro
+ZXIgeW91IGFueSBtb3JlIGFuZCB0YWtlIHVwIGFueSBtb3JlIG9mIHlvdXIgdGltZS4NCg0KVGhh
+bmsgeW91IHZlcnkgbXVjaCBmb3IgeW91ciBhdHRlbnRpb24uIFdlIGxvb2sgZm9yd2FyZCB0byB3
+b3JraW5nIHdpdGggeW91IGFuZCBoZWFyaW5nIGZyb20geW91Lg0KDQpFbHNhDQpVcmJhbiBQbGFu
+bmluZyBhbmQgQ29uc3RydWN0aW9uDQpKYXBhbiBCaWxpbmd1YWwgUHVibGlzaGluZyBDby4NCg==
