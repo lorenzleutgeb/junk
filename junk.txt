@@ -83,6 +83,7 @@
 *@haberliff.com
 *@helpdesk-academic-relations.com
 *@historyrj.org
+*@hydrologyjournal.org
 *@iaicf.net
 *@iaria.org
 *@icctis.org

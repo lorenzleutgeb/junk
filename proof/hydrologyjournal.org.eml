@@ -1,0 +1,334 @@
+Return-Path: <adalynn@hydrologyjournal.org>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp12.migadu.com ([2001:41d0:2:bcc0::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms5.migadu.com with LMTPS
+	id 6HIYLUpfkGL6lAAAbAwnHQ
+	(envelope-from <adalynn@hydrologyjournal.org>)
+	for <lorenz@leutgeb.xyz>; Fri, 27 May 2022 07:19:06 +0200
+Received: from aspmx1.migadu.com ([2001:41d0:2:bcc0::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp12.migadu.com with LMTPS
+	id IOPoLEpfkGKlXwEAauVa8A
+	(envelope-from <adalynn@hydrologyjournal.org>)
+	for <lorenz@leutgeb.xyz>; Fri, 27 May 2022 07:19:06 +0200
+Received: from mail-yb1-xb2a.google.com (mail-yb1-xb2a.google.com [IPv6:2607:f8b0:4864:20::b2a])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id 5532DBE8B
+	for <lorenz@leutgeb.xyz>; Fri, 27 May 2022 07:19:05 +0200 (CEST)
+Received: by mail-yb1-xb2a.google.com with SMTP id d2so2181056ybc.12
+        for <lorenz@leutgeb.xyz>; Thu, 26 May 2022 22:19:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hydrologyjournal-org.20210112.gappssmtp.com; s=20210112;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=174hMpKlq1Cq98lUwhybAohGiHuZD4ABtKW4bRSFSHU=;
+        b=JGVsaub7E4wh9krun7yJw5oyjBgDyi7vXs6jo8XnwhAWZCPY2Uv4DWjQPvYJT6ZeSN
+         zXR3XRYSlytnyyDf5OfR3WN5FTEYqlPrSCM0I8evzQu9iaCrwZgR6ZX3umJQfZuV4EBZ
+         Yh1wEskvGZZ92mxrf0+f5b+J5yVypOxhFYAEUZX6zco3HDJltSCGFtm/9PlezAErCUV/
+         0Mj/92S8wlHM54eWrGFuMSjeqW7ZNoO1wbZk7hYpmTbGv35TruiDf1cfT9ALL/4hKTYu
+         ddI8jEVawak0IMaibTFoARDXtBl9dQyj7tx+nACalOD3SUN6GAGP+lJVTjzoGttCgrEn
+         c5wQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=174hMpKlq1Cq98lUwhybAohGiHuZD4ABtKW4bRSFSHU=;
+        b=305EMxTrXWp1Juc6K63hz9Yvkv7qBjNSE+TOZcSlCllLDUq0Sd505i7gdnZW0IGsQ1
+         wG4/zbGMT1wA64G1DOLVM94wBh9aTsq80Qu+vpR1HBGBFEwHxSNBN77VzXjQaOitun3s
+         z+hHFjKqtMipE5sZn8T7u2H5PfwP4hNq0XZOsE9oHBCY3GviqTjixoVkMsLOiKOZ9N9E
+         aJ8ZUa0R65+GpWicNZBA+g6H8X0+tK8OPTklyosrBjXz9s95VZ7awY7Q9wTFondIzBhm
+         lKwruoOrBAiGsmEMK0FwwoqggKoXj47Z6Ju5cYTNGX7NnOq47KJPT8dWyGhUpXB+JvBd
+         GmhQ==
+X-Gm-Message-State: AOAM531BFEa82EjIFFHmiOsjZzhZHxeTKUGshcp0tK0LkcezmumnD2A/
+	jT4tThA/zgm5243di6yHZab4XVit1IgBc9YMFwDp3qZDT51bu1M=
+X-Google-Smtp-Source: ABdhPJxTQt/sxkH9JGO+vS+TSoIVlf9f7p1N4szaV7FFTSr18IzSuJ/YrLH69OPEPbH/dMMlo8dDHG32pzTXk7L89yQ=
+X-Received: by 2002:a05:6902:348:b0:64a:d339:a75f with SMTP id
+ e8-20020a056902034800b0064ad339a75fmr38654176ybs.63.1653628743980; Thu, 26
+ May 2022 22:19:03 -0700 (PDT)
+MIME-Version: 1.0
+From: Adalynn Ferguson <adalynn@hydrologyjournal.org>
+Date: Fri, 27 May 2022 01:18:54 -0400
+Message-ID: <CAJeLqWbLYKn5-d_TJgnMEnZGru-CUZSt42fa-f0rWAW+MBZS1w@mail.gmail.com>
+Subject: =?UTF-8?B?RGVhciBMZXV0Z2ViLCBMLjogU8+F0Kxt0ZZ0IE1hbtW9c2Ny0ZbPgXQgYW5kINCI0L7Rlg==?=
+	=?UTF-8?B?biBPdXIg0JXUgdGWdG9yaWFsIELOv9CwctSBL8mM0r3OvWnSvXdlciBUZWFt?=
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="000000000000e02c0d05dff771cc"
+X-Migadu-Flow: FLOW_IN
+X-Migadu-To: lorenz@leutgeb.xyz
+X-Migadu-Country: US
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1653628745;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=174hMpKlq1Cq98lUwhybAohGiHuZD4ABtKW4bRSFSHU=;
+	b=mT0PjmKe2frAM3eyVk1GIrnGcjHmL6pzg6vdFf5Sy4jJn+oCepHcW9MLtDZIXlUCaYjMSA
+	j4J5KAnZknZnIyFRMLEmMycdmuFdtv93mxwVoP3wds5YuRvv7RZqBrR3qeSlVjnEREJ6DJ
+	mm7DQ0oUzhs5zsVtGKo4p+TUSrcK4Zg=
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1653628745; a=rsa-sha256; cv=none;
+	b=Aozyksscxk1jhO4szoIvFPYDCrDI7sUo1EhwRMLFAbyx/zXQtMB4eoVHbj3pp/6VWyYDkm
+	wH8yRkAwZ/pu798A1LaWU/WQU5XSNp3OqQxIx4vzVoTaTJ0Y40qsnPVFK9wKhcxT+4ksiB
+	1SRd75CLXCXiH6e83KUMAjfdlED9ZQs=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=hydrologyjournal-org.20210112.gappssmtp.com header.s=20210112 header.b=JGVsaub7;
+	dmarc=none;
+	spf=none (aspmx1.migadu.com: domain of adalynn@hydrologyjournal.org has no SPF policy when checking 2607:f8b0:4864:20::b2a) smtp.mailfrom=adalynn@hydrologyjournal.org
+X-Migadu-Spam-Score: -7.59
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=hydrologyjournal-org.20210112.gappssmtp.com header.s=20210112 header.b=JGVsaub7;
+	dmarc=none;
+	spf=none (aspmx1.migadu.com: domain of adalynn@hydrologyjournal.org has no SPF policy when checking 2607:f8b0:4864:20::b2a) smtp.mailfrom=adalynn@hydrologyjournal.org
+X-Migadu-Queue-Id: 5532DBE8B
+X-Spam-Score: -7.59
+X-Migadu-Scanner: scn0.migadu.com
+
+--000000000000e02c0d05dff771cc
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+If you don't wish to receive such em=D0=B0=D1=96ls, please un=D1=95=D5=BDb=
+=D1=95cribe here
+<http://www.amjcst.org/usfb/gtt7y>.
+American =D0=88ourn=D0=B0l of Computer Science and Technology
+e-I=D0=85=D0=85=C6=9D: 2640-012Xp-I=D0=85=D0=85=C6=9D: 2640-0111
+=E2=88=9A =D0=88ourn=D0=B0l of the Gold =D0=9E=CE=91 Model =E2=88=9A Peer =
+=C9=8C=D0=B5vi=D0=B5w =E2=88=9A =CE=A1=D0=B0per =C6=A4ublic=D0=B0tion: 50-7=
+0 Days
+Dear Leutgeb, L.,
+American =D0=88ourn=D0=B0l of Computer Science and Technology (AJCST) is an=
+ open
+a=CF=B2=CF=B2=D0=B5ss and internationally recognized and ranked =D0=B0=D1=
+=81=D0=B0demi=D1=81 =CF=B3=D0=BEurnal. It
+intends to be one of the top =CF=B3=D0=BEurnals in the field of computer sc=
+ience and
+technology.
+Having noticed that your pu=C6=84lic=D0=B0tion t=D1=96tl=D2=BDd "ATLAS: Aut=
+omated Amortised
+Complexity Analysis of Self-adjusting Data Structures" has aroused broad
+interests, we will f=D2=BD=D2=BDl honored if you could s=E1=B4=9C=D0=ACmit =
+unp=E1=B4=9Cbli=D1=95hed =D1=80=D0=B0=D1=80ers to
+our =CF=B3=D0=BEurnal and =D1=98o=D1=96n us as a m=D2=BDm=D0=AC=D2=BDr of t=
+he E=D4=80it=CE=BFrial =D0=92=D0=BEard/=C9=8C=D0=B5vi=D0=B5wer Team.
+=D5=8Fubm=D1=96t Your Unp=E1=B4=9Cbli=D1=95hed Art=D1=96cl=D0=B5
+Aiming at promoting the development of the =D0=B0=D1=81=D0=B0demi=D1=81 com=
+munity, AJCST can
+make specialists in the related fields closer to the latest scientific
+re=D1=95ear=CF=B2h. Given the strong relevance of your sch=D0=BEl=D0=B0rly =
+experience and
+background to the subject, we sincerely =D1=96nv=D1=96t=D0=B5 you to s=E1=
+=B4=9C=D0=ACmit other
+unp=E1=B4=9Cbli=D1=95hed manuscr=D1=96=D1=80ts of similar themes to the =CF=
+=B3=D0=BEurnal.
+=D5=8Fubm=D1=96t your =D0=B0rticl=D0=B5 via: *http://www.amjcst.org/sdfb/gt=
+t7y*
+<http://www.amjcst.org/sdfb/gtt7y>
+To Become the E=D4=80it=CE=BFrial =D0=92=D0=BEard =CE=9C=D0=B5mb=D0=B5r/=C9=
+=8C=D0=B5vi=D0=B5wer
+On behalf of the E=D4=80it=CE=BFrial =D0=92=D0=BEard of the =CF=B3=D0=BEurn=
+al, we would like to =D1=96nv=D1=96t=D0=B5
+you to =D1=98o=D1=96n us as one of the ed=D1=96t=CE=BFrial =C6=85oar=D4=80 =
+m=D2=BDm=D0=AC=D2=BDrs/r=D0=B5v=D1=96=D0=B5wers.
+=D0=88=D0=BEining us: *http://www.amjcst.org/jee/gtt7y*
+<http://www.amjcst.org/jee/gtt7y>
+Requirements for =D0=88=D0=BEining our =C9=8C=D0=B5vi=D0=B5wer Gr=D0=BEu=D1=
+=80 or E=D4=80it=CE=BFrial =D0=A1ommitt=D2=BD=D2=BD:
+
+   1. Receive about three =D1=80=D0=B0=D1=80ers to r=D0=B5v=D1=96=D0=B5w =
+=D0=B0nn=E1=B4=9C=D0=B0lly.
+   2. Send back their r=D0=B5v=D1=96=D0=B5w results in designated time.
+   3. =C9=8C=D0=B5vi=D0=B5w the s=E1=B4=9C=D0=ACmitted =D0=B0rticl=D0=B5s.
+   4. S=D2=BDr=CE=BD=D2=BD a term lasting for 2 years and probably be re-ap=
+pointed for
+   another term.
+
+Please check below for the =D0=B0bstr=D0=B0=E1=B4=84t of your aforementione=
+d =D0=B0rticl=D0=B5: Being
+able to argue about the performance of self-adjusting data structures such
+as splay trees has been a main objective, when Sleator and Tarjan
+introduced the notion of amortised complexity. Analysing these data
+structures requires sophisticated potential functions, which typically
+contain logarithmic expressions. Possibly for these reasons, and despite
+the recent progress in automated resource analysis, they have so far eluded
+automation. In this =D1=80=D0=B0=D1=80er, we r=D0=B5=D1=80ort on the first =
+fully-automated amortised
+complexity analysis of self-adjusting data structures. Following earlier
+work, our analysis is based on potential function templates with unknown
+coefficients. We make the following c=CE=BFntr=D1=96but=D1=96=CE=BFns: 1) W=
+e encode the search
+for concrete potential function coefficients as an optimisation problem
+over a suitable constraint system. Our target function steers the search
+towards coefficients that minimise the inferred amortised complexity. 2)
+Automation is achieved by using a linear constraint system in conjunction
+with suitable lemmata schemes that encapsulate the required non-linear
+facts about the logarithm. We discuss our choices that achieve a scalable
+analysis. 3) We present our tool ATLAS and r=D0=B5=D1=80ort on experimental=
+ results
+for splay trees, splay heaps and pairing heaps. We completely automatically
+infer complexity estimates that match previous results (obtained by
+sophisticated pen-and-=D1=80=D0=B0=D1=80er proofs), and in some cases even =
+infer better
+complexity estimates than previously p=E1=B4=9Cbli=D1=95hed. ? 2021, The =
+=CE=91ut=D2=BBor(s).
+Please let us know if there is any question.
+Cordially yours,
+E=D4=80it=CE=BFr of American =D0=88ourn=D0=B0l of Computer Science and Tech=
+nology
+
+--000000000000e02c0d05dff771cc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br style=3D"color:rgb(0,0,0);font-family:&quot;Microsoft =
+YaHei&quot;;font-size:medium"><br style=3D"color:rgb(0,0,0);font-family:&qu=
+ot;Microsoft YaHei&quot;;font-size:medium"><table border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"font-family:&quot;Microsoft YaHei&quot;;p=
+adding:29px 9px 30px 18px;background:rgb(224,224,224);width:1360px;display:=
+block"><tbody><tr><td style=3D"padding-bottom:11px"><table border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" width=3D"750px"><tbody><tr><td style=3D"te=
+xt-align:right;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:12px=
+">If you don&#39;t wish to receive such em=D0=B0=D1=96ls, please=C2=A0<a bo=
+rder=3D"0" target=3D"_blank" href=3D"http://www.amjcst.org/usfb/gtt7y" styl=
+e=3D"text-decoration-line:none;color:rgb(254,254,254);white-space:nowrap;di=
+splay:inline-block;padding:0px 3px;font-size:13px;line-height:19.5px;border=
+-radius:3px;background:rgb(246,117,0)">un=D1=95=D5=BDb=D1=95cribe here</a>.=
+</td></tr></tbody></table></td></tr><tr><td style=3D"padding:0px"><table bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"750px" style=3D"bor=
+der-collapse:collapse;background:rgb(250,250,250)"><tbody><tr><td style=3D"=
+background:rgb(44,175,183);padding:15px 20px 20px"><table cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" width=3D"710px"><tbody><tr><td style=3D"fon=
+t-size:16px;font-weight:bold;color:rgb(250,250,250);font-family:Tahoma,Aria=
+l,Helvetica,sans-serif;line-height:24px;padding-bottom:6px">American =D0=88=
+ourn=D0=B0l of Computer Science and Technology</td></tr><tr><td style=3D"co=
+lor:rgb(250,250,250);font-family:Tahoma,Arial,Helvetica,sans-serif;font-siz=
+e:13px;line-height:24px;padding-bottom:5px">e-I=D0=85=D0=85=C6=9D: 2640-012=
+X<span style=3D"padding-left:29px">p-I=D0=85=D0=85=C6=9D: 2640-0111</span><=
+/td></tr><tr><td style=3D"padding-top:5px"><table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0"><tbody><tr><td style=3D"background:rgb(245,245,245)=
+;padding:2px 10px 2px 5px;display:inline-block;color:rgb(44,175,183);font-f=
+amily:Tahoma,Arial,Helvetica,sans-serif;font-size:13px;line-height:16px"><s=
+pan style=3D"font-size:16px;font-family:Verdana;display:inline-block;vertic=
+al-align:middle">=E2=88=9A=C2=A0</span>=D0=88ourn=D0=B0l of the Gold =D0=9E=
+=CE=91 Model</td><td style=3D"background:rgb(245,245,245);padding:2px 10px =
+2px 5px;display:inline-block;color:rgb(44,175,183);font-family:Tahoma,Arial=
+,Helvetica,sans-serif;font-size:13px;line-height:16px"><span style=3D"font-=
+size:16px;font-family:Verdana;display:inline-block;vertical-align:middle">=
+=E2=88=9A=C2=A0</span>Peer =C9=8C=D0=B5vi=D0=B5w</td><td style=3D"backgroun=
+d:rgb(245,245,245);padding:2px 10px 2px 5px;display:inline-block;color:rgb(=
+44,175,183);font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:13px;li=
+ne-height:16px"><span style=3D"font-size:16px;font-family:Verdana;display:i=
+nline-block;vertical-align:middle">=E2=88=9A=C2=A0</span>=CE=A1=D0=B0per =
+=C6=A4ublic=D0=B0tion: 50-70 Days</td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr><tr><td style=3D"padding:20px;background-image:initial;=
+background-position:initial;background-size:initial;background-repeat:initi=
+al;background-origin:initial;background-clip:initial"><table border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"710px"><tbody><tr><td style=3D"=
+color:rgb(32,32,32);font-family:Tahoma,Arial,Helvetica,sans-serif;font-size=
+:13px;line-height:24px">Dear Leutgeb, L.,</td></tr><tr><td style=3D"padding=
+-top:12px;color:rgb(32,32,32);font-family:Tahoma,Arial,Helvetica,sans-serif=
+;font-size:13px;line-height:24px;text-align:justify"><span style=3D"font-st=
+yle:italic;font-weight:bold">American =D0=88ourn=D0=B0l of Computer Science=
+ and Technology (AJCST)</span>=C2=A0is an open a=CF=B2=CF=B2=D0=B5ss and in=
+ternationally recognized and ranked =D0=B0=D1=81=D0=B0demi=D1=81 =CF=B3=D0=
+=BEurnal. It intends to be one of the top =CF=B3=D0=BEurnals in the field o=
+f computer science and technology.</td></tr><tr><td style=3D"padding-top:12=
+px;color:rgb(32,32,32);font-family:Tahoma,Arial,Helvetica,sans-serif;font-s=
+ize:13px;line-height:24px;text-align:justify">Having noticed that your pu=
+=C6=84lic=D0=B0tion t=D1=96tl=D2=BDd=C2=A0<span style=3D"font-style:italic"=
+>&quot;ATLAS: Automated Amortised Complexity Analysis of Self-adjusting Dat=
+a Structures&quot;</span>=C2=A0has aroused broad interests, we will f=D2=BD=
+=D2=BDl honored if you could s=E1=B4=9C=D0=ACmit unp=E1=B4=9Cbli=D1=95hed =
+=D1=80=D0=B0=D1=80ers to our =CF=B3=D0=BEurnal and =D1=98o=D1=96n us as a m=
+=D2=BDm=D0=AC=D2=BDr of the E=D4=80it=CE=BFrial =D0=92=D0=BEard/=C9=8C=D0=
+=B5vi=D0=B5wer Team.</td></tr></tbody></table></td></tr><tr><td style=3D"pa=
+dding:0px 20px 20px"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" width=3D"710px"><tbody><tr><td style=3D"background:rgb(216,245,245);paddi=
+ng:10px"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"6=
+90px"><tbody><tr><td style=3D"text-align:center;padding-bottom:15px;font-si=
+ze:15px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-weight:bold;colo=
+r:rgb(32,32,32);line-height:26px">=D5=8Fubm=D1=96t Your Unp=E1=B4=9Cbli=D1=
+=95hed Art=D1=96cl=D0=B5</td></tr><tr><td style=3D"background:rgb(241,255,2=
+55);padding:15px"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" w=
+idth=3D"660px"><tbody><tr><td style=3D"color:rgb(32,32,32);font-family:Taho=
+ma,Arial,Helvetica,sans-serif;font-size:13px;line-height:24px;text-align:ju=
+stify">Aiming at promoting the development of the =D0=B0=D1=81=D0=B0demi=D1=
+=81 community,=C2=A0<span style=3D"font-style:italic">AJCST</span>=C2=A0can=
+ make specialists in the related fields closer to the latest scientific re=
+=D1=95ear=CF=B2h. Given the strong relevance of your sch=D0=BEl=D0=B0rly ex=
+perience and background to the subject, we sincerely =D1=96nv=D1=96t=D0=B5 =
+you to s=E1=B4=9C=D0=ACmit other unp=E1=B4=9Cbli=D1=95hed manuscr=D1=96=D1=
+=80ts of similar themes to the =CF=B3=D0=BEurnal.<br><span style=3D"font-si=
+ze:15px;font-weight:bold;color:rgb(228,53,5)">=D5=8Fubm=D1=96t your =D0=B0r=
+ticl=D0=B5 via:</span>=C2=A0<a href=3D"http://www.amjcst.org/sdfb/gtt7y" ta=
+rget=3D"_blank" style=3D"text-decoration-line:none;color:rgb(0,0,255);white=
+-space:nowrap"><b>http://www.amjcst.org/sdfb/gtt7y</b></a></td></tr></tbody=
+></table></td></tr><tr><td style=3D"text-align:center;padding:20px 0px 15px=
+;font-size:15px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-weight:b=
+old;color:rgb(32,32,32);line-height:26px">To Become the E=D4=80it=CE=BFrial=
+ =D0=92=D0=BEard =CE=9C=D0=B5mb=D0=B5r/=C9=8C=D0=B5vi=D0=B5wer</td></tr><tr=
+><td style=3D"background:rgb(241,255,255);padding:15px"><table border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"660px"><tbody><tr><td style=
+=3D"color:rgb(32,32,32);font-family:Tahoma,Arial,Helvetica,sans-serif;font-=
+size:13px;line-height:24px;text-align:justify">On behalf of the E=D4=80it=
+=CE=BFrial =D0=92=D0=BEard of the =CF=B3=D0=BEurnal, we would like to =D1=
+=96nv=D1=96t=D0=B5 you to =D1=98o=D1=96n us as one of the ed=D1=96t=CE=BFri=
+al =C6=85oar=D4=80 m=D2=BDm=D0=AC=D2=BDrs/r=D0=B5v=D1=96=D0=B5wers.</td></t=
+r><tr><td style=3D"color:rgb(32,32,32);font-family:Tahoma,Arial,Helvetica,s=
+ans-serif;font-size:13px;line-height:24px"><span style=3D"font-size:15px;fo=
+nt-weight:bold;color:rgb(228,53,5)">=D0=88=D0=BEining us:</span>=C2=A0<a hr=
+ef=3D"http://www.amjcst.org/jee/gtt7y" target=3D"_blank" style=3D"text-deco=
+ration-line:none;color:rgb(0,0,255);white-space:nowrap"><b>http://www.amjcs=
+t.org/jee/gtt7y</b></a></td></tr><tr><td style=3D"padding-top:15px"><table =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=3D"pa=
+dding-bottom:5px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:13=
+px;line-height:24px;font-weight:bold">Requirements for =D0=88=D0=BEining ou=
+r =C9=8C=D0=B5vi=D0=B5wer Gr=D0=BEu=D1=80 or E=D4=80it=CE=BFrial =D0=A1ommi=
+tt=D2=BD=D2=BD:</td></tr><tr><td><ol style=3D"list-style-type:lower-alpha;m=
+argin:0px;padding:0px 0px 0px 17px;font-family:Tahoma,Arial,Helvetica,sans-=
+serif;font-size:13px;text-align:justify"><li style=3D"line-height:24px">Rec=
+eive about three =D1=80=D0=B0=D1=80ers to r=D0=B5v=D1=96=D0=B5w =D0=B0nn=E1=
+=B4=9C=D0=B0lly.</li><li style=3D"line-height:24px">Send back their r=D0=B5=
+v=D1=96=D0=B5w results in designated time.</li><li style=3D"line-height:24p=
+x">=C9=8C=D0=B5vi=D0=B5w the s=E1=B4=9C=D0=ACmitted =D0=B0rticl=D0=B5s.</li=
+><li style=3D"line-height:24px">S=D2=BDr=CE=BD=D2=BD a term lasting for 2 y=
+ears and probably be re-appointed for another term.</li></ol></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></td></tr><tr><td style=3D"padding:0px 20px 20px;border-bott=
+om:20px solid rgb(66,78,88)"><table border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" width=3D"710px"><tbody><tr><td style=3D"padding-bottom:10px;font-=
+family:Tahoma,Arial,Helvetica,sans-serif;color:rgb(32,32,32);font-size:13px=
+;line-height:24px;text-align:justify">Please check below for the =D0=B0bstr=
+=D0=B0=E1=B4=84t of your aforementioned =D0=B0rticl=D0=B5: Being able to ar=
+gue about the performance of self-adjusting data structures such as splay t=
+rees has been a main objective, when Sleator and Tarjan introduced the noti=
+on of amortised complexity. Analysing these data structures requires sophis=
+ticated potential functions, which typically contain logarithmic expression=
+s. Possibly for these reasons, and despite the recent progress in automated=
+ resource analysis, they have so far eluded automation. In this =D1=80=D0=
+=B0=D1=80er, we r=D0=B5=D1=80ort on the first fully-automated amortised com=
+plexity analysis of self-adjusting data structures. Following earlier work,=
+ our analysis is based on potential function templates with unknown coeffic=
+ients. We make the following c=CE=BFntr=D1=96but=D1=96=CE=BFns: 1) We encod=
+e the search for concrete potential function coefficients as an optimisatio=
+n problem over a suitable constraint system. Our target function steers the=
+ search towards coefficients that minimise the inferred amortised complexit=
+y. 2) Automation is achieved by using a linear constraint system in conjunc=
+tion with suitable lemmata schemes that encapsulate the required non-linear=
+ facts about the logarithm. We discuss our choices that achieve a scalable =
+analysis. 3) We present our tool ATLAS and r=D0=B5=D1=80ort on experimental=
+ results for splay trees, splay heaps and pairing heaps. We completely auto=
+matically infer complexity estimates that match previous results (obtained =
+by sophisticated pen-and-=D1=80=D0=B0=D1=80er proofs), and in some cases ev=
+en infer better complexity estimates than previously p=E1=B4=9Cbli=D1=95hed=
+. ? 2021, The =CE=91ut=D2=BBor(s).</td></tr><tr><td style=3D"font-family:Ta=
+homa,Arial,Helvetica,sans-serif;color:rgb(35,35,35);font-size:13px;line-hei=
+ght:24px">Please let us know if there is any question.</td></tr><tr><td sty=
+le=3D"padding:23px 0px 9px;font-family:Tahoma,Arial,Helvetica,sans-serif;co=
+lor:rgb(35,35,35);font-size:13px;line-height:24px">Cordially yours,</td></t=
+r><tr><td style=3D"font-family:Tahoma,Arial,Helvetica,sans-serif;color:rgb(=
+35,35,35);font-size:13px;line-height:24px">E=D4=80it=CE=BFr of=C2=A0<span s=
+tyle=3D"font-style:italic">American =D0=88ourn=D0=B0l of Computer Science a=
+nd Technology</span></td></tr></tbody></table></td></tr></tbody></table></t=
+d></tr></tbody></table><br class=3D"gmail-Apple-interchange-newline"></div>
+
+--000000000000e02c0d05dff771cc--
