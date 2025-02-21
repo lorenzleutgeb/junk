@@ -1,0 +1,381 @@
+Return-Path: <ra.wil@ijlangling.org>
+Delivered-To: lorenz@leutgeb.xyz
+Received: from mp1.migadu.com ([2001:41d0:303:e16b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by ms13.migadu.com with LMTPS
+	id yDiSJpXjt2ca6AAA62LTzQ:P1
+	(envelope-from <ra.wil@ijlangling.org>)
+	for <lorenz@leutgeb.xyz>; Fri, 21 Feb 2025 02:23:17 +0000
+Received: from aspmx1.migadu.com ([2001:41d0:303:e16b::])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by mp1.migadu.com with LMTPS
+	id yDiSJpXjt2ca6AAA62LTzQ
+	(envelope-from <ra.wil@ijlangling.org>)
+	for <lorenz@leutgeb.xyz>; Fri, 21 Feb 2025 03:23:17 +0100
+X-Envelope-To: lorenz@leutgeb.xyz
+Authentication-Results: aspmx1.migadu.com;
+	dkim=pass header.d=ijlangling.org header.s=google header.b=AOLvTZp0;
+	spf=pass (aspmx1.migadu.com: domain of ra.wil@ijlangling.org designates 2607:f8b0:4864:20::234 as permitted sender) smtp.mailfrom=ra.wil@ijlangling.org;
+	dmarc=pass (policy=none) header.from=ijlangling.org
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=leutgeb.xyz;
+	s=key1; t=1740104597;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 list-unsubscribe:dkim-signature;
+	bh=1XQbZsPnyc7RAP4fpHsg7yEbNqcT+WeHDulgwoZE/GU=;
+	b=lPWVH0k4KT5HI9VDtIRvW/0bRXJBq50UxmMxlyXsTCG5S5V389FN69Y5c9BB7xe6YCKNRP
+	XJ/9Bq2MRzRRT0MPKxsxB0AyjFLEsHzsu6Eq8c6XDzgpPI+KvyeETM/GI+46nrKArOJv3z
+	IWcslHqRgKQJ+rMMxtuVrR6kRo3lGLc=
+ARC-Seal: i=1; s=key1; d=leutgeb.xyz; t=1740104597; a=rsa-sha256; cv=none;
+	b=BcZNGRn5z2DeaBoU3Sq4nL8kt/UhmR/AieGOH+iq66c0i1FakBG70JFkdndSDS44zRgJ9J
+	ShrA5pP0Ng4KEKvziTZjSfkSLo2kYermYpypugR/cGvL4+JflIpggThCh/bQxG8PqayIPb
+	VjOf8+pfKF7vRNQVZpsQBshep0a+yfE=
+ARC-Authentication-Results: i=1;
+	aspmx1.migadu.com;
+	dkim=pass header.d=ijlangling.org header.s=google header.b=AOLvTZp0;
+	spf=pass (aspmx1.migadu.com: domain of ra.wil@ijlangling.org designates 2607:f8b0:4864:20::234 as permitted sender) smtp.mailfrom=ra.wil@ijlangling.org;
+	dmarc=pass (policy=none) header.from=ijlangling.org
+Received: from mail-oi1-x234.google.com (mail-oi1-x234.google.com [IPv6:2607:f8b0:4864:20::234])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by aspmx1.migadu.com (Postfix) with ESMTPS id B006B8471E
+	for <lorenz@leutgeb.xyz>; Fri, 21 Feb 2025 03:23:16 +0100 (CET)
+Received: by mail-oi1-x234.google.com with SMTP id 5614622812f47-3f3ecfa7a76so791590b6e.2
+        for <lorenz@leutgeb.xyz>; Thu, 20 Feb 2025 18:23:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ijlangling.org; s=google; t=1740104595; x=1740709395; darn=leutgeb.xyz;
+        h=to:subject:message-id:date:list-unsubscribe:mime-version:from:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=1XQbZsPnyc7RAP4fpHsg7yEbNqcT+WeHDulgwoZE/GU=;
+        b=AOLvTZp0ox1Go8j0Tnyeb1zbqsMzi+gvgQxRfQAG6skjyQ733C/v4UshvNM/Hkuvpd
+         RHs6MVHwjPet0+IB+gO1VjGpOoj1hBQE6GzXg+V5m6hFstRYfAGeyjBi+RA0YqChswtp
+         zNfRVs18zXrt40Z5uczgavN+YCeZaLz19aYmSrOA1pCTwnBjzdjJ/WOn93NL1oFPseFW
+         F1y7qVy6TUV9hWbHwKIGaykvo75pGIAvaEhW+wEJztDj/LPHPrlWDWkhfdTNHtQFfvMj
+         gcxpjqy3Ba8xyuvbcNmb3Pln4URZynzFO/LYXLFiedtDxpV0FZdli+i3yHeimX17WJNL
+         0mzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740104595; x=1740709395;
+        h=to:subject:message-id:date:list-unsubscribe:mime-version:from
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1XQbZsPnyc7RAP4fpHsg7yEbNqcT+WeHDulgwoZE/GU=;
+        b=idpJcqVsSOoAXPmr4orGUEjB+3RpIo8UCfiiTv4s1D4cV+o/GOnRzRAMpL+GdKw/Fo
+         wbgT3LcjKDfXUx+l/GdgrHMDj5BJeRZSTiYCaQlsIF8DKccvfCjzzI4zxLWxd7H2Vbx5
+         5BstgCzOXaEoYmu+ZBgj8RM2VO8WkvRd6Tuz+yiRGlvB/nLoVatHgemHBjywar0Ld9GX
+         raeqXmlkTqUxj+/10x9ETE9lC3b+dMo0QLjBq7lWtaaUw2dId4pJMYlvK5uv4R9mZUYl
+         v08j0MMZuqvH245xLIKgz0ibNeHYh3bF9ZGxYO0ik4wASyUvg1Em2tbWZEqZMrEtRxgD
+         /67g==
+X-Gm-Message-State: AOJu0Yz075l3VuvVG1HvgJbJxnVvZYUpo/+9uQVLLPzyRQWSfD4I/ohF
+	BlHPnQKlLVoMggXMA5Z2gKhCjFrin/yB8CLSQNSxBcL4yZSb3YvX3r7dZUEz9aZAR9hh+9F48OV
+	36iSLnF+ECx+DKGejbJZ8Mvg732mtdmsPF04HylCNYOJARTehmcE=
+X-Gm-Gg: ASbGnctorOVMGGLmsi4xgBgWWhwxHEZ2YlRk4n/OI0PMME0/WUPigKPoUxykAeimrPe
+	zcp7WuhExRHiL9mmkOpbN9imlrdSxuFHvqJs1C2BMTtqqmPCmFtdls7Gl0791/Q0aSvjz3vpeF4
+	3L4I3K2Fk=
+X-Google-Smtp-Source: AGHT+IH6gJtt5jty2LKjKqgMDIjs3KpZ/zydTl89tAYAMJbH5saCzOqIxyBQWCWN5eb/GDuJv63QB2lBDg2kjSdPgUw=
+X-Received: by 2002:a05:6808:2393:b0:3f4:b0c:aa5 with SMTP id
+ 5614622812f47-3f4246a10b0mr1582308b6e.2.1740104595223; Thu, 20 Feb 2025
+ 18:23:15 -0800 (PST)
+Received: from 1063235251948 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 20 Feb 2025 20:23:14 -0600
+Received: from 1063235251948 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 20 Feb 2025 20:23:14 -0600
+From: ra.wil@ijlangling.org
+MIME-Version: 1.0
+List-Unsubscribe: <mailto:ra.wil@ijlangling.org?subject=unsubscribe&body=subscribe%20list>
+Date: Thu, 20 Feb 2025 20:23:14 -0600
+X-Gm-Features: AWEUYZnZSOxaykO2xDWksMg-EiIXLBn1CEeMVhfZjy9uC-I6NaRBaURt44gOJyQ
+Message-ID: <CAET8j0igNJgrsdVzAJ+jZiQqx6didwvvaFx0b=n1pLv36KTBQw@mail.gmail.com>
+Subject: =?UTF-8?B?RGVhciBMZXV0Z2ViLCBMLjogQmUgzpXUgdGWdG9yaWFsINCSb9CwctSBIM6c0LVt0KzQtQ==?=
+	=?UTF-8?B?cnMgb3IgUtC1dmnQtdSdZXJz?=
+To: lorenz@leutgeb.xyz
+Content-Type: multipart/alternative; boundary="000000000000454cf4062e9dacdf"
+X-Migadu-Country: US
+X-Migadu-Flow: FLOW_IN
+X-Migadu-Spam-Score: -2.54
+X-Spam-Score: -2.54
+X-Migadu-Queue-Id: B006B8471E
+X-Migadu-Scanner: mx13.migadu.com
+
+--000000000000454cf4062e9dacdf
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+If you no longer want to receive such kind of emails, =D1=81l=D1=96=D1=81k =
+here
+<http://www.amjcst.net/us/Kkqoc> to unsu=D0=ACscri=D0=AC=D0=B5.
+Be the =CE=9C=D0=B5mb=D0=B5r of the =CE=95dit=CE=BFrial Bo=D0=B0r=D4=81/Rev=
+=D1=96e=E1=B4=A1er Team
+Develop Your A=D1=81a=D4=81emi=D1=81 Group  |   Boost =D0=85chol=D0=B0rs' =
+=D0=90c=D0=B0demic Impact  |   Have
+A=E1=B4=84=E1=B4=84e=D1=95=D1=95 to the Newest Research
+Dear Leutgeb, L.,
+=D5=95ffering a platform for global research dissemination, the 300+ open-a=
+=CF=B2=CF=B2=D0=B5ss
+=D1=98o=D5=BDrnals span a diverse range of disciplines. Over the past decad=
+e, a
+continuous stream of p=D5=BDbl=D1=96cat=D1=96ons has been upheld by more th=
+an 115 =D1=98ourn=D0=B0ls.
+Featuring a wide array of subjects in computer science and technology, Amer=
+ican
+Journal of Computer Science and Technology (e-=D0=86=D0=85=D0=85N: 2640-012=
+X) is an
+international =CF=B3ourn=D0=B0l =D1=80u=D0=AClished on this platform.
+Be the =D0=9Cem=D0=ACer of the Ed=D1=96t=D0=BErial B=CE=BFar=D4=81 or Re=CE=
+=BD=D1=96ewer Team
+After going through the a=E1=B4=84a=D4=81emi=E1=B4=84 =D1=80a=D1=80=D0=B5r =
+"ATLAS: Automated Amortised
+Complexity Analysis of Self-adjusting Data Structures" =D1=80u=D0=AClished =
+by you,
+which has impressed us a lot, we are pleased to make this invitation to you
+to =D0=B0ppl=D1=83 for the m=D0=B5m=D0=AC=D0=B5rship on our R=D0=B5vi=D0=B5=
+=E1=B4=A1er Panel/Ed=D1=96t=CE=BFrial =D0=92oar=D4=81. We think
+your contribution will definitely bring b=D0=B5n=D0=B5f=D1=96ts to the scie=
+ntific
+community.
+The following l=D1=96n=CE=BA will guide you to j=D0=BE=D1=96n us as one m=
+=D0=B5m=D0=AC=D0=B5r of the E=D4=81it=D0=BErial
+=CE=92o=D0=B0rd/Re=E1=B4=A0ie=E1=B4=A1er Team:
+http://www.amjcst.net/jy/Kkqoc
+We Are Looking For:
+
+   1. Specialists equipped with the devotion to open a=CF=B2=CF=B2=D0=B5ss,=
+ reformation in
+   scientific publi=D1=95=D5=B0ing and motivation for being a supporter in =
+their
+   fields;
+   2. Individuals in the early phase of their career progression, striving
+   to build a more inclusive research community are the ones we are
+   particularly interested in.
+
+The t=D1=96tl=D0=B5 and ab=D1=95tra=E1=B4=84t of your =D1=80=D0=B0=D1=80er =
+are listed as below:
+The t=D1=96tl=D0=B5 of your work: ATLAS: Automated Amortised Complexity Ana=
+lysis of
+Self-adjusting Data Structures
+The =D0=B0=D0=ACstr=D0=B0ct of your work: Being able to argue about the per=
+formance of
+self-adjusting data structures such as splay trees has been a main
+objective, when Sleator and Tarjan introduced the notion of amortised
+complexity. Analysing these data structures requires sophisticated
+potential functions, which typically contain logarithmic expressions.
+Possibly for these reasons, and despite the recent progress in automated
+resource analysis, they have so far eluded automation. In this =D1=80=D0=B0=
+=D1=80er, we r=D0=B5=D1=80
+ort on the first f=D5=BDlly-automated amortised complexity analysis of
+self-adjusting data structures. Following earlier work, our analysis is
+based on potential function templates with unknown coefficients. We make
+the following contributions: 1) We encode the search for concrete potential
+function coefficients as an optimisation problem over a suitable constraint
+system. Our target function steers the search towards coefficients that
+minimise the inferred amortised complexity. 2) Automation is achieved by
+using a linear constraint system in conjunction with suitable lemmata
+schemes that encapsulate the required non-linear facts about the logarithm.
+We discuss our choices that achieve a scalable analysis. 3) We present our
+tool ATLAS and r=D0=B5=D1=80ort on experimental results for splay trees, sp=
+lay heaps
+and pairing heaps. We completely automatically infer complexity estimates
+that match previous results (obtained by sophisticated pen-and-=D1=80a=D1=
+=80=D0=B5r
+proofs), and in some cases even infer better complexity estimates than
+previously publi=D1=95=D5=B0ed. ? 2021, The A=D5=BDt=D5=B0or(s).
+
+--000000000000454cf4062e9dacdf
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<br><br><meta charset=3D"utf-8"><table style=3D"background:#ededea;color:#1=
+51515;padding:22px 22px;display:block;width:100%"> 	<tr><td style=3D"paddin=
+g-bottom:12px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:14px;=
+line-height:24px;text-align:left">If you no longer want to receive such kin=
+d of emails, <a href=3D"http://www.amjcst.net/us/Kkqoc" border=3D"0" target=
+=3D"_blank" style=3D"text-decoration:none;color:#0000ff;white-space:nowrap;=
+font-size:13px;line-height:150%">=D1=81l=D1=96<span style=3D"padding-left:0=
+.9px">=D1=81k</span> here</a> to unsu=D0=AC<span style=3D"letter-spacing:-0=
+.2px">scr</span>i=D0=AC=D0=B5.</td></tr><tr><td style=3D"padding:0px"><tabl=
+e cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"780" style=3D"b=
+order:0;border-spacing:0"><tr><td style=3D"padding:0px"><table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;bord=
+er-spacing:0"> 	<tr><td style=3D"width:740px;border:7px solid #c5eaf5"> 		<=
+table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=
+=3D"border:0;border-spacing:0;border-collapse:collapse"> 		<tr><td style=3D=
+"padding:0px"> 			<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" w=
+idth=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:collapse">=
+ 			<tr><td style=3D"background:#e8f6f9"> 				<table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;border-spacing:=
+0;border-collapse:collapse"> 				<tr><td style=3D"border:1px dashed #c9c9c9=
+;background:#eff7ff"> 					<table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" width=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:c=
+ollapse"> 					<tr><td style=3D"background:#5263a9"> 	 						<table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;=
+border-spacing:0;border-collapse:collapse"> 									 						<tr><td style=
+=3D"display:table-cell;vertical-align:middle"> 	 							<table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;bord=
+er-spacing:0;border-collapse:collapse"> 							<tr><td style=3D"color:#fdff=
+ff;padding:20px 0px 10px;text-align:center;font-size:24px;line-height:24px"=
+><font face=3D"Times New Roman">Be the =CE=9C=D0=B5m<span style=3D"letter-s=
+pacing:-0.4px">b=D0=B5r</span> of the =CE=95di<span style=3D"letter-spacing=
+:0.7px">t=CE=BFr</span>ial Bo=D0=B0<span style=3D"padding-left:0.7px">r=D4=
+=81</span>/Rev<span style=3D"padding-right:0.3px">=D1=96e=E1=B4=A1</span>er=
+ Team</font></td></tr>  							<tr><td style=3D"text-align:center;padding-b=
+ottom:16px"> 								<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" width=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:collaps=
+e"> 								<tr><td style=3D"padding:0px"> 									<table cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;border-sp=
+acing:0;border-collapse:collapse;text-align:center"> 									<tr><td style=
+=3D"display:inline-block;padding:2px 0px;line-height:24px;border-radius:4px=
+;color:#fdffff;font-size:13px;font-family:Tahoma,Arial,Helvetica,sans-serif=
+">Develop Your A=D1=81a<span style=3D"padding-left:0.8px">=D4=81em</span>i=
+=D1=81 Group=C2=A0=C2=A0|=C2=A0=C2=A0</td> 									<td style=3D"display:in=
+line-block;padding:2px 0px;line-height:24px;border-radius:4px;color:#fdffff=
+;font-size:13px;font-family:Tahoma,Arial,Helvetica,sans-serif">Boost =D0=85=
+ch<span style=3D"padding-left:0.2px">ol=D0=B0</span>rs&#39; =D0=90c=D0=B0<s=
+pan style=3D"letter-spacing:0.7px">dem</span>ic Impact=C2=A0=C2=A0|=C2=A0=
+=C2=A0</td> 									<td style=3D"display:inline-block;padding:2px 0px;line=
+-height:24px;border-radius:4px;color:#fdffff;font-size:13px;font-family:Tah=
+oma,Arial,Helvetica,sans-serif">Have A=E1=B4=84=E1=B4=84<span style=3D"lett=
+er-spacing:0.2px">e=D1=95=D1=95</span> to the Newest Research</td></tr> 			=
+						</table> 								</td></tr> 								</table> 							</td></tr> 						=
+	</table> 						</td></tr>  							 						</table> 					</td></tr> 					</t=
+able> 				</td></tr> 				</table> 			</td></tr> 			</table> 		</td></tr> 		=
+<tr><td style=3D"border-bottom:1px dashed #c9c9c9;border-left:1px dashed #c=
+9c9c9;border-right:1px dashed #c9c9c9"> 		<table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;border-spacing:0;bo=
+rder-collapse:collapse"> 		<tr><td style=3D"padding:20px 20px 20px;backgrou=
+nd:#fdffff"> 		<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" widt=
+h=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:collapse"> 		=
+<tr><td style=3D"padding:0px"> 			<table cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" width=3D"100%" style=3D"border:0;border-spacing:0;border-col=
+lapse:collapse"> 			<tr><td style=3D"background:#fdffff"> 				<table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0=
+;border-spacing:0;border-collapse:collapse"> 				<tr><td style=3D"padding:0=
+px 0px 0px 0px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:14px=
+;line-height:24px;text-align:left">Dear Leutgeb, L.,</td></tr> 				<tr><td =
+style=3D"padding:10px 0;font-family:Tahoma,Arial,Helvetica,sans-serif;font-=
+size:14px;line-height:24px;text-align:left"><span style=3D"letter-spacing:0=
+.9px">=D5=95f</span>fering a platform for global research dissemination, th=
+e <span style=3D"font-weight:bold">300+ open-a=CF=B2=CF=B2<span style=3D"le=
+tter-spacing:1px">=D0=B5ss</span> =D1=98o=D5=BD<span style=3D"letter-spacin=
+g:-0.9px">rna</span>ls</span> span a diverse range of disciplines. Over the=
+ <span style=3D"font-weight:bold">past decade</span>, a continuous stream o=
+f p=D5=BDbl<span style=3D"letter-spacing:-0.6px">=D1=96cat</span>=D1=96ons =
+has been upheld by more than 115 =D1=98ou<span style=3D"letter-spacing:0.1p=
+x">rn=D0=B0</span>ls.</td></tr><tr><td style=3D"padding:0;font-family:Tahom=
+a,Arial,Helvetica,sans-serif;font-size:14px;line-height:24px;text-align:lef=
+t">Featuring a wide array of subjects in computer science and technology, <=
+span style=3D"font-style:italic;color:#ed4511;font-weight:bold">American Jo=
+u<span style=3D"letter-spacing:-0.6px">rna</span>l of Computer Science and =
+Technology</span> (e-=D0=86=D0=85<span style=3D"letter-spacing:-0.8px">=D0=
+=85N</span>: 2640-012X) is an international =CF=B3ou<span style=3D"padding-=
+left:0.1px">rn=D0=B0</span>l =D1=80u=D0=AC<span style=3D"letter-spacing:-0.=
+8px">lis</span>hed on this platform.</td></tr> 				</table> 			</td></tr> 	=
+		</table> 		</td></tr> 		<tr><td style=3D"padding:14px 0px 0px;background:=
+#fdffff"> 			<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:collapse"> 			=
+<tr><td style=3D"background:#fdffff"> 				<table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;border-spacing:0;bo=
+rder-collapse:collapse"> 				<tr><td style=3D"background:#5263a9;display:in=
+line-block"> 	 					<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"100%" style=3D"border:0;border-spacing:0;border-collapse:collapse=
+"> 									 					<tr><td style=3D"color:#fafafa;padding:8px 10px;text-alig=
+n:left;font-size:16px;font-weight:bold;font-family:Tahoma,Arial,Helvetica,s=
+ans-serif;line-height:24px">Be the =D0=9Cem<span style=3D"padding-right:0.2=
+px">=D0=ACer</span> of the Ed=D1=96<span style=3D"padding-left:0.9px">t=D0=
+=BEr</span>ial B=CE=BFa<span style=3D"padding-right:0.2px">r=D4=81</span> o=
+r Re=CE=BD<span style=3D"padding-left:0.6px">=D1=96ew</span>er Team</td></t=
+r> 				</table>					 				</td></tr> 				<tr><td style=3D"border:1px dashed =
+#9caef9;padding:10px 16px"> 				<table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" width=3D"100%" style=3D"border:0;border-spacing:0;border-colla=
+pse:collapse"> 				<tr><td style=3D"padding-top:4px"> 					<table cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;bo=
+rder-spacing:0;border-collapse:collapse"> 						<tr><td style=3D"padding-to=
+p:10px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:14px;line-he=
+ight:24px;text-align:left">After going through the a=E1=B4=84a<span style=
+=3D"letter-spacing:-0.6px">=D4=81em</span>i=E1=B4=84 =D1=80a=D1=80<span sty=
+le=3D"letter-spacing:0.6px">=D0=B5r</span> <span style=3D"font-style:italic=
+">&quot;ATLAS: Automated Amortised Complexity Analysis of Self-adjusting Da=
+ta Structures&quot;</span> =D1=80u=D0=AC<span style=3D"letter-spacing:0.8px=
+">lis</span>hed by you, which has impressed us a lot, we are pleased to mak=
+e this invitation to you to =D0=B0pp<span style=3D"padding-left:0.1px">l=D1=
+=83</span> for the m=D0=B5m<span style=3D"padding-right:0.3px">=D0=AC=D0=B5=
+r</span>ship on our R=D0=B5v<span style=3D"letter-spacing:0.1px">i=D0=B5=E1=
+=B4=A1</span>er Panel/Ed=D1=96<span style=3D"padding-right:0.2px">t=CE=BFr<=
+/span>ial =D0=92oa<span style=3D"padding-left:0.9px">r=D4=81</span>. We thi=
+nk your contribution will definitely bring b=D0=B5n<span style=3D"padding-l=
+eft:0.6px">=D0=B5f=D1=96</span>ts to the scientific community.</td></tr> 		=
+				<tr><td style=3D"padding-top:10px;font-family:Tahoma,Arial,Helvetica,sa=
+ns-serif;font-size:14px;line-height:24px;text-align:left">The following l=
+=D1=96<span style=3D"letter-spacing:0.2px">n=CE=BA</span> will guide you to=
+ j=D0=BE<span style=3D"letter-spacing:-0.9px">=D1=96n</span> us as one m=D0=
+=B5m<span style=3D"padding-left:1px">=D0=AC=D0=B5r</span> of the E=D4=81i<s=
+pan style=3D"padding-left:0.3px">t=D0=BEr</span>ial =CE=92o=D0=B0<span styl=
+e=3D"padding-left:0.1px">rd</span>/Re=E1=B4=A0<span style=3D"letter-spacing=
+:-0.8px">ie=E1=B4=A1</span>er Team:</td></tr> 						<tr><td style=3D"paddin=
+g-bottom:16px"> 						<a href=3D"http://www.amjcst.net/jy/Kkqoc" border=3D"=
+0" target=3D"_blank" style=3D"text-decoration:none;font-size:14px;color:#00=
+00ff;white-space:nowrap;font-weight:bold;font-family:Tahoma,Arial,Helvetica=
+,sans-serif">http://www.amjcst.net/jy/Kkqoc</a> 						</td></tr> 						 			=
+			<tr><td style=3D"padding:16px 0px 10px 0px;border-top:1px dashed #cccccc=
+"> 							<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"=
+100%" style=3D"border:0;border-spacing:0;border-collapse:collapse"> 							=
+<tr><td style=3D"padding:0px;border-radius:6px"><table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;border-spacin=
+g:0;border-collapse:collapse">	<tr><td style=3D"font-family:Tahoma,Arial,He=
+lvetica,sans-serif;font-size:14px;color:#292929;line-height:24px;text-align=
+:justify;font-weight:bold;padding-bottom:5px">We Are Looking For:</td></tr>=
+	<tr><td style=3D"padding:0;font-family:Tahoma,Arial,Helvetica,sans-serif;f=
+ont-size:14px;color:#292929;line-height:24px;text-align:justify">		<ol styl=
+e=3D"list-style-type:square;margin:0;padding:0 0 0 17px">			<li>Specialists=
+ equipped with the devotion to open a=CF=B2=CF=B2<span style=3D"padding-lef=
+t:0.7px">=D0=B5ss</span>, reformation in scientific pub<span style=3D"paddi=
+ng-right:0.7px">li=D1=95</span>=D5=B0ing and motivation for being a support=
+er in their fields;</li>			<li>Individuals in the early phase of their care=
+er progression, striving to build a more inclusive research community are t=
+he ones we are particularly interested in.</li>		</ol>	</td></tr></table></=
+td></tr> 						</table> 						</td></tr> 						</table> 					</td></tr> 			=
+		</table> 				</td></tr> 				</table> 			</td></tr> 			</table> 		</td></t=
+r> 		<tr><td style=3D"padding-top:10px;font-family:Tahoma,Arial,Helvetica,s=
+ans-serif;font-size:14px;line-height:24px;text-align:left"><table cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"border:0;bo=
+rder-spacing:0;border-collapse:collapse"><tr><td style=3D"padding:0px;font-=
+family:Tahoma,Arial,Helvetica,sans-serif;font-size:14px;line-height:24px;te=
+xt-align:justify">The t=D1=96t<span style=3D"padding-right:1px">l=D0=B5</sp=
+an> and ab=D1=95<span style=3D"padding-left:0.3px">tra</span>=E1=B4=84t of =
+your =D1=80=D0=B0=D1=80<span style=3D"padding-right:0.5px">er</span> are li=
+sted as below:</td></tr><tr><td style=3D"padding:0px;font-family:Tahoma,Ari=
+al,Helvetica,sans-serif;font-size:14px;line-height:24px;text-align:justify"=
+><span style=3D"font-weight:bold">The t=D1=96t<span style=3D"padding-right:=
+0.1px">l=D0=B5</span> of your work:</span> ATLAS: Automated Amortised Compl=
+exity Analysis of Self-adjusting Data Structures</td></tr><tr><td style=3D"=
+padding:0px;font-family:Tahoma,Arial,Helvetica,sans-serif;font-size:14px;li=
+ne-height:24px;text-align:justify"><span style=3D"font-weight:bold">The =D0=
+=B0=D0=ACs<span style=3D"padding-left:0.2px">tr=D0=B0</span>ct of your work=
+:</span> Being able to argue about the performance of self-adjusting data s=
+tructures such as splay trees has been a main objective, when Sleator and T=
+arjan introduced the notion of amortised complexity. Analysing these data s=
+tructures requires sophisticated potential functions, which typically conta=
+in logarithmic expressions. Possibly for these reasons, and despite the rec=
+ent progress in automated resource analysis, they have so far eluded automa=
+tion. In this =D1=80=D0=B0=D1=80<span style=3D"padding-right:0.4px">er</spa=
+n>, we r=D0=B5=D1=80<span style=3D"letter-spacing:-0.8px">ort</span> on the=
+ first f<span style=3D"letter-spacing:1px">=D5=BDl</span>ly-automated amort=
+ised complexity analysis of self-adjusting data structures. Following earli=
+er work, our analysis is based on potential function templates with unknown=
+ coefficients. We make the following contributions: 1) We encode the search=
+ for concrete potential function coefficients as an optimisation problem ov=
+er a suitable constraint system. Our target function steers the search towa=
+rds coefficients that minimise the inferred amortised complexity. 2) Automa=
+tion is achieved by using a linear constraint system in conjunction with su=
+itable lemmata schemes that encapsulate the required non-linear facts about=
+ the logarithm. We discuss our choices that achieve a scalable analysis. 3)=
+ We present our tool ATLAS and r=D0=B5=D1=80<span style=3D"padding-left:0.8=
+px">ort</span> on experimental results for splay trees, splay heaps and pai=
+ring heaps. We completely automatically infer complexity estimates that mat=
+ch previous results (obtained by sophisticated pen-and-=D1=80a=D1=80<span s=
+tyle=3D"letter-spacing:-0.4px">=D0=B5r</span> proofs), and in some cases ev=
+en infer better complexity estimates than previously pub<span style=3D"padd=
+ing-right:0.4px">li=D1=95</span>=D5=B0ed. ? 2021, The A=D5=BDt<span style=
+=3D"letter-spacing:0.2px">=D5=B0or</span>(s).</td></tr></table></td></tr> 	=
+	</table> 	</td></tr> 	</table> 	</td></tr> 	</table> 	</td></tr> 	 	 	</ta=
+ble></td></tr></table></td></tr></table>=20
+
+--000000000000454cf4062e9dacdf--
