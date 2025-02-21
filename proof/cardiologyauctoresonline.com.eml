@@ -1,0 +1,683 @@
+Return-Path: <bounce+bounce_67b141d8767da197967869@surgeryauctoresonline.com>
+Delivered-To: lorenz
+Received: from zak ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by idas.mpi-inf.mpg.de with LMTPS
+	id EBsHFCgdsmdFHgwAQ6f/oA:P1
+	(envelope-from <bounce+bounce_67b141d8767da197967869@surgeryauctoresonline.com>)
+	for <lorenz>; Sun, 16 Feb 2025 18:15:20 +0100
+Received: from jupiter.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by zak with LMTPS
+	id EBsHFCgdsmdFHgwAQ6f/oA
+	(envelope-from <bounce+bounce_67b141d8767da197967869@surgeryauctoresonline.com>)
+	for <lorenz@imap-inf0.mpi-inf.mpg.de>; Sun, 16 Feb 2025 18:15:20 +0100
+Received: from pk3.surgeryauctoresonline.com ([148.113.174.49]:39854)
+	by jupiter.mpi-klsb.mpg.de (envelope-from <bounce+bounce_67b141d8767da197967869@surgeryauctoresonline.com>) 
+	with esmtps (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.98) id 1tjiEf-00000008MuE-0GHo
+	for lorenz@mpi-inf.mpg.de;
+	Sun, 16 Feb 2025 18:15:20 +0100
+Received: from pk.cardiologyauctoresonline.com (pk.cardiologyauctoresonline.com [5.255.113.116])
+	by pk3.surgeryauctoresonline.com (Postfix) with ESMTPSA id 86201C610B
+	for <lorenz@mpi-inf.mpg.de>; Sun, 16 Feb 2025 17:06:55 +0000 (UTC)
+X-Notes-Item: [BBBBBB]   FROM_HAS_DN  FROM_NEQ_ENVFROM  REPLYTO_ADDR_EQ_FROM  RCVD_COUNT_TWO  HAS_LIST_UNSUB  PREVIOUSLY_DELIVERED  MIME_GOOD  NEURAL_HAM  R_DKIM_NA  RWL_MAILSPIKE_POSSIBLE  R_SPF_ALLOW  RCVD_VIA_SMTP_AUTH  ASN  MISSING_XM_UA  BAD_REP_POLICIES  RBL_SENDERSCORE_REPUT_5  RCVD_TLS_ALL  REPLYTO_DOM_NEQ_TO_DOM  TAGGED_FROM  TO_DN_ALL  TO_MATCH_ENVRCPT_ALL  DMARC_POLICY_SOFTFAIL  GREYLIST  URI_COUNT_ODD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  FORGED_SENDER  HAS_REPLYTO  BAYES_SPAM  
+    [XX] RCVD_IN_MSPIKE_H2 BAYES_00 HEADER_FROM_DIFFERENT_DOMAINS DATE_IN_PAST_12_24 HTML_MESSAGE RAZOR2_CHECK RAZOR2_CF_RANGE_51_100 ;
+    name=$DNSBLSite
+Message-ID: <88c517676ea91ea687ff7edf8bfb1dbd@swift.generated>
+Date: Sun, 16 Feb 2025 01:39:35 +0000
+Subject: IJCCR:Kindly submit the case reports paper on medicine
+From: Maria Emerson <jcci@cardiologyauctoresonline.com>
+Reply-To: jcci@cardiologyauctoresonline.com
+To: LorenzLeutgeb <lorenz@mpi-inf.mpg.de>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1739669975_0c431da388218baa7578b276af67b2e4_=_"
+X-EMAIL-ID: 952
+List-Unsubscribe: <mailto:bounce+unsubscribe_67b141d8767da197967869@surgeryauctoresonline.com>,
+ <https://pk.cardiologyauctoresonline.com/email/unsubscribe/67b141d8767da197967869>
+X-MPI-No-Header-Rewrite: yes
+X-RSPAMD-Score: 6.0 (++++++)
+X-RSPAMD-Report: Action: add header
+ Symbol: FROM_HAS_DN(0.00)
+ Symbol: FROM_NEQ_ENVFROM(0.00)
+ Symbol: REPLYTO_ADDR_EQ_FROM(0.00)
+ Symbol: RCVD_COUNT_TWO(0.00)
+ Symbol: HAS_LIST_UNSUB(-0.01)
+ Symbol: PREVIOUSLY_DELIVERED(0.00)
+ Symbol: MIME_GOOD(-0.10)
+ Symbol: NEURAL_HAM(0.00)
+ Symbol: R_DKIM_NA(0.00)
+ Symbol: RWL_MAILSPIKE_POSSIBLE(0.00)
+ Symbol: R_SPF_ALLOW(0.00)
+ Symbol: RCVD_VIA_SMTP_AUTH(0.00)
+ Symbol: ASN(0.00)
+ Symbol: MISSING_XM_UA(0.00)
+ Symbol: BAD_REP_POLICIES(0.10)
+ Symbol: RBL_SENDERSCORE_REPUT_5(1.50)
+ Symbol: RCVD_TLS_ALL(0.00)
+ Symbol: REPLYTO_DOM_NEQ_TO_DOM(0.00)
+ Symbol: TAGGED_FROM(0.00)
+ Symbol: TO_DN_ALL(0.00)
+ Symbol: TO_MATCH_ENVRCPT_ALL(0.00)
+ Symbol: DMARC_POLICY_SOFTFAIL(0.10)
+ Symbol: GREYLIST(0.00)
+ Symbol: URI_COUNT_ODD(1.00)
+ Symbol: ARC_NA(0.00)
+ Symbol: RCPT_COUNT_ONE(0.00)
+ Symbol: MIME_TRACE(0.00)
+ Symbol: FORGED_SENDER(0.30)
+ Symbol: HAS_REPLYTO(0.00)
+ Symbol: BAYES_SPAM(3.13)
+ Message-ID: 88c517676ea91ea687ff7edf8bfb1dbd@swift.generated
+X-RSPAMD-Bar: ++++++
+X-RSPAMD-Status: Yes
+X-Spam-MPI-Report: Content analysis details:
+ * -1.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+ *      [148.113.174.49 listed in wl.mailspike.net]
+ * -1.9 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0000]
+ *  1.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ *      domains are different
+ *  1.0 DATE_IN_PAST_12_24 Date: is 12 to 24 hours before Received: date
+ *  0.0 HTML_MESSAGE BODY: HTML included in message
+ *  0.9 RAZOR2_CHECK Listed in Razor2 (http://razor.sf.net/)
+ *  1.9 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+ *      [cf: 100]
+ -------------------------------------------------------------------------------
+ * 02.0 Total Score
+X-Spam-MPI-Level: [BBBBBB]   FROM_HAS_DN  FROM_NEQ_ENVFROM  REPLYTO_ADDR_EQ_FROM  RCVD_COUNT_TWO  HAS_LIST_UNSUB  PREVIOUSLY_DELIVERED  MIME_GOOD  NEURAL_HAM  R_DKIM_NA  RWL_MAILSPIKE_POSSIBLE  R_SPF_ALLOW  RCVD_VIA_SMTP_AUTH  ASN  MISSING_XM_UA  BAD_REP_POLICIES  RBL_SENDERSCORE_REPUT_5  RCVD_TLS_ALL  REPLYTO_DOM_NEQ_TO_DOM  TAGGED_FROM  TO_DN_ALL  TO_MATCH_ENVRCPT_ALL  DMARC_POLICY_SOFTFAIL  GREYLIST  URI_COUNT_ODD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  FORGED_SENDER  HAS_REPLYTO  BAYES_SPAM  
+    [XX] RCVD_IN_MSPIKE_H2 BAYES_00 HEADER_FROM_DIFFERENT_DOMAINS DATE_IN_PAST_12_24 HTML_MESSAGE RAZOR2_CHECK RAZOR2_CF_RANGE_51_100 
+X-MPI-Decontamination: 53B8F08AE8394EDE671D7E795A5478E062E0D987
+
+
+--_=_swift_1739669975_0c431da388218baa7578b276af67b2e4_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+=C2=A0International Journal of Clinical Case Reports and Reviews
+
+ISSN:=
+ 2690-4861
+Impact Factor: 3.89
+
+Dear Dr. LorenzLeutgeb=E2=80=8D,
+Gr=
+eetings from=C2=A0International Journal of Clinical Case Reports and
+Revi=
+ews!
+[https://pk.cardiologyauctoresonline.com/r/72722cfdfd09eacb2d299b976=
+?ct=3DYTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6M=
+TtpOjkxNDt9czo1OiJlbWFpbCI7aTo5NTI7czo0OiJzdGF0IjtzOjIyOiI2N2IxNDFkODc2N2Rh=
+MTk3OTY3ODY5IjtzOjQ6ImxlYWQiO3M6NzoiNjcwMTg1MSI7czo3OiJjaGFubmVsIjthOjE6e3M=
+6NToiZW1haWwiO2k6OTUyO319&]
+I appreciate your professionalism and knowled=
+ge after a view at your
+published article" Carbon-chain chemistry in the =
+interstellar medium=E2=80=8D"=C2=A0=E2=80=8D=E2=80=8D.
+We extend a warm i=
+nvitation to you to contribute an unpublished
+manuscript for publication =
+in our upcoming issue. We would greatly
+appreciate it if you could submit=
+ your manuscript by=C2=A0March 18th,
+2025.
+If your manuscript is prepar=
+ed and ready for submission please send it
+email =C2=A0to =C2=A0Online Ma=
+nuscript Submission System
+[https://pk.cardiologyauctoresonline.com/r/a7a=
+10863b3a0600ce78135c15?ct=3DYTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2F=
+tcGFpZ24uZXZlbnQiO2k6MTtpOjkxNDt9czo1OiJlbWFpbCI7aTo5NTI7czo0OiJzdGF0IjtzOj=
+IyOiI2N2IxNDFkODc2N2RhMTk3OTY3ODY5IjtzOjQ6ImxlYWQiO3M6NzoiNjcwMTg1MSI7czo3O=
+iJjaGFubmVsIjthOjE6e3M6NToiZW1haWwiO2k6OTUyO319&]=C2=A0(OR)=C2=A0info@aucto=
+respublishing.com
+When you are submitting through our INFO mail (or) Subm=
+ission link,
+please mention the respective Editorial Coordinator=C2=A0nam=
+e:=C2=A0(Maria
+Emerson)
+Note: If you want to become a member of the Edi=
+torial Board, a minimum
+requirement of either a Ph.D. or M.D. is necessar=
+y.
+Your affirmative response to our invitation would be highly valued.
+=
+We eagerly anticipate your submission.
+Best Regards,
+Maria Emerson,
+E=
+ditorial Coordinator,
+International Journal of Clinical Case Reports and =
+Reviews,
+Auctores Publishing LLC, USA.
+Office: +1-(302)-520-2644
+
+D=
+isclaimer:=C2=A0If you do not wish to receive any emails from us, please
+=
+give a reply as Unsubscribe.
+
+=C2=A0
+
+=C2=A0
+
+=C2=A0
+
+=
+=C2=A0
+
+--_=_swift_1739669975_0c431da388218baa7578b276af67b2e4_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Tra=
+nsitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html xmlns=3D"http:/=
+/www.w3.org/1999/xhtml" lang=3D"en" class=3D" js flexbox flexboxlegacy canv=
+as canvastext webgl no-touch geolocation postmessage no-websqldatabase inde=
+xeddb hashchange history draganddrop websockets rgba hsla multiplebgs backg=
+roundsize borderimage borderradius boxshadow textshadow opacity cssanimatio=
+ns csscolumns cssgradients cssreflections csstransforms csstransforms3d css=
+transitions fontface generatedcontent video audio localstorage sessionstora=
+ge webworkers no-applicationcache svg inlinesvg smil svgclippaths responsej=
+s " style=3D""><head>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8" />
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1" />
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+        <meta name=3D"robots" content=3D"noindex, nofollow" />
+        <title>IJCCR:Kindly submit the case reports paper on medicine</titl=
+e>
+        <style type=3D"text/css">
+            body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%;}
+            table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+            img{border: 0; height: auto; line-height: 100%; outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic;}
+            table{border-collapse: collapse !important;}
+            body{font-family: 'Open Sans', Verdana, Arial, sans-serif; heig=
+ht: 100% !important; margin: 0 !important; padding: 0 !important; width: 10=
+0% !important; -webkit-font-smoothing: antialiased !important; font-smoothi=
+ng: antialiased !important;}
+            div[style*=3D"margin: 16px 0;"] { margin:0 !important; }
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            @media only screen and (min-width: 660px) {
+                .shrinker {
+                    padding: 0 55px !important;
+                }
+                .c4 {
+                    width: 35% !important;
+                    float: left !important;
+                    display: block !important;
+                }
+                .c8 {
+                    width: 60% !important;
+                    padding-left: 5% !important;
+                    float: left !important;
+                    display: block !important;
+                }
+            }
+            @media only screen and (max-width: 660px) {
+                .shrinker {
+                    width: 100% !important;
+                }
+                .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c10,.c11,.c12 {
+                    width: 100% !important;
+                    float: left !important;
+                    display: block;
+                    padding: 0 !important;
+                    margin: 10px 0;
+                }
+            }
+        </style>
+        <!--[if !mso]><!---->
+        <style type=3D"text/css">
+            /* Opens sans font */
+            @font-face {
+              font-family: 'Open Sans';
+              src: url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-Regular.WOFF') format('woff'),
+                   url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-Regular.ttf')  format('truetype');=20
+              font-weight: 300;
+            }
+            @font-face {
+              font-family: 'Open Sans';
+              src: url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-Italic.WOFF') format('woff'),
+                   url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-Italic.ttf')  format('truetype');=20
+              font-weight: 300;
+              font-style: italic;
+            }
+            @font-face {
+              font-family: 'Open Sans';
+              src: url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-SemiBold.WOFF') format('woff'),
+                   url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-SemiBold.ttf')  format('truetype');=20
+              font-weight: 700;
+            }
+            @font-face {
+              font-family: 'Open Sans';
+              src: url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-SemiBoldItalic.WOFF') format('woff'),
+                   url('https://pk.cardiologyauctoresonline.com/themes/auro=
+ra/assets/open-sans/OpenSans-SemiBoldItalic.ttf')  format('truetype');=20
+              font-weight: 700;
+              font-style: italic;
+            }
+        </style>
+        <!--<![endif]-->
+                                      </head>
+    <body style=3D"margin:0; padding:0;" class=3D"ui-sortable">
+    <!--[if mso]>
+    <style type=3D"text/css">
+    body, table, td {font-family: 'Open Sans', Verdana, Arial, sans-serif; =
+!important;}
+    </style>
+    <![endif]-->
+    <table width=3D"100%" height=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"center">
+        <tbody><tr>
+            <td width=3D"100%" valign=3D"top" align=3D"center">
+                <center>
+                    <!-- START HERO -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <div data-slot-container=3D"1" class=3D"ui-=
+sortable">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif;" class=3D"shrinker ui-sort=
+able" data-slot-container=3D"1">
+                                            <div data-slot=3D"text" class=
+=3D""><table align=3D"center" bgcolor=3D"#00bf9a" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"max-width:660px; background: #00bf9a;" wi=
+dth=3D"100%"><tbody><tr><td align=3D"center" bgcolor=3D"#00bf9a" class=3D"s=
+hrinker" style=3D"font-family: 'Open Sans', Verdana, Arial, sans-serif; bac=
+kground: #00bf9a; padding: 0 15px;"><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 550px; background: rg=
+b(255, 255, 255); margin-left: calc(7%); width: 83%; margin-right: calc(10%=
+);" width=3D"100%"><thead><tr><th><br /></th></tr></thead><tbody><tr><td he=
+ight=3D"40" style=3D"font-size: 40px; line-height: 40px;"><div style=3D"tex=
+t-align: center;"><span style=3D"color: rgb(65, 168, 95);"><span style=3D"f=
+ont-family: Times New Roman,Times,serif;"><strong><span style=3D"font-size:=
+ 24px;">=C2=A0</span></strong></span></span><span style=3D"font-size: 24px;=
+"><span style=3D"font-family: Times New Roman,Times,serif;"><strong><span s=
+tyle=3D"color: rgb(41, 105, 176);">International Journal of Clinical Case R=
+eports and Reviews</span></strong></span></span></div></td></tr><tr><td ali=
+gn=3D"center" style=3D"padding: 0 15px" valign=3D"top"><span style=3D"color=
+: rgb(184, 49, 47);"><strong><span style=3D"font-family: Times New Roman,Ti=
+mes,serif;">ISSN: 2690-4861<br /></span></strong><span style=3D"font-family=
+: Times New Roman,Times,serif;"><strong>Impact Factor: 3.89</strong></span>=
+</span><span style=3D"color: rgb(147, 101, 184);"><span style=3D"font-famil=
+y: Times New Roman,Times,serif;"><strong><br /></strong></span></span></td>=
+</tr><tr><td height=3D"20" style=3D"font-size: 20px; line-height: 20px;"><d=
+iv style=3D"text-align: center;"><br /></div></td></tr><tr><td align=3D"cen=
+ter" style=3D"padding: 0 15px" valign=3D"top"><p open=3D"" style=3D"font-fa=
+mily: "><br /></p></td></tr></tbody></table></td></tr></tbody></table></div=
+></td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END HERO -->
+                    <!-- START SECTION 1 -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; background:#f0f0f0; color:=
+#212121; padding: 0 15px;" class=3D"shrinker ui-sortable" data-slot-contain=
+er=3D"1">
+                                            <div data-slot=3D"text"><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+max-width:550px; background: #ffffff" width=3D"100%"><tbody><tr><td height=
+=3D"30" style=3D"font-size: 30px; line-height: 30px;"><div style=3D"text-al=
+ign: center;"><span style=3D"font-family: Times New Roman,Times,serif;"><sp=
+an style=3D"font-size: 14px;"><strong><span style=3D"color: rgb(0, 0, 0);">=
+Dear Dr. <span class=3D"atwho-inserted" data-atwho-at-query=3D"{F" data-fr-=
+verified=3D"true">LorenzLeutgeb</span>=E2=80=8D,</span><br />Greetings from=
+=C2=A0</strong><a href=3D"https://pk.cardiologyauctoresonline.com/r/72722cf=
+dfd09eacb2d299b976?ct=3DYTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGF=
+pZ24uZXZlbnQiO2k6MTtpOjkxNDt9czo1OiJlbWFpbCI7aTo5NTI7czo0OiJzdGF0IjtzOjIyOi=
+I2N2IxNDFkODc2N2RhMTk3OTY3ODY5IjtzOjQ6ImxlYWQiO3M6NzoiNjcwMTg1MSI7czo3OiJja=
+GFubmVsIjthOjE6e3M6NToiZW1haWwiO2k6OTUyO319&"><strong>International Journal=
+ of Clinical Case Reports and Reviews!</strong></a><br />I appreciate your =
+professionalism and knowledge after a view at your published article<strong=
+>" <span class=3D"atwho-inserted" data-atwho-at-query=3D"{AR" data-fr-verif=
+ied=3D"true">Carbon-chain chemistry in the interstellar medium</span>=
+=E2=80=8D"=C2=A0</strong><span style=3D"color: rgb(0, 0, 0);"><strong>=
+=E2=80=8D=E2=80=8D.</strong></span><br />We extend a warm invitation to you=
+ to contribute an unpublished manuscript for publication in our upcoming is=
+sue. We would greatly appreciate it if you could submit your manuscript by<=
+span style=3D"color: rgb(184, 49, 47);"><strong>=C2=A0March 18th, 2025.</st=
+rong></span></span></span></div><div style=3D"text-align: center;"><span st=
+yle=3D"font-family: Times New Roman,Times,serif;"><span style=3D"font-size:=
+ 14px;">If your manuscript is prepared and ready for submission please send=
+ it email =C2=A0to <span style=3D"color: rgb(0, 168, 133);"><strong>=C2=
+=A0</strong></span><a href=3D"https://pk.cardiologyauctoresonline.com/r/a7a=
+10863b3a0600ce78135c15?ct=3DYTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2F=
+tcGFpZ24uZXZlbnQiO2k6MTtpOjkxNDt9czo1OiJlbWFpbCI7aTo5NTI7czo0OiJzdGF0IjtzOj=
+IyOiI2N2IxNDFkODc2N2RhMTk3OTY3ODY5IjtzOjQ6ImxlYWQiO3M6NzoiNjcwMTg1MSI7czo3O=
+iJjaGFubmVsIjthOjE6e3M6NToiZW1haWwiO2k6OTUyO319&" rel=3D"noopener noreferre=
+r" target=3D"_blank"><span style=3D"color: rgb(0, 168, 133);"><strong>Onlin=
+e Manuscript Submission System</strong></span></a><strong>=C2=A0(OR)=C2=
+=A0</strong><a href=3D"mailto:info@auctorespublishing.com" rel=3D"noopener =
+noreferrer" target=3D"_blank"><strong>info@auctorespublishing.com</strong><=
+/a></span></span></div><div style=3D"text-align: center;"><span style=3D"fo=
+nt-family: Times New Roman,Times,serif;"><span style=3D"font-size: 14px;"><=
+span style=3D"color: rgb(184, 49, 47);"><strong>When you are submitting thr=
+ough our INFO mail (or) Submission link, please mention the respective Edit=
+orial Coordinator</strong><strong>=C2=A0name</strong></span><span style=3D"=
+color: rgb(0, 0, 0);"><strong>:</strong></span><span style=3D"color: rgb(65=
+, 168, 95);"><strong>=C2=A0(Maria Emerson)</strong></span><br /><strong>Not=
+e:</strong> If you want to become a member of the Editorial Board, a minimu=
+m requirement of either a <strong>Ph.D. or M.D.</strong> is necessary.<br /=
+>Your affirmative response to our invitation would be highly valued.<br />W=
+e eagerly anticipate your submission.<br /><strong>Best Regards,<br />Maria=
+ Emerson,<br />Editorial Coordinator,<br />International Journal of Clinica=
+l Case Reports and Reviews,<br />Auctores Publishing LLC, USA.<br />Office:=
+ +1-(302)-520-2644</strong><br /></span></span></div></td></tr><tr><td alig=
+n=3D"center" style=3D"padding: 0 30px" valign=3D"top"><div><span style=3D"f=
+ont-family: Times New Roman,Times,serif;"><span style=3D"font-size: 10px;">=
+<strong>Disclaimer:=C2=A0</strong>If you do not wish to receive any emails =
+from us, please give a reply as Unsubscribe.</span><span style=3D"font-size=
+: 14px;"><br /><br /></span></span></div></td></tr></tbody></table></div>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END SECTION 1-->
+                    <!-- START SECTION 2 -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; background:#f0f0f0; color:=
+#212121; padding: 0 15px;" class=3D"shrinker ui-sortable" data-slot-contain=
+er=3D"1">
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END SECTION 2 -->
+                    <!-- START SECTION 3 -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; background:#f0f0f0; color:=
+#212121; padding: 0 15px;" class=3D"shrinker ui-sortable" data-slot-contain=
+er=3D"1">
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END SECTION 3 -->
+                    <!-- START SECTION 4 -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; background:#f0f0f0; color:=
+#212121; padding: 0 15px;" class=3D"shrinker ui-sortable" data-slot-contain=
+er=3D"1">
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END SECTION 4 -->
+                   <!-- START COMPANY INFO -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td height=3D"15" style=3D"font-siz=
+e: 15px; line-height: 15px;">=C2=A0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; color:#212121; text-transf=
+orm: uppercase;" data-slot-container=3D"1" class=3D"ui-sortable">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height=3D"15" style=3D"font-siz=
+e: 15px; line-height: 15px;">=C2=A0</td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END COMPANY INFO -->
+                    <!-- START COPYRIGHT -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" style=3D"font-=
+family: 'Open Sans', Verdana, Arial, sans-serif; color:#212121; text-transf=
+orm: uppercase;" data-slot-container=3D"1" class=3D"ui-sortable">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height=3D"20" style=3D"font-siz=
+e: 20px; line-height: 20px;">=C2=A0</td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END COPYRIGHT -->
+                    <!-- START SOCIAL -->
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" data-section-wrapper=3D"1">
+                        <tbody><tr data-section=3D"1">
+                            <td align=3D"center" height=3D"100%" valign=3D"=
+top" width=3D"100%">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align=3D"center" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"660">
+                                <tr>
+                                <td align=3D"center" valign=3D"top" width=
+=3D"660">
+                                <![endif]-->
+                                <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px;" bgc=
+olor=3D"#f0f0f0">
+                                    <tbody><tr>
+                                        <td align=3D"center" height=3D"100%=
+" valign=3D"top" width=3D"100%" data-slot-container=3D"1" class=3D"ui-sorta=
+ble">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height=3D"40" style=3D"font-siz=
+e: 40px; line-height: 40px;">=C2=A0</td>
+                                    </tr>
+                                </tbody></table>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- END SOCIAL -->
+                    <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </center>
+            </td>
+        </tr>
+    </tbody></table>             =20
+    <div style=3D"display:none; white-space:nowrap; font:15px courier; line=
+-height:0;">
+    </div>
+<img height=3D"1" width=3D"1" src=3D"https://pk.cardiologyauctoresonline.co=
+m/email/67b141d8767da197967869.gif" alt=3D"" /></body></html>
+
+--_=_swift_1739669975_0c431da388218baa7578b276af67b2e4_=_--
+
