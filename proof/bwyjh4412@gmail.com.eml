@@ -1,0 +1,136 @@
+Return-Path: <bwyjh4412@gmail.com>
+Delivered-To: lorenz
+Received: from maniac ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by idas.mpi-inf.mpg.de with LMTPS
+	id oBc0BTi7tWcjbBkAOyvQ4w:P1
+	(envelope-from <bwyjh4412@gmail.com>)
+	for <lorenz>; Wed, 19 Feb 2025 12:06:32 +0100
+Received: from jupiter.mpi-klsb.mpg.de ([139.19.86.15])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	by maniac with LMTPS
+	id oBc0BTi7tWcjbBkAOyvQ4w
+	(envelope-from <bwyjh4412@gmail.com>)
+	for <lorenz@imap-inf0.mpi-inf.mpg.de>; Wed, 19 Feb 2025 12:06:32 +0100
+Received: from mail-ej1-f54.google.com ([209.85.218.54]:56447)
+	by jupiter.mpi-klsb.mpg.de (envelope-from <bwyjh4412@gmail.com>) 
+	with esmtps (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_128_GCM:128)
+	(Exim 4.98) id 1tkhuO-00000001uvS-43sG
+	for lorenz@mpi-inf.mpg.de;
+	Wed, 19 Feb 2025 12:06:31 +0100
+Received: by mail-ej1-f54.google.com with SMTP id a640c23a62f3a-abb7a6ee2deso624125266b.0
+        for <lorenz@mpi-inf.mpg.de>; Wed, 19 Feb 2025 03:06:28 -0800 (PST)
+X-Notes-Item: [/]   FROM_HAS_DN  FROM_EQ_ENVFROM  RCVD_COUNT_TWO  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  MID_RHS_MATCH_FROMTLD  NEURAL_HAM  R_SPF_ALLOW  ASN  MISSING_XM_UA  BAD_REP_POLICIES  DKIM_TRACE  DMARC_POLICY_ALLOW  BAYES_HAM  RBL_SENDERSCORE_REPUT_7  TO_MATCH_ENVRCPT_ALL  RCVD_TLS_LAST  R_DKIM_ALLOW  RWL_MAILSPIKE_GOOD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  FREEMAIL_FROM  DWL_DNSWL_NONE  FREEMAIL_ENVFROM  RCVD_IN_DNSWL_NONE  
+    [/] RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID_EF DKIM_VALID_AU DKIM_VALID BAYES_50 FREEMAIL_FROM FREEMAIL_ENVFROM_END_DIGIT HTML_MESSAGE RCVD_IN_MSPIKE_H3 RCVD_IN_MSPIKE_WL ;
+    name=$DNSBLSite
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1739963188; x=1740567988; darn=mpi-inf.mpg.de;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=CXfXOySqqKbk/v3BhUqjsRD3fQ9YopzjH4NnFXnOtoQ=;
+        b=bWSEmgKyhA/206XmoBRqBd/njnYCV3Vpmlp7ngAuXMPuhoZe3Qi1j1ro/+UxCfq3CW
+         A+5IoZc4lp6f3otbGmFd0WLLIymtMrwYTOQCxH0t9wY5QWJtePuesJQXgxKHi/9wGh/h
+         6EogYKlxQWOFMcccONHbknhGHd+EK1YUOZyTb7jboT666Nb1GIMxxqiCZ7+0XqLu8tIE
+         Jbq93zhaSpJS5YiOfmuLNizTIsghVh3OqHWyNJCTAv0bIyIuq56+7tw58smM00AeZPQG
+         0/vX28+NeAnTknjwamXSUACL1UhFxAwXtHSeU47xg0Zndz1n33F6nWSxv1RsJJo+dij1
+         PlsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739963188; x=1740567988;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=CXfXOySqqKbk/v3BhUqjsRD3fQ9YopzjH4NnFXnOtoQ=;
+        b=QHdEl4bTRiaTJbyYtfq0dJr7Qj53Zut96Md6R8/VOInNpE5G1tTBLOScYvigkAd/yf
+         mSGnlxomogP6zmOtIj5bk1jfwLTXEwGagYfIDfbw0r6ORSfRUnc8znN2Y5dkjouEx0Wf
+         cDg3Tz326koTEfpNtsOMGG4XoKgzN+d3vvG9ENYTVOvw1cf7jsHF3ygjgb1/zuMC+HY+
+         2lsxwwVEVWPevnJh0am1Ck6eTW0dfcFoFqDrQmBrU4napcHfy/D7SBUkRcz8st2ImnK4
+         TwJVJoj6LJEmemMCV6jt/eb/2z3QVjlDvIhRW6hDnfRoUnLUtKp7SdMT5/G2BmZdxnnG
+         2nRg==
+X-Gm-Message-State: AOJu0Yx0gL1RbcvI1fCOZkeEfqt+WqjOEFGUo1LoH65+BF1Gy/mkpgeg
+	p2VN+TGQc8eug7uONCRqFYoRuobNZH3kK93rYlExP+/kkflXY1MbR8e7IPYw7XXe6rv9NF/U9cK
+	GDbl+2pYRcUM+91MzgRXOLvgTyEP6FtYke4lu
+X-Gm-Gg: ASbGncsjCwEE8RDqYez4Fz7CtOuFUoZa5I5J0vYIfwqGYI+Gx9C2lbskA5nlkacZ64y
+	GW7mAdBS/KidD4bPDco0zmMo9u3GHiD1IeoNwzA31qhEMrq44IUwnWD2UAVAlNgGgcXL7jNMhQA
+	==
+X-Google-Smtp-Source: AGHT+IHhgBomTOEJeb4vYVa2mGq06B9TO5A4n5zg70PjuywucM530oX7u8aqAR/OLoNW8UZUEpmFlLpjpK7Tz4QhXk4=
+X-Received: by 2002:a17:906:478b:b0:ab7:6369:83fc with SMTP id
+ a640c23a62f3a-abbcd05a708mr302275466b.38.1739963187917; Wed, 19 Feb 2025
+ 03:06:27 -0800 (PST)
+MIME-Version: 1.0
+From: Christoph Weidenbach <bwyjh4412@gmail.com>
+Date: Wed, 19 Feb 2025 12:06:20 +0100
+X-Gm-Features: AWEUYZnm85yvD5sZrA_I_Gy8kUnae7deX_d0Npj3jlbEo40aIPAYEtsoBuYve38
+Message-ID: <CAOrr3qG+QhvC-v=NTuqD-pK_a5OWDv3wRzP-iL6zOHv2M2xGjw@mail.gmail.com>
+Subject: Get back to me
+To: lorenz@mpi-inf.mpg.de
+Content-Type: multipart/alternative; boundary="000000000000bcfaaa062e7cbf1b"
+X-MPI-No-Header-Rewrite: yes
+X-RSPAMD-Score: 0.2 (/)
+X-RSPAMD-Report: Action: no action
+ Symbol: FROM_HAS_DN(0.00)
+ Symbol: FROM_EQ_ENVFROM(0.00)
+ Symbol: RCVD_COUNT_TWO(0.00)
+ Symbol: TO_DN_NONE(0.00)
+ Symbol: PREVIOUSLY_DELIVERED(0.00)
+ Symbol: MIME_GOOD(-0.10)
+ Symbol: MID_RHS_MATCH_FROMTLD(0.00)
+ Symbol: NEURAL_HAM(0.00)
+ Symbol: R_SPF_ALLOW(0.00)
+ Symbol: ASN(0.00)
+ Symbol: MISSING_XM_UA(0.00)
+ Symbol: BAD_REP_POLICIES(0.10)
+ Symbol: DKIM_TRACE(0.00)
+ Symbol: DMARC_POLICY_ALLOW(0.00)
+ Symbol: BAYES_HAM(-0.15)
+ Symbol: RBL_SENDERSCORE_REPUT_7(0.50)
+ Symbol: TO_MATCH_ENVRCPT_ALL(0.00)
+ Symbol: RCVD_TLS_LAST(0.00)
+ Symbol: R_DKIM_ALLOW(0.00)
+ Symbol: RWL_MAILSPIKE_GOOD(-0.10)
+ Symbol: ARC_NA(0.00)
+ Symbol: RCPT_COUNT_ONE(0.00)
+ Symbol: MIME_TRACE(0.00)
+ Symbol: FREEMAIL_FROM(0.00)
+ Symbol: DWL_DNSWL_NONE(0.00)
+ Symbol: FREEMAIL_ENVFROM(0.00)
+ Symbol: RCVD_IN_DNSWL_NONE(0.00)
+ Message-ID: CAOrr3qG+QhvC-v=NTuqD-pK_a5OWDv3wRzP-iL6zOHv2M2xGjw@mail.gmail.com
+X-RSPAMD-Bar: /
+X-Spam-MPI-Report: Content analysis details:
+ * -0.0 RCVD_IN_DNSWL_NONE RBL: Sender listed at https://www.dnswl.org/, no
+ *      trust
+ *      [209.85.218.54 listed in list.dnswl.org]
+ *  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+ *      valid
+ * -0.1 DKIM_VALID_EF Message has a valid DKIM or DK signature from
+ *      envelope-from domain
+ * -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ *       domain
+ * -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4914]
+ *  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ *      [bwyjh4412(at)gmail.com]
+ *  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+ *      digit
+ *      [bwyjh4412(at)gmail.com]
+ *  0.0 HTML_MESSAGE BODY: HTML included in message
+ * -0.0 RCVD_IN_MSPIKE_H3 RBL: Good reputation (+3)
+ *      [209.85.218.54 listed in wl.mailspike.net]
+ * -0.0 RCVD_IN_MSPIKE_WL Mailspike good senders
+ -------------------------------------------------------------------------------
+ * 00.8 Total Score
+X-Spam-MPI-Level: [/]   FROM_HAS_DN  FROM_EQ_ENVFROM  RCVD_COUNT_TWO  TO_DN_NONE  PREVIOUSLY_DELIVERED  MIME_GOOD  MID_RHS_MATCH_FROMTLD  NEURAL_HAM  R_SPF_ALLOW  ASN  MISSING_XM_UA  BAD_REP_POLICIES  DKIM_TRACE  DMARC_POLICY_ALLOW  BAYES_HAM  RBL_SENDERSCORE_REPUT_7  TO_MATCH_ENVRCPT_ALL  RCVD_TLS_LAST  R_DKIM_ALLOW  RWL_MAILSPIKE_GOOD  ARC_NA  RCPT_COUNT_ONE  MIME_TRACE  FREEMAIL_FROM  DWL_DNSWL_NONE  FREEMAIL_ENVFROM  RCVD_IN_DNSWL_NONE  
+    [/] RCVD_IN_DNSWL_NONE DKIM_SIGNED DKIM_VALID_EF DKIM_VALID_AU DKIM_VALID BAYES_50 FREEMAIL_FROM FREEMAIL_ENVFROM_END_DIGIT HTML_MESSAGE RCVD_IN_MSPIKE_H3 RCVD_IN_MSPIKE_WL 
+X-MPI-Decontamination: CC4CB38987F1659F30F8C39942683E3914B038DC
+
+--000000000000bcfaaa062e7cbf1b
+Content-Type: text/plain; charset="UTF-8"
+
+Are you in the Lab?
+
+--000000000000bcfaaa062e7cbf1b
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Are you in the Lab?<br></div>
+
+--000000000000bcfaaa062e7cbf1b--
